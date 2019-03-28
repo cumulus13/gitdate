@@ -6,8 +6,10 @@ pid = os.getpid()
 import sys
 from make_colors import make_colors
 import subprocess
+import platform
 import time
-import vping
+if not 'arm' in platform.machine():
+    import vping
 # import tracert
 import colorama
 import configset
@@ -75,36 +77,57 @@ def gitStatus(print_separated=False):
             print "-" * len(a[-1])
         return False
 
-def getVersion(check=True, write=True):
-    file_version = checkFileVersion()
-    #print "file_version =", checkFileVersion()
-    if os.path.isfile(os.path.join(os.getcwd(), file_version)):
-        version = open(os.path.join(os.getcwd(), file_version)).read().strip()
-        if check:
-            return version
-        if isinstance(version, str) and len(version) > 1:
-            #print "is STR"
-            if "." in str(version):
-                ver, build_num = str(version).split(".")
-                #print "ver       =", ver
-                #print "build_num =", build_num
-                if len(build_num) > 2 and build_num[1] == '9':
-                    version = int(ver) + 1
-                    version = str(version) + "." + "0"
-                else:
-                    #print "float(version) =", float(version)
-                    version = float(version) + 0.01
-                    #print "version x =", version
-            else:
-                version = float(version) + 0.01
-        if version == '':
-            version = "0.1"
-        if write:
-            version_file = open(os.path.join(os.getcwd(), file_version), 'w')
-            version_file.write(str(version))
-            version_file.close()
-    return str(version)
+def writeVersion(file_version, version_number):
+    with open(file_version, 'wb') as f:
+        f.write("version = " + str(version_number))
+        f.close()
 
+
+def getVersion(check=True, write=True, step=0.01, test=False):
+    file_version = checkFileVersion()
+    debug(file_version=file_version)
+    if file_version.endswith('.py'):
+        import imp
+        # print "__version__ file:", __version__.__file__
+        # print "dir(__version__) =", dir(__version__)
+        version = ''
+        try:
+            # version = getattr(__version__, 'version')
+            __version__ = imp.load_source('__version__', '__version__.py')
+            version = __version__.version
+        except:
+            traceback.format_exc()
+        debug(version=version)
+        if version:
+            version = str(version).split(".")
+            if len(version) == 1:
+                version = str(float(version[0]) + step)
+                writeVersion(file_version, version)
+            elif len(version) > 2:
+                version, build_number, test_number = version[0], version[1], version[2]
+                if test:
+                    version = str(version) + "." + str(build_number) + "." + str(int(test_number) + 1)
+                    writeVersion(file_version, version)
+                else:
+                    version = float(str(version) + "." + str(build_number)) + step
+                    writeVersion(file_version, version)
+            else:
+                version = "1.00"
+                writeVersion(file_version, version)
+        else:
+            with open(file_version, 'rb') as f:
+                if len(f.read()) > 1:
+                    version = str(f.read()).split("\n")[0].strip()
+                    print "VERSION =", version
+                    version = float(version) + step
+                    writeVersion(file_version, version)        
+        if not version:
+            version = "1.00"
+            writeVersion(file_version, version)
+    else:
+        print make_colors("Please re-name version file to '__version__.py'")
+        raise SystemError("Please re-name version file to '__version__.py'")
+    # sys.exit(0)
 
 def notify(message, event='Control', app = 'GitDate', title = '', icon = None, host = '127.0.0.1', port = 23053, timeout = 5):
     if not event:
@@ -392,9 +415,10 @@ def checkRemote(remote_push_name=None, branch='master'):
                 if host_ping == 'bitbucket.org':
                     pass
                 else:
-                    if not vping.vping(host_ping):
-                        print make_colors("Can't PUSH to %s, NO HOST CONNECTION" % (make_colors(str(q), 'yellow')), 'white', 'red')
-                        sys.exit(0)
+                    if not 'arm' in platform.machine():
+                        if not vping.vping(host_ping):
+                            print make_colors("Can't PUSH to %s, NO HOST CONNECTION" % (make_colors(str(q), 'yellow')), 'white', 'red')
+                            sys.exit(0)
             print make_colors("PUSH to: ", 'white', 'red') +  make_colors("%s" % str(q), 'yellow', '', ['blink'])
             push = subprocess.Popen([GIT_BIN, "push", "origin", "master"], stdout = subprocess.PIPE, shell= True)
             (push_out, push_err) = push.communicate()
@@ -447,9 +471,10 @@ def checkRemote(remote_push_name=None, branch='master'):
                 if host_ping == 'bitbucket.org':
                     pass
                 else:
-                    if not vping.vping(host_ping):
-                        print make_colors("Can't PUSH to %s, NO HOST CONNECTION" % (make_colors(str(host_ping), 'yellow')), 'white', 'red')
-                        sys.exit(0)		
+                    if not 'arm' in platform.machine():
+                        if not vping.vping(host_ping):
+                            print make_colors("Can't PUSH to %s, NO HOST CONNECTION" % (make_colors(str(host_ping), 'yellow')), 'white', 'red')
+                            sys.exit(0)		
         print make_colors("PUSH to: ", 'white', 'red') +  make_colors("%s" % str(b), 'yellow', '', ['blink'])
         push = subprocess.Popen([GIT_BIN, "push", "origin", "master"], stdout = subprocess.PIPE, shell= True)
         (push_out, push_err) = push.communicate()
