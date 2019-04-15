@@ -38,18 +38,25 @@ if 'linux' in sys.platform or 'msys' in sys.platform:
 
 def checkFileVersion():
     if os.path.isfile(os.path.join(os.getcwd(), '__version__.py')):
+        debug("PROCESS CHECK 001 ....")
         return os.path.join(os.getcwd(), '__version__.py')
     elif os.path.isfile(os.path.join(os.getcwd(), 'version.py')):
+        debug("PROCESS CHECK 002 ....")
         return os.path.join(os.getcwd(), 'version.py')
     elif os.path.isfile(os.path.join(os.getcwd(), 'version')):
+        debug("PROCESS CHECK 003 ....")
         return os.path.join(os.getcwd(), 'version')
     elif os.path.isfile(os.path.join(os.getcwd(), '__VERSION__.py')):
+        debug("PROCESS CHECK 004 ....")
         return os.path.join(os.getcwd(), '__VERSION__.py')
     elif os.path.isfile(os.path.join(os.getcwd(), 'VERSION.py')):
+        debug("PROCESS CHECK 005 ....")
         return os.path.join(os.getcwd(), 'VERSION.py')
     elif os.path.isfile(os.path.join(os.getcwd(), 'VERSION')):
+        debug("PROCESS CHECK 006 ....")
         return os.path.join(os.getcwd(), 'VERSION')
     else:
+        debug("PROCESS CHECK 007 ....")
         version_file = open('__version__.py', 'w')
         version_file.close()
         return version_file.name
@@ -78,12 +85,13 @@ def gitStatus(print_separated=False):
         return False
 
 def writeVersion(file_version, version_number):
-    with open(file_version, 'wb') as f:
-        f.write("version = " + str(version_number))
-        f.close()
+    f = open(file_version, 'wb')
+    f.write("version = " + str(version_number))
+    f.close()
 
 
 def getVersion(check=True, write=True, step=0.01, test=False):
+    test_number = "1"
     file_version = checkFileVersion()
     debug(file_version=file_version)
     if file_version.endswith('.py'):
@@ -95,14 +103,26 @@ def getVersion(check=True, write=True, step=0.01, test=False):
             # version = getattr(__version__, 'version')
             __version__ = imp.load_source('__version__', '__version__.py')
             version = __version__.version
+            debug(version=version)
         except:
             traceback.format_exc()
         debug(version=version)
         if version:
             version = str(version).split(".")
+            debug(version=version)
+            
             if len(version) == 1:
                 version = str(float(version[0]) + step)
                 writeVersion(file_version, version)
+            elif len(version) < 3:
+                version, build_number = version[0], version[1]
+                if test:
+                    version = str(version) + "." + str(build_number) + "." + str(int(test_number) + 1)
+                    writeVersion(file_version, version)
+                else:
+                    version = float(str(version) + "." + str(build_number)) + step
+                    debug(version=version)
+                    writeVersion(file_version, version)
             elif len(version) > 2:
                 version, build_number, test_number = version[0], version[1], version[2]
                 if test:
@@ -115,17 +135,23 @@ def getVersion(check=True, write=True, step=0.01, test=False):
                 version = "1.00"
                 writeVersion(file_version, version)
         else:
-            with open(file_version, 'rb') as f:
-                if len(f.read()) > 1:
-                    version = str(f.read()).split("\n")[0].strip()
-                    print "VERSION =", version
-                    version = float(version) + step
-                    writeVersion(file_version, version)        
+            f = open(file_version, 'rb').read()
+            # with open(file_version, 'rb') as f:
+            if len(f) > 1:
+                version = f.split("\n")[0].strip()
+                debug(version=version)
+                version = float(version) + step
+                debug(version=version)
+                writeVersion(file_version, version)        
+        
         if not version:
-            version = "1.00"
-            writeVersion(file_version, version)
+            print make_colors("NO VERSION FOUND !", 'lw', 'lr')
+            sys.exit()
+            # version = "1.00"
+            # writeVersion(file_version, version)
+        return version
     else:
-        print make_colors("Please re-name version file to '__version__.py'")
+        print make_colors("Please re-name version file to '__version__.py'", 'lw', 'lr')
         raise SystemError("Please re-name version file to '__version__.py'")
     # sys.exit(0)
 
@@ -797,6 +823,8 @@ def usage():
 
 if __name__ == '__main__':
     print "PID =", pid
+    # print "checkFileVersion() =", checkFileVersion()
+    # print "VERSION:", getVersion()
     # controlRemote()
     usage()
     #pushs()
