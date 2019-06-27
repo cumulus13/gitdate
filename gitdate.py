@@ -105,7 +105,8 @@ def getVersion(check=True, write=True, step=0.01, test=False):
             version = __version__.version
             debug(version=version)
         except:
-            traceback.format_exc()
+            if os.getenv('DEBUG') == '1':
+                traceback.format_exc()
         debug(version=version)
         if version:
             version = str(version).split(".")
@@ -113,40 +114,53 @@ def getVersion(check=True, write=True, step=0.01, test=False):
             
             if len(version) == 1:
                 version = str(float(version[0]) + step)
-                writeVersion(file_version, version)
+                if write:
+                    writeVersion(file_version, version)
             elif len(version) < 3:
                 version, build_number = version[0], version[1]
                 if test:
                     version = str(version) + "." + str(build_number) + "." + str(int(test_number) + 1)
-                    writeVersion(file_version, version)
+                    if write:
+                        writeVersion(file_version, version)
                 else:
                     version = float(str(version) + "." + str(build_number)) + step
                     debug(version=version)
-                    writeVersion(file_version, version)
+                    if write:
+                        writeVersion(file_version, version)
             elif len(version) > 2:
                 version, build_number, test_number = version[0], version[1], version[2]
                 if test:
                     version = str(version) + "." + str(build_number) + "." + str(int(test_number) + 1)
-                    writeVersion(file_version, version)
+                    if write:
+                        writeVersion(file_version, version)
                 else:
                     version = float(str(version) + "." + str(build_number)) + step
-                    writeVersion(file_version, version)
+                    if write:
+                        writeVersion(file_version, version)
             else:
                 version = "1.00"
-                writeVersion(file_version, version)
+                if write:
+                    writeVersion(file_version, version)
         else:
             f = open(file_version, 'rb').read()
             # with open(file_version, 'rb') as f:
             if len(f) > 1:
                 version = f.split("\n")[0].strip()
+                if "version" in version:
+                    version = re.split("version|=", version)[-1]
                 debug(version=version)
                 version = float(version) + step
                 debug(version=version)
                 writeVersion(file_version, version)        
+            else:
+                version = "0.1"
+                writeVersion(file_version, version)        
+
         
         if not version:
             print make_colors("NO VERSION FOUND !", 'lw', 'lr')
-            sys.exit()
+            print make_colors("MAKE NEW VERSION !", 'lw', 'lm')
+            # sys.exit()
             # version = "1.00"
             # writeVersion(file_version, version)
         return version
@@ -175,10 +189,15 @@ def notify(message, event='Control', app = 'GitDate', title = '', icon = None, h
                 if ":" in i:
                     growl_host, growl_port = str(i).strip().split(":")
                     growl_port = int(growl_port)
+                    print "Growl Host:", growl_host
+                    print "Growl Port:", growl_port
                     try:
                         growl.publish(app, event, title, message, timeout= timeout, iconpath= icon, host = growl_host, port = int(growl_port))
                     except:
-                        print "Growl Server not Found (%s:%s)" %(host,port)
+                        if os.getenv('DEBUG'):
+                            traceback.format_exc()
+                        else:
+                            print "Growl Server not Found (%s:%s)" %(host,port)
                 else:
                     if host and isinstance(port,int):
                         growl.publish(app, event, title, message, timeout= int(timeout), iconpath= str(icon), host=host, port=port)
@@ -230,7 +249,7 @@ def pushs(remote_name = None):
             a_push = re.split("\n|\t|\(push\)", i)
             remote_pushs.update({a_push[0].strip():a_push[1].strip()})
             
-    #print "remote_pushs =", remote_pushs
+    # print "remote_pushs =", remote_pushs
     if remote_name and remote_name in remote_pushs.keys():
         host = format_git_remote(remote_pushs.get(remote_name))
         if host:
@@ -317,7 +336,8 @@ def format_git_remote(remote):
     host = ''
     port = ''
     _remote = ''
-    if not urlparse.urlparse(remote).scheme in ['http', 'https', 'ssh']:
+    # print "SCHEME:", urlparse.urlparse(remote).scheme
+    if not urlparse.urlparse(remote).scheme == 'https' and not urlparse.urlparse(remote).scheme == 'http' and not urlparse.urlparse(remote).scheme == 'ssh':
         return False
     
     if '@' in remote:
@@ -373,10 +393,11 @@ def format_git_remote(remote):
         flag, port = str(flag).split(":")
     if port == '68' or port == 68:
         flag == 'gogs'
-    elif port == '69' or port == 69:
+    if port == '69' or port == 69:
         flag == 'gogs'
     elif port == '5000':
         flag = 'kallithea'
+    # print("FLAG: %s"%(str(flag)))
     debug(flag = flag)
     if CONFIG.read_config(flag, 'username'):
         username = CONFIG.read_config(flag, 'username')
@@ -632,7 +653,7 @@ def commit(no_push = False, check=False, commit=True, push_version=True, with_ti
     if not os.path.isfile(os.path.join(os.getcwd(), '.gitignore')):
         print make_colors('add .gitignore', 'lightyellow') + make_colors(' .....', 'lightcyan')
         f = open(os.path.join(os.getcwd(), '.gitignore'), 'w')
-        f.write("*.pyc\n*.zip\n*.rar\n*.7z\n*.mp3\n*.wav\n.hg/\n*.hgignore\n*.hgtags")
+        f.write("*.pyc\n*.zip\n*.rar\n*.7z\n*.mp3\n*.wav\n.hg/\n*.hgignore\n*.hgtags\n*dist/\n*.egg-info/")
         f.close()
 
     print make_colors('add file to index', 'lightyellow') + make_colors(' .....', 'lightcyan')
@@ -701,11 +722,11 @@ def commit(no_push = False, check=False, commit=True, push_version=True, with_ti
                     debug(i_split = re.split('\(push\)| |\t', i))
                     remotes_list.append({'name': re.split('\(push\)| |\t', i)[0], 'url': re.split('\(push\)| |\t', i)[1]})
             debug(remotes_list = remotes_list)
-            if len(remotes_list) > 1:
+            if len(remotes_list) > 0:
                 for i in remotes_list:
                     host = format_git_remote(i.get('url'))
                     debug(host = host)
-                    if 'http:' in host or 'https:' in host or 'ssh:' in host or 'git:' in host:
+                    if 'https:' in host or 'http:' in host or 'ssh:' in host or 'git:' in host:
                         print make_colors("PUSH to: ", 'white', 'red') +  make_colors("%s" % str(i.get('name')), 'yellow', '', ['blink'])
                         push = subprocess.Popen([GIT_BIN, "push", host, "master"], stdout = subprocess.PIPE, shell= True)
                         (push_out, push_err) = push.communicate()
@@ -721,7 +742,8 @@ def commit(no_push = False, check=False, commit=True, push_version=True, with_ti
             else:
                 if len(remotes_list) == 1 and not remotes_list[0].get('name') == 'origin':
                     host = format_git_remote(remotes_list[0].get('url'))
-                    if 'http:' in host or 'https:' in host or 'ssh:' in host or 'git:' in host:
+                    # if 'https:' in host or 'http:' in host or 'ssh:' in host or 'git:' in host:
+                    if  urlparse.urlparse(host).scheme == 'https' or urlparse.urlparse(host).scheme == 'http' or urlparse.urlparse(host).scheme == 'ssh' or urlparse.urlparse(host).scheme == 'git':
                         print make_colors("PUSH to: ", 'white', 'red') +  make_colors("%s" % str(remotes_list[0].get('name')), 'yellow', '', ['blink'])
                         push = subprocess.Popen([GIT_BIN, "push", host, "master"], stdout = subprocess.PIPE, shell= True)
                         (push_out, push_err) = push.communicate()
@@ -827,6 +849,7 @@ if __name__ == '__main__':
     # print "VERSION:", getVersion()
     # controlRemote()
     usage()
+    # print "VERSION =", getVersion(check=True, write=False, step=0.01, test=False)
     #pushs()
     # checkRemote()
     # sys.exit(0)
