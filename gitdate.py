@@ -687,7 +687,7 @@ def commit(no_push = False, check=False, commit=True, push_version=True, with_ti
                     sys.stdout.write(".")
                     time.sleep(1)
         if commit_out:
-            if bytes("merge") in commit_out:
+            if "merge" in str(commit_out):
                 return False
             if commit_err:
                 if "merge" in commit_err:
