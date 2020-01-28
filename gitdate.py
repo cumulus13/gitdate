@@ -1,6 +1,6 @@
 #!/usr/bin/python2
 #encoding:utf-8
-
+from __future__ import print_function
 import os
 pid = os.getpid()
 import sys
@@ -15,8 +15,8 @@ import colorama
 import configset
 import random
 import re
-import urlparse
-from debug import debug
+import urllib.parse
+from pydebugger.debug import debug
 import getpass
 import traceback
 colorama.init(True)
@@ -71,21 +71,21 @@ def gitStatus(print_separated=False):
     try:
         a[-1]
     except:
-        print "\n"
-        print make_colors("NOT a GIT REPO !", 'lightwhite', 'lightred', attrs=['blink'])
+        print("\n")
+        print(make_colors("NOT a GIT REPO !", 'lightwhite', 'lightred', attrs=['blink']))
         sys.exit(1)
     if "nothing to commit, working tree clean\n" in a:
         return True
     else:
         for i in a:
-            print random.choice(color_random) + str(i).split('\n')[0]
+            print(random.choice(color_random) + str(i).split('\n')[0])
         notify(a[-1], host = [NOTIFY_HOST + ":" + NOTIFY_PORT])
         if print_separated:
-            print "-" * len(a[-1])
+            print("-" * len(a[-1]))
         return False
 
 def writeVersion(file_version, version_number):
-    f = open(file_version, 'wb')
+    f = open(file_version, 'w')
     f.write("version = " + str(version_number))
     f.close()
 
@@ -111,7 +111,7 @@ def getVersion(check=True, write=True, step=0.01, test=False):
         if version:
             version = str(version).split(".")
             debug(version=version)
-            
+
             if len(version) == 1:
                 version = str(float(version[0]) + step)
                 if write:
@@ -156,16 +156,16 @@ def getVersion(check=True, write=True, step=0.01, test=False):
                 version = "0.1"
                 writeVersion(file_version, version)        
 
-        
+
         if not version:
-            print make_colors("NO VERSION FOUND !", 'lw', 'lr')
-            print make_colors("MAKE NEW VERSION !", 'lw', 'lm')
+            print(make_colors("NO VERSION FOUND !", 'lw', 'lr'))
+            print(make_colors("MAKE NEW VERSION !", 'lw', 'lm'))
             # sys.exit()
             # version = "1.00"
             # writeVersion(file_version, version)
         return version
     else:
-        print make_colors("Please re-name version file to '__version__.py'", 'lw', 'lr')
+        print(make_colors("Please re-name version file to '__version__.py'", 'lw', 'lr'))
         raise SystemError("Please re-name version file to '__version__.py'")
     # sys.exit(0)
 
@@ -189,15 +189,15 @@ def notify(message, event='Control', app = 'GitDate', title = '', icon = None, h
                 if ":" in i:
                     growl_host, growl_port = str(i).strip().split(":")
                     growl_port = int(growl_port)
-                    print "Growl Host:", growl_host
-                    print "Growl Port:", growl_port
+                    print("Growl Host:", growl_host)
+                    print("Growl Port:", growl_port)
                     try:
                         growl.publish(app, event, title, message, timeout= timeout, iconpath= icon, host = growl_host, port = int(growl_port))
                     except:
                         if os.getenv('DEBUG'):
                             traceback.format_exc()
                         else:
-                            print "Growl Server not Found (%s:%s)" %(host,port)
+                            print("Growl Server not Found (%s:%s)" %(host,port))
                 else:
                     if host and isinstance(port,int):
                         growl.publish(app, event, title, message, timeout= int(timeout), iconpath= str(icon), host=host, port=port)
@@ -248,21 +248,21 @@ def pushs(remote_name = None):
         for i in a_push:
             a_push = re.split("\n|\t|\(push\)", i)
             remote_pushs.update({a_push[0].strip():a_push[1].strip()})
-            
+
     # print "remote_pushs =", remote_pushs
-    if remote_name and remote_name in remote_pushs.keys():
+    if remote_name and remote_name in list(remote_pushs.keys()):
         host = format_git_remote(remote_pushs.get(remote_name))
         if host:
-            print make_colors("PUSH to: ", 'white', 'red') +  make_colors("%s" % str(remote_pushs.get(remote_name)), 'yellow', '', ['blink'])
+            print(make_colors("PUSH to: ", 'white', 'red') +  make_colors("%s" % str(remote_pushs.get(remote_name)), 'yellow', '', ['blink']))
             push = subprocess.Popen([GIT_BIN, "push", host, "master"], stdout = subprocess.PIPE, shell= True)
             (push_out, push_err) = push.communicate()
-            print make_colors(push_out, 'lightcyan')
+            print(make_colors(push_out, 'lightcyan'))
             notify('Push to remote origin: %s' % str(remote_pushs.get(remote_name)), 'PUSH', host = [NOTIFY_HOST + ":" + NOTIFY_PORT])
-            
-            print make_colors("PUSH Tags to: ", 'white', 'red') +  make_colors("%s" % str(remote_pushs.get(remote_name)), 'yellow', '', ['blink'])
+
+            print(make_colors("PUSH Tags to: ", 'white', 'red') +  make_colors("%s" % str(remote_pushs.get(remote_name)), 'yellow', '', ['blink']))
             push_tags = subprocess.Popen([GIT_BIN, "push", host, "--tags"], stdout = subprocess.PIPE, shell= True)
             (push_out, push_err) = push_tags.communicate()
-            print make_colors(push_out, 'lightcyan')
+            print(make_colors(push_out, 'lightcyan'))
             notify('Push Tags to remote: %s' % str(remote_pushs.get(remote_name)), 'PUSH', host = [NOTIFY_HOST + ":" + NOTIFY_PORT])
     else:
         for i in remote_pushs:
@@ -271,22 +271,22 @@ def pushs(remote_name = None):
             host = format_git_remote(remote_pushs.get(i))
             debug(host = host)
             if host:
-                print make_colors("PUSH to: ", 'white', 'red') +  make_colors("%s" % str(remote_pushs.get(i)), 'yellow', '', ['blink'])
+                print(make_colors("PUSH to: ", 'white', 'red') +  make_colors("%s" % str(remote_pushs.get(i)), 'yellow', '', ['blink']))
                 push = subprocess.Popen([GIT_BIN, "push", host, "master"], stdout = subprocess.PIPE, shell= True)
                 (push_out, push_err) = push.communicate()
-                print make_colors(push_out, 'lightcyan')
+                print(make_colors(push_out, 'lightcyan'))
                 notify('Push to remote origin: %s' % str(remote_pushs.get(i)), 'PUSH', host = [NOTIFY_HOST + ":" + NOTIFY_PORT])
-                
-                print make_colors("PUSH Tags to: ", 'white', 'red') +  make_colors("%s" % str(remote_pushs.get(i)), 'yellow', '', ['blink'])
+
+                print(make_colors("PUSH Tags to: ", 'white', 'red') +  make_colors("%s" % str(remote_pushs.get(i)), 'yellow', '', ['blink']))
                 push_tags = subprocess.Popen([GIT_BIN, "push", host, "--tags"], stdout = subprocess.PIPE, shell= True)
                 (push_out, push_err) = push_tags.communicate()
-                print make_colors(push_out, 'lightcyan')
+                print(make_colors(push_out, 'lightcyan'))
                 notify('Push Tags to remote: %s' % str(remote_pushs.get(i)), 'PUSH', host = [NOTIFY_HOST + ":" + NOTIFY_PORT])    
-        
-    
+
+
 def get_hostping(host_ping):
     # host_ping = urlparse.urlparse(host_ping).netloc.split('www.')[:-1]
-    host_ping = urlparse.urlparse(host_ping).netloc.split('www.')[-1]
+    host_ping = urllib.parse.urlparse(host_ping).netloc.split('www.')[-1]
     if "@" in host_ping:
         host_ping = host_ping.split('@')[1]
     debug(host_ping=host_ping)
@@ -300,7 +300,7 @@ def remote_pack(remote, username = None, password = None):
     username_x = ''
     password_x = ''
     host = ''
-    remote_parse = urlparse.urlparse(remote)
+    remote_parse = urllib.parse.urlparse(remote)
     scheme = remote_parse.scheme
     netloc = remote_parse.netloc
     path = remote_parse.path
@@ -337,9 +337,9 @@ def format_git_remote(remote):
     port = ''
     _remote = ''
     # print "SCHEME:", urlparse.urlparse(remote).scheme
-    if not urlparse.urlparse(remote).scheme == 'https' and not urlparse.urlparse(remote).scheme == 'http' and not urlparse.urlparse(remote).scheme == 'ssh':
+    if not urllib.parse.urlparse(remote).scheme == 'https' and not urllib.parse.urlparse(remote).scheme == 'http' and not urllib.parse.urlparse(remote).scheme == 'ssh':
         return False
-    
+
     if '@' in remote:
         debug(remote = remote)
         if ":" in remote:
@@ -376,14 +376,14 @@ def format_git_remote(remote):
                 debug(host = host)                
             #return False
     else:
-        host = urlparse.urlparse(remote).netloc
+        host = urllib.parse.urlparse(remote).netloc
         debug(host = host)
         if ":" in host:
             port = host.split(":")[1]        
         debug(host = host)
         #return False
     if not host:
-        print make_colors('INVALID REMOTE HOST NAME !', 'lightwhite', 'lightred')
+        print(make_colors('INVALID REMOTE HOST NAME !', 'lightwhite', 'lightred'))
         sys.exit(0)
     #if 'bitbucket' in remote or 'github' in remote or 'gogs' in remote:
     flag = host.split(".")[0]
@@ -403,7 +403,7 @@ def format_git_remote(remote):
         username = CONFIG.read_config(flag, 'username')
     else:
         if not username:
-            username = raw_input('[%s] USERNAME: ' % (flag))
+            username = input('[%s] USERNAME: ' % (flag))
             CONFIG.write_config(flag, 'username', value= username)
     if CONFIG.read_config(flag, 'password'):
         password = CONFIG.read_config(flag, 'password')
@@ -419,32 +419,32 @@ def format_git_remote(remote):
     #else:
         #debug(remote)
         #return remote
-        
+
 def checkRemote(remote_push_name=None, branch='master'):
     host_ping = ''
     if remote_push_name:
         if checkRemoteName(remote_push_name):
-            print make_colors("PUSH to: ", 'white', 'red') +  make_colors("%s" % str(remote_push_name), 'yellow', '', ['blink'])
+            print(make_colors("PUSH to: ", 'white', 'red') +  make_colors("%s" % str(remote_push_name), 'yellow', '', ['blink']))
             b = os.popen(GIT_BIN + " push %s %s"%(remote_push_name, branch)).readlines()
-            print make_colors("PUSH Tags to: ", 'white', 'red') +  make_colors("%s" % str(remote_push_name), 'yellow', '', ['blink'])
+            print(make_colors("PUSH Tags to: ", 'white', 'red') +  make_colors("%s" % str(remote_push_name), 'yellow', '', ['blink']))
             b1 = os.popen(GIT_BIN + " push %s --tags"%(remote_push_name)).readlines()
         notify('Push to remote origin: %s' % str(remote_push_name), 'PUSH', host = [NOTIFY_HOST + ":" + NOTIFY_PORT])
         return True
 
     a = os.popen(GIT_BIN + " remote -v").readline()
     if len(a) < 1:
-        q = raw_input(make_colors('git remote origin (URL): ', 'white', 'red'))
+        q = input(make_colors('git remote origin (URL): ', 'white', 'red'))
 
         if len(q) == 0:
-            print make_colors("Please Add remote git url (origin) first !", 'white', 'red')
-            print make_colors("EXIT!", 'white', 'red')
+            print(make_colors("Please Add remote git url (origin) first !", 'white', 'red'))
+            print(make_colors("EXIT!", 'white', 'red'))
             sys.exit(0)
         else:
             host_ping = get_hostping(q)
-            print make_colors('add remote origin: ', 'lightgreen') + make_colors('%s' % str(q), 'lightmagenta') + make_colors(' .....', 'lightcyan')
+            print(make_colors('add remote origin: ', 'lightgreen') + make_colors('%s' % str(q), 'lightmagenta') + make_colors(' .....', 'lightcyan'))
             remote_add = subprocess.Popen([GIT_BIN, 'remote', 'add', 'origin', '%s' %(str(q))], stdout = subprocess.PIPE, shell= True)
             (remote_add_out, remote_add_err) = remote_add.communicate()
-            print make_colors(remote_add_out, 'lightyellow')
+            print(make_colors(remote_add_out, 'lightyellow'))
             notify('Add remote origin: %s' % str(q), 'Add Remote', host = [NOTIFY_HOST + ":" + NOTIFY_PORT])
             if not IS_LINUX:
                 while 1:
@@ -454,7 +454,7 @@ def checkRemote(remote_push_name=None, branch='master'):
                         sys.stdout.write(".")
             if not os.path.isdir(q):
                 if not checkRemoteName('origin'):
-                    print make_colors("Can't PUSH to %s, NO ORIGIN REMOTE NAME" % (make_colors(str(q), 'yellow')), 'white', 'red')
+                    print(make_colors("Can't PUSH to %s, NO ORIGIN REMOTE NAME" % (make_colors(str(q), 'yellow')), 'white', 'red'))
                     sys.exit()
                 # if not host_ping and not vping.vping('8.8.8.8'):
                 # 	print make_colors("Can't PUSH to %s, NO INTERNET CONNECTION" % (make_colors(str(q), 'yellow')), 'white', 'red')
@@ -464,12 +464,12 @@ def checkRemote(remote_push_name=None, branch='master'):
                 else:
                     if not 'arm' in platform.machine():
                         if not vping.vping(host_ping):
-                            print make_colors("Can't PUSH to %s, NO HOST CONNECTION" % (make_colors(str(q), 'yellow')), 'white', 'red')
+                            print(make_colors("Can't PUSH to %s, NO HOST CONNECTION" % (make_colors(str(q), 'yellow')), 'white', 'red'))
                             sys.exit(0)
-            print make_colors("PUSH to: ", 'white', 'red') +  make_colors("%s" % str(q), 'yellow', '', ['blink'])
+            print(make_colors("PUSH to: ", 'white', 'red') +  make_colors("%s" % str(q), 'yellow', '', ['blink']))
             push = subprocess.Popen([GIT_BIN, "push", "origin", "master"], stdout = subprocess.PIPE, shell= True)
             (push_out, push_err) = push.communicate()
-            print make_colors(push_out, 'lightcyan', '')
+            print(make_colors(push_out, 'lightcyan', ''))
             #os.system(GIT_BIN + " push origin master")
             notify('Push to remote origin: %s' % str(q), 'PUSH', host = [NOTIFY_HOST + ":" + NOTIFY_PORT])
             if not IS_LINUX:
@@ -478,10 +478,10 @@ def checkRemote(remote_push_name=None, branch='master'):
                         break
                     else:
                         sys.stdout.write(".")			
-            print make_colors("PUSH Tags to: ", 'white', 'red') +  make_colors("%s" % str(q), 'yellow', '', ['blink'])
+            print(make_colors("PUSH Tags to: ", 'white', 'red') +  make_colors("%s" % str(q), 'yellow', '', ['blink']))
             push_tags = subprocess.Popen([GIT_BIN, "push", "origin", "--tags"], stdout = subprocess.PIPE, shell= True)
             (push_out, push_err) = push_tags.communicate()
-            print make_colors(push_out, 'lightcyan', '')
+            print(make_colors(push_out, 'lightcyan', ''))
             #os.system(GIT_BIN + " push origin master")
             notify('Push Tags to remote origin: %s' % str(q), 'PUSH', host = [NOTIFY_HOST + ":" + NOTIFY_PORT])
             if not IS_LINUX:
@@ -496,19 +496,19 @@ def checkRemote(remote_push_name=None, branch='master'):
             debug(b = b)
             host_ping = get_hostping(b)
         if not b:
-            q = raw_input(make_colors('git remote origin (URL): ', 'white', 'red'))
+            q = input(make_colors('git remote origin (URL): ', 'white', 'red'))
             debug(q=q)
             host_ping = get_hostping(q)
             if len(q) == 0:
-                print make_colors("Please Add remote git url (origin) first !", 'white', 'red')
-                print make_colors("EXIT!", 'white', 'red')
+                print(make_colors("Please Add remote git url (origin) first !", 'white', 'red'))
+                print(make_colors("EXIT!", 'white', 'red'))
                 sys.exit(0)
         #print make_colors("PUSH to: ", 'white', 'red', ['blink'], 'termcolor') + make_colors("%s" % str(b), 'red', 'yellow', ['bold'], 'termcolor')
         #os.system(GIT_BIN + " push origin master")
         #notify('Push to remote origin: %s' % str(b), 'PUSH', host = [NOTIFY_HOST + ":" + NOTIFY_PORT])
         if not os.path.isdir(b):
             if not checkRemoteName('origin'):
-                print make_colors("Can't PUSH to %s, NO ORIGIN REMOTE NAME" % (make_colors(str(host_ping), 'yellow')), 'white', 'red')
+                print(make_colors("Can't PUSH to %s, NO ORIGIN REMOTE NAME" % (make_colors(str(host_ping), 'yellow')), 'white', 'red'))
                 sys.exit(0)
             else:
                 # if not host_ping and not vping.vping('8.8.8.8'):
@@ -520,12 +520,12 @@ def checkRemote(remote_push_name=None, branch='master'):
                 else:
                     if not 'arm' in platform.machine():
                         if not vping.vping(host_ping):
-                            print make_colors("Can't PUSH to %s, NO HOST CONNECTION" % (make_colors(str(host_ping), 'yellow')), 'white', 'red')
+                            print(make_colors("Can't PUSH to %s, NO HOST CONNECTION" % (make_colors(str(host_ping), 'yellow')), 'white', 'red'))
                             sys.exit(0)		
-        print make_colors("PUSH to: ", 'white', 'red') +  make_colors("%s" % str(b), 'yellow', '', ['blink'])
+        print(make_colors("PUSH to: ", 'white', 'red') +  make_colors("%s" % str(b), 'yellow', '', ['blink']))
         push = subprocess.Popen([GIT_BIN, "push", "origin", "master"], stdout = subprocess.PIPE, shell= True)
         (push_out, push_err) = push.communicate()
-        print make_colors(push_out, 'lightcyan')
+        print(make_colors(push_out, 'lightcyan'))
         #os.system(GIT_BIN + " push origin master")
         notify('Push to remote origin: %s' % str(b), 'PUSH', host = [NOTIFY_HOST + ":" + NOTIFY_PORT])
         if not IS_LINUX:
@@ -534,10 +534,10 @@ def checkRemote(remote_push_name=None, branch='master'):
                     break
                 else:
                     sys.stdout.write(".")			
-        print make_colors("PUSH Tags to: ", 'white', 'red') +  make_colors("%s" % str(b), 'yellow', '', ['blink'])
+        print(make_colors("PUSH Tags to: ", 'white', 'red') +  make_colors("%s" % str(b), 'yellow', '', ['blink']))
         push_tags = subprocess.Popen([GIT_BIN, "push", "origin", "--tags"], stdout = subprocess.PIPE, shell= True)
         (push_out, push_err) = push_tags.communicate()
-        print make_colors(push_out, 'lightcyan')
+        print(make_colors(push_out, 'lightcyan'))
         #os.system(GIT_BIN + " push origin master")
         notify('Push Tags to remote origin: %s' % str(b), 'PUSH', host = [NOTIFY_HOST + ":" + NOTIFY_PORT])
         if not IS_LINUX:
@@ -565,7 +565,7 @@ def controlRemote(show=True, add=False, change=False, interactive=False, show_di
 
     if show:
         for i in a:
-            print random.choice(color_random) + str(i).split("\n")[0]
+            print(random.choice(color_random) + str(i).split("\n")[0])
         return True
     if add:
         if isinstance(add, list):
@@ -575,8 +575,8 @@ def controlRemote(show=True, add=False, change=False, interactive=False, show_di
                     add_remote.insert(0, (add_remote_add,add_remote_url_add))
 
         if interactive or add == True:
-            qa_n = raw_input('Add Remote Name [%s] %s:'%(add_remote[0][0],show_dir))
-            qa_u = raw_input('Add Remote URL  [%s] %s:'%(add_remote[0][1],show_dir))
+            qa_n = input('Add Remote Name [%s] %s:'%(add_remote[0][0],show_dir))
+            qa_u = input('Add Remote URL  [%s] %s:'%(add_remote[0][1],show_dir))
             add_remote.insert(0,(qa_n,qa_u))
             if add_remote[0][0] and add_remote[0][1]:
                 os.system(GIT_BIN + " remote add %s %s"%(add_remote[0][0],add_remote[0][1]))
@@ -592,8 +592,8 @@ def controlRemote(show=True, add=False, change=False, interactive=False, show_di
                     change_remote_add, change_remote_url_add = str(i).split(";")
                     change_remote.insert(0, (change_remote_add,change_remote_url_add))
         if interactive or add == True:
-            qa_n = raw_input('Change Remote Name [%s] %s:'%(change_remote[0][0],show_dir))
-            qa_u = raw_input('Change Remote URL  [%s] %s:'%(change_remote[0][1],show_dir))
+            qa_n = input('Change Remote Name [%s] %s:'%(change_remote[0][0],show_dir))
+            qa_u = input('Change Remote URL  [%s] %s:'%(change_remote[0][1],show_dir))
             change_remote.insert(0,(qa_n,qa_u))
             if change_remote[0][0] and change_remote[0][1]:
                 os.system(GIT_BIN + " remote remove %s"%(change_remote[0][0]))
@@ -631,35 +631,35 @@ def commit(no_push = False, check=False, commit=True, push_version=True, with_ti
     if check:
         _check = gitStatus(print_separated)
         if _check:
-            print make_colors('No Commit need !', 'white', 'red', attrs=['blink'])
+            print(make_colors('No Commit need !', 'white', 'red', attrs=['blink']))
             notify("No Commit need !", host = [NOTIFY_HOST + ":" + NOTIFY_PORT])
         return True
 
     else:
         if gitStatus(print_separated):
-            print make_colors('No Commit need !', 'white', 'red', attrs=['blink'])
+            print(make_colors('No Commit need !', 'white', 'red', attrs=['blink']))
             notify("No Commit need !", host = [NOTIFY_HOST + ":" + NOTIFY_PORT])
             return False
 
     if not push_version:
         version = getVersion(write=False)
         if not comment:
-            comment = raw_input('Comment:')
+            comment = input('Comment:')
         comment = comment + " ~ " + comment_datetime
     else:
         version = getVersion(False,True)
         comment = "version: " + str(version) + " ~ " + comment_datetime
     TAG = "v" + str(version) + "." + tag_datetime
     if not os.path.isfile(os.path.join(os.getcwd(), '.gitignore')):
-        print make_colors('add .gitignore', 'lightyellow') + make_colors(' .....', 'lightcyan')
+        print(make_colors('add .gitignore', 'lightyellow') + make_colors(' .....', 'lightcyan'))
         f = open(os.path.join(os.getcwd(), '.gitignore'), 'w')
         f.write("*.pyc\n*.zip\n*.rar\n*.7z\n*.mp3\n*.wav\n.hg/\n*.hgignore\n*.hgtags\n*dist/\n*.egg-info/")
         f.close()
 
-    print make_colors('add file to index', 'lightyellow') + make_colors(' .....', 'lightcyan')
+    print(make_colors('add file to index', 'lightyellow') + make_colors(' .....', 'lightcyan'))
     add = subprocess.Popen([GIT_BIN, "add", "-A", '.'], stdout = subprocess.PIPE, shell= True)
     (add_out, add_err) = add.communicate()
-    print make_colors(add_out, 'red', 'yellow', ['bold'])
+    print(make_colors(add_out, 'red', 'yellow', ['bold']))
     notify("Add file to index", 'Add File', host = [NOTIFY_HOST + ":" + NOTIFY_PORT])
     if not IS_LINUX:
         while 1:
@@ -670,14 +670,14 @@ def commit(no_push = False, check=False, commit=True, push_version=True, with_ti
                 time.sleep(1)
 
     if commit:
-        print make_colors('Commit', 'lightmagenta') + make_colors(' .....', 'lightcyan')
+        print(make_colors('Commit', 'lightmagenta') + make_colors(' .....', 'lightcyan'))
         commit = subprocess.Popen([GIT_BIN, "commit", "-a", "-m", '%s' % comment], stdout = subprocess.PIPE, shell= True)
         (commit_out, commit_err) = commit.communicate()
         # if commit_out:
             # print "OUTPUT :", commit_out
         if commit_err:
-            print "ERROR  :", commit_err
-        print make_colors(str(commit_out), 'lightcyan')
+            print("ERROR  :", commit_err)
+        print(make_colors(str(commit_out), 'lightcyan'))
         notify("Commit", 'Commit', host = [NOTIFY_HOST + ":" + NOTIFY_PORT])
         if not IS_LINUX:
             while 1:
@@ -687,21 +687,21 @@ def commit(no_push = False, check=False, commit=True, push_version=True, with_ti
                     sys.stdout.write(".")
                     time.sleep(1)
         if commit_out:
-            if "merge" in commit_out:
+            if bytes("merge") in commit_out:
                 return False
             if commit_err:
                 if "merge" in commit_err:
                     return False
             else:
                 if push_version:
-                    print make_colors("Add Tag: ", "lightyellow") + make_colors("%s" % TAG, "lightgreen") + make_colors(' .....', 'lightcyan')
+                    print(make_colors("Add Tag: ", "lightyellow") + make_colors("%s" % TAG, "lightgreen") + make_colors(' .....', 'lightcyan'))
                     tag = subprocess.Popen([GIT_BIN, "tag", '%s'%str(TAG)], stdout= subprocess.PIPE, shell= True)
                     (tag_out, tag_err) = tag.communicate()
                     if tag_out:
-                        print "OUTPUT :", tag_out
+                        print("OUTPUT :", tag_out)
                     if tag_err:
-                        print "ERROR  :", tag_err		
-                    print make_colors(tag_out, 'white', 'cyan')
+                        print("ERROR  :", tag_err)		
+                    print(make_colors(tag_out, 'white', 'cyan'))
                     notify("Add tag", 'Add Tag', host = [NOTIFY_HOST + ":" + NOTIFY_PORT])
                     if not IS_LINUX:
                         while 1:
@@ -727,32 +727,32 @@ def commit(no_push = False, check=False, commit=True, push_version=True, with_ti
                     host = format_git_remote(i.get('url'))
                     debug(host = host)
                     if 'https:' in host or 'http:' in host or 'ssh:' in host or 'git:' in host:
-                        print make_colors("PUSH to: ", 'white', 'red') +  make_colors("%s" % str(i.get('name')), 'yellow', '', ['blink'])
+                        print(make_colors("PUSH to: ", 'white', 'red') +  make_colors("%s" % str(i.get('name')), 'yellow', '', ['blink']))
                         push = subprocess.Popen([GIT_BIN, "push", host, "master"], stdout = subprocess.PIPE, shell= True)
                         (push_out, push_err) = push.communicate()
-                        print make_colors(push_out, 'lightcyan')
+                        print(make_colors(push_out, 'lightcyan'))
                         notify('Push to remote origin: %s' % str(i.get('name')), 'PUSH', host = [NOTIFY_HOST + ":" + NOTIFY_PORT])
-                        
-                        print make_colors("PUSH Tags to: ", 'white', 'red') +  make_colors("%s" % str(i.get('name')), 'yellow', '', ['blink'])
+
+                        print(make_colors("PUSH Tags to: ", 'white', 'red') +  make_colors("%s" % str(i.get('name')), 'yellow', '', ['blink']))
                         push_tags = subprocess.Popen([GIT_BIN, "push", host, "--tags"], stdout = subprocess.PIPE, shell= True)
                         (push_out, push_err) = push_tags.communicate()
-                        print make_colors(push_out, 'lightcyan')
+                        print(make_colors(push_out, 'lightcyan'))
                         notify('Push Tags to remote: %s' % str(i.get('name')), 'PUSH', host = [NOTIFY_HOST + ":" + NOTIFY_PORT])                                        
-                    
+
             else:
                 if len(remotes_list) == 1 and not remotes_list[0].get('name') == 'origin':
                     host = format_git_remote(remotes_list[0].get('url'))
                     # if 'https:' in host or 'http:' in host or 'ssh:' in host or 'git:' in host:
-                    if  urlparse.urlparse(host).scheme == 'https' or urlparse.urlparse(host).scheme == 'http' or urlparse.urlparse(host).scheme == 'ssh' or urlparse.urlparse(host).scheme == 'git':
-                        print make_colors("PUSH to: ", 'white', 'red') +  make_colors("%s" % str(remotes_list[0].get('name')), 'yellow', '', ['blink'])
+                    if  urllib.parse.urlparse(host).scheme == 'https' or urllib.parse.urlparse(host).scheme == 'http' or urllib.parse.urlparse(host).scheme == 'ssh' or urllib.parse.urlparse(host).scheme == 'git':
+                        print(make_colors("PUSH to: ", 'white', 'red') +  make_colors("%s" % str(remotes_list[0].get('name')), 'yellow', '', ['blink']))
                         push = subprocess.Popen([GIT_BIN, "push", host, "master"], stdout = subprocess.PIPE, shell= True)
                         (push_out, push_err) = push.communicate()
-                        print make_colors(push_out, 'lightcyan')
+                        print(make_colors(push_out, 'lightcyan'))
                         notify('Push to remote origin: %s' % str(remotes_list[0].get('name')), 'PUSH', host = [NOTIFY_HOST + ":" + NOTIFY_PORT])                    
-                        print make_colors("PUSH Tags to: ", 'white', 'red') +  make_colors("%s" % str(remotes_list[0].get('name')), 'yellow', '', ['blink'])
+                        print(make_colors("PUSH Tags to: ", 'white', 'red') +  make_colors("%s" % str(remotes_list[0].get('name')), 'yellow', '', ['blink']))
                         push_tags = subprocess.Popen([GIT_BIN, "push", host, "--tags"], stdout = subprocess.PIPE, shell= True)
                         (push_out, push_err) = push_tags.communicate()
-                        print make_colors(push_out, 'lightcyan')
+                        print(make_colors(push_out, 'lightcyan'))
                         notify('Push Tags to remote: %s' % str(remotes_list[0].get('name')), 'PUSH', host = [NOTIFY_HOST + ":" + NOTIFY_PORT])                    
                 else:
                     checkRemote()
@@ -787,7 +787,7 @@ def usage():
     parser.add_argument('-nt', '--no-time', action='store_false', help='Don\'t Generate Comment time of this program/project')
     parser.add_argument('-m', '--message', action='store', help='comment if --no-version')
     parser.add_argument('-V', '--version', action='store_true', help='Show version of this program/project')
-    print __help__
+    print(__help__)
     if len(sys.argv) == 1:
         commit()
         # parser.print_help()
@@ -801,15 +801,15 @@ def usage():
             for i in args.pushs:
                 pushs(i)
         if args.version:
-            print "VERSION     :", getVersion()
-            print "NEXT VERSION:", getVersion(False, False)
+            print("VERSION     :", getVersion())
+            print("NEXT VERSION:", getVersion(False, False))
         if args.check:
             #commit(no_push = False, check=False, commit=True, push_version=False, with_time=True, comment=None):
             commit(check=args.check)
         elif args.check_dir:
             for i in args.check_dir:
                 if os.path.isdir(i):
-                    print make_colors("REPOSITORY: ", 'lightmagenta') + make_colors(os.path.dirname(i) + "\\", "lightyellow") + make_colors(os.path.basename(i), 'white', 'blue', attrs=['bold','italic'])
+                    print(make_colors("REPOSITORY: ", 'lightmagenta') + make_colors(os.path.dirname(i) + "\\", "lightyellow") + make_colors(os.path.basename(i), 'white', 'blue', attrs=['bold','italic']))
                     os.chdir(i)
                     commit(check=True,print_separated=True)
         if args.add_remote:
@@ -844,7 +844,7 @@ def usage():
                     commit(no_push = args.no_push, check=False, commit=True, push_version=args.no_version, with_time=args.no_time, comment=args.message)
 
 if __name__ == '__main__':
-    print "PID =", pid
+    print("PID =", pid)
     # print "checkFileVersion() =", checkFileVersion()
     # print "VERSION:", getVersion()
     # controlRemote()
