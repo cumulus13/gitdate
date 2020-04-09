@@ -1,4 +1,4 @@
-#!/usr/bin/python2
+#!c:/SDK/Anaconda2/python.exe
 #encoding:utf-8
 from __future__ import print_function
 import os
@@ -15,7 +15,15 @@ import colorama
 import configset
 import random
 import re
-import urllib.parse
+if sys.version_info.major == 3:
+    import urllib.parse
+else:
+    import urlparse
+    class urllib:
+        def parse(self):
+            pass
+    urllib.parse = urlparse
+        
 from pydebugger.debug import debug
 import getpass
 import traceback
@@ -27,11 +35,12 @@ if GIT_BIN == r'':
 NOTIFY_HOST = "127.0.0.1"
 NOTIFY_PORT = "23053"
 MAX_WAIT = 50
-CONFIG = configset.configset()
 CONFIG_NAME = os.path.join(os.path.dirname(__file__), 'gitdate.ini')
-CONFIG.path = os.path.dirname(__file__)
-CONFIG.configname = CONFIG_NAME
 debug(CONFIG_NAME = CONFIG_NAME)
+CONFIG = configset.configset(CONFIG_NAME)
+CONFIG.path = os.path.dirname(__file__)
+#CONFIG.configname = CONFIG_NAME
+#debug(CONFIG_NAME = CONFIG_NAME)
 IS_LINUX = False
 if 'linux' in sys.platform or 'msys' in sys.platform:
     IS_LINUX = True
@@ -108,22 +117,33 @@ def getVersion(check=True, write=True, step=0.01, test=False):
             if os.getenv('DEBUG') == '1':
                 traceback.format_exc()
         debug(version=version)
+        #print("version =", version)
         if version:
             version = str(version).split(".")
+            #print("version 0 =", version)
             debug(version=version)
 
             if len(version) == 1:
                 version = str(float(version[0]) + step)
+                version = "%0.2f" % (version)
                 if write:
                     writeVersion(file_version, version)
             elif len(version) < 3:
                 version, build_number = version[0], version[1]
                 if test:
-                    version = str(version) + "." + str(build_number) + "." + str(int(test_number) + 1)
+                    version = str(version[0]) + "." + str(build_number) + str(int(test_number) + 1)
                     if write:
                         writeVersion(file_version, version)
                 else:
-                    version = float(str(version) + "." + str(build_number)) + step
+                    print("version 1 =", version[0])
+                    print("build_number 1 =", build_number)
+                    print("step 1 =", step)
+                    version0 = str(version[0]) + "." + str(build_number)
+                    print("version0 =", version0)
+                    version = float(version0) + float(step)
+                    version = "%0.2f" % (version)
+                    #print("version 1 =", version)
+                    
                     debug(version=version)
                     if write:
                         writeVersion(file_version, version)
@@ -134,7 +154,11 @@ def getVersion(check=True, write=True, step=0.01, test=False):
                     if write:
                         writeVersion(file_version, version)
                 else:
-                    version = float(str(version) + "." + str(build_number)) + step
+                    print("version 2 =", version[0])
+                    print("build_number 2 =", build_number)
+                    print("step 2 =", step)                    
+                    version = int(str(version[0]) + "." + str(build_number)) + float(step)
+                    version = "%0.2f" % (version)
                     if write:
                         writeVersion(file_version, version)
             else:
@@ -150,6 +174,7 @@ def getVersion(check=True, write=True, step=0.01, test=False):
                     version = re.split("version|=", version)[-1]
                 debug(version=version)
                 version = float(version) + step
+                version = "%0.2f" % (version)
                 debug(version=version)
                 writeVersion(file_version, version)        
             else:
@@ -330,13 +355,16 @@ def remote_pack(remote, username = None, password = None):
             return scheme + '://' + host + path
 
 def format_git_remote(remote):
+    debug(remote = remote)
     global CONFIG
     username = ''
     password = ''
     host = ''
     port = ''
-    _remote = ''
-    # print "SCHEME:", urlparse.urlparse(remote).scheme
+    if not remote:
+        remote = ''
+    debug(remote = remote)
+    #print ("SCHEME:", urlparse.urlparse(remote))
     if not urllib.parse.urlparse(remote).scheme == 'https' and not urllib.parse.urlparse(remote).scheme == 'http' and not urllib.parse.urlparse(remote).scheme == 'ssh':
         return False
 
@@ -650,10 +678,11 @@ def commit(no_push = False, check=False, commit=True, push_version=True, with_ti
         version = getVersion(False,True)
         comment = "version: " + str(version) + " ~ " + comment_datetime
     TAG = "v" + str(version) + "." + tag_datetime
+    #sys.exit(0)
     if not os.path.isfile(os.path.join(os.getcwd(), '.gitignore')):
         print(make_colors('add .gitignore', 'lightyellow') + make_colors(' .....', 'lightcyan'))
         f = open(os.path.join(os.getcwd(), '.gitignore'), 'w')
-        f.write("*.pyc\n*.zip\n*.rar\n*.7z\n*.mp3\n*.wav\n.hg/\n*.hgignore\n*.hgtags\n*dist/\n*.egg-info/")
+        f.write("*.pyc\n*.bak\n*.zip\n*.rar\n*.7z\n*.mp3\n*.wav\n.hg/\n*.hgignore\n*.hgtags\n*dist/\n*.egg-info/\ntraceback.log\n__pycache__/")
         f.close()
 
     print(make_colors('add file to index', 'lightyellow') + make_colors(' .....', 'lightcyan'))
@@ -677,7 +706,7 @@ def commit(no_push = False, check=False, commit=True, push_version=True, with_ti
             # print "OUTPUT :", commit_out
         if commit_err:
             print("ERROR  :", commit_err)
-        print(make_colors(str(commit_out), 'lightcyan'))
+        print(make_colors(commit_out.decode('utf-8'), 'lightcyan'))
         notify("Commit", 'Commit', host = [NOTIFY_HOST + ":" + NOTIFY_PORT])
         if not IS_LINUX:
             while 1:
@@ -760,7 +789,7 @@ def commit(no_push = False, check=False, commit=True, push_version=True, with_ti
             if os.getenv('DEBUG'):
                 traceback.format_exc()
             else:
-                traceback.format_exc(print_msg = False)
+                traceback.format_exc(print_msg = True)
         return
 
 def usage():
