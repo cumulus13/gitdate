@@ -816,6 +816,7 @@ def commit(no_push = False, check=False, commit=True, push_version=True, with_ti
     else:
         try:
             remotes = os.popen(GIT_BIN + ' remote -v' ).readlines()
+            debug(remotes = remotes)
             remotes_list = []
             for i in remotes:
                 if '(push)' in i:
@@ -830,13 +831,13 @@ def commit(no_push = False, check=False, commit=True, push_version=True, with_ti
                     debug(host = host)
                     if 'git@' in i.get('url') or 'https:' in i.get('url') or 'ssh:' in i.get('url') or 'http:' in i.get('url'):
                         print(make_colors("PUSH to: ", 'white', 'red') +  make_colors("%s" % str(i.get('name')), 'yellow', '', ['blink']))
-                        push = subprocess.Popen([GIT_BIN, "push", i.get('url'), "master"], stdout = subprocess.PIPE, shell= SHELL)
+                        push = subprocess.Popen([GIT_BIN, "push", host, "master"], stdout = subprocess.PIPE, shell= SHELL)
                         (push_out, push_err) = push.communicate()
                         print(make_colors(push_out, 'lightcyan'))
                         notify('Push to remote %s [%s]' % (str(i.get('name')), i.get('url')), "PUSH", "gitdate")
 
                         print(make_colors("PUSH Tags to: ", 'white', 'red') +  make_colors("%s" % str(i.get('name')), 'yellow', '', ['blink']))
-                        push_tags = subprocess.Popen([GIT_BIN, "push", i.get('url'), "--tags"], stdout = subprocess.PIPE, shell= SHELL)
+                        push_tags = subprocess.Popen([GIT_BIN, "push", host, "--tags"], stdout = subprocess.PIPE, shell= SHELL)
                         (push_out, push_err) = push_tags.communicate()
                         print(make_colors(push_out, 'lightcyan'))
                         notify('Push Tags %s to remote: %s' % (str(i.get('name')), i.get('url')), 'PUSH', "gitdate", host = [NOTIFY_HOST + ":" + NOTIFY_PORT])                     
@@ -844,6 +845,7 @@ def commit(no_push = False, check=False, commit=True, push_version=True, with_ti
             else:
                 if len(remotes_list) == 1 and not remotes_list[0].get('name') == 'origin':
                     host = format_git_remote(remotes_list[0].get('url'))
+                    debug(host = host)
                     # if 'https:' in host or 'http:' in host or 'ssh:' in host or 'git:' in host:
                     if  urllib.parse.urlparse(host).scheme == 'https' or urllib.parse.urlparse(host).scheme == 'http' or urllib.parse.urlparse(host).scheme == 'ssh' or urllib.parse.urlparse(host).scheme == 'git':
                         print(make_colors("PUSH to: ", 'white', 'red') +  make_colors("%s" % str(remotes_list[0].get('name')), 'yellow', '', ['blink']))
