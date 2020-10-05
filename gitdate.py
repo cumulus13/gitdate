@@ -599,6 +599,7 @@ def checkRemote(remote_push_name=None, branch='master'):
                     sys.stdout.write(".")
 
 def controlRemote(show=True, add=False, change=False, interactive=False, show_dir=''):
+    debug(add = add)
     add_remote = [('',''),]
     add_remote_add = ''
     add_remote_url_add = ''
@@ -630,9 +631,12 @@ def controlRemote(show=True, add=False, change=False, interactive=False, show_di
             if add_remote[0][0] and add_remote[0][1]:
                 os.system(GIT_BIN + " remote add %s %s"%(add_remote[0][0],add_remote[0][1]))
         else:
+            debug(add = add)
             if ";" in add:
                 remote, url = add.split(";")
-                os.system(GIT_BIN + " remote add {0} {1}".format(remote.strip(), url.strip()))
+                CMD = GIT_BIN + " remote add {0} {1}".format(remote.strip(), url.strip())
+                debug(CMD = CMD)
+                os.system(CMD)
             else:
                 if not 'http:' in add or not 'https:' in add or not 'ssh' in add or not 'git:' in add:
                     return controlRemote(show, False, change, True, show_dir)
@@ -641,7 +645,9 @@ def controlRemote(show=True, add=False, change=False, interactive=False, show_di
                         url = raw_input(make_colors('Add Remote URL: ', 'lw', 'lr'))
                         if remote:
                             break
-                    os.system(GIT_BIN + " remote add {0} {1}".format(add , url.strip()))
+                    CMD = GIT_BIN + " remote add {0} {1}".format(add , url.strip())
+                    debug(CMD = CMD)
+                    os.system(CMD)
                     
         return True
     elif change:
@@ -876,6 +882,9 @@ def create_repo_github():
     
     REPO_NAME = os.path.basename(os.getcwd())
     if check_repo_github(REPO_NAME, as_is = True):
+            # add = "origin;" + 'https://github.com/' + REPO_NAME
+            # controlRemote(add = add, interactive = True)
+            # os.system(GIT_BIN + " remote -v")
         return True
     debug(REPO_NAME = REPO_NAME)
     username = CONFIG.get_config('github', 'username')
@@ -897,6 +906,7 @@ def create_repo_github():
         return create_repo_github()
     g = Github(username, password)
     auth = g.get_user()
+    debug(auth = auth)
     README = None
     DECRIPTION = None
     for i in os.listdir(os.getcwd()):
@@ -966,6 +976,7 @@ def check_repo_github(name = None, private = False, sort = 'time', as_is = True)
     return FOUND
             
 def check_repo():
+    repo_name = ''
     if not checkRemoteName() and CONFIG.get_config('default', 'repo') == 'github': # if nor origin is exists and set origin to github
         repo_name = create_repo_github()
         if isinstance(repo_name, bool) and repo_name == True:
@@ -985,7 +996,13 @@ def check_repo():
             if origin == 'github':
                 create_repo_github()
             if origin:
-                add = "origin;" + origin
+                if not repo_name:
+                    repo_name = os.path.basename(os.getcwd())
+                if origin == 'github':
+                    user = re.split("@", CONFIG.get_config('github', 'username'))[0]
+                    add = "origin;" + 'https://github.com/{0}/{1}'.format(user, repo_name)
+                else:
+                    add = "origin;" + origin
                 controlRemote(add = add, interactive = True)
                 os.system(GIT_BIN + " remote -v")
                 return True
@@ -1025,6 +1042,7 @@ def usage():
     if len(sys.argv) == 1:
         check_repo()
         commit()
+        pushs()
         # parser.print_help()
     elif len(sys.argv) == 2 and sys.argv[1] == '--no-push' or sys.argv[1] == '-np':
         commit(no_push=True)
