@@ -766,7 +766,7 @@ def commit(no_push = False, check=False, commit=True, push_version=True, with_ti
     if not os.path.isfile(os.path.join(os.getcwd(), '.gitignore')):
         print(make_colors('add .gitignore', 'lightyellow') + make_colors(' .....', 'lightcyan'))
         f = open(os.path.join(os.getcwd(), '.gitignore'), 'w')
-        f.write("*.pyc\n*.bak\n*.zip\n*.rar\n*.7z\n*.mp3\n*.wav\n.hg/\nbuild/\n*.hgignore\n*.hgtags\n*dist/\n*.egg-info/\ntraceback.log\n__pycache__/")
+        f.write("*.pyc\n*.bak\n*.zip\n*.rar\n*.7z\n*.mp3\n*.wav\n*.sublime-workspace\n.hg/\nbuild/\n*.hgignore\n*.hgtags\n*dist/\n*.egg-info/\ntraceback.log\n__pycache__/")
         f.close()
 
     print(make_colors('add file to index', 'lightyellow') + make_colors(' .....', 'lightcyan'))
