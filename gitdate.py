@@ -26,7 +26,11 @@ else:
 from pydebugger.debug import debug
 import getpass
 import traceback
-from pause import pause
+try:
+    from pause import pause
+except:
+    pass
+import clipboard
 
 GIT_BIN = r''
 if not GIT_BIN:
@@ -282,6 +286,26 @@ def checkRemoteName(remote_push_name='origin'):
         if remote_push_name == i:
             return True
     return False
+
+def getOrigin(remote_push_name='origin'):
+    a = os.popen(GIT_BIN + " remote -v").readlines()
+    a_push = []
+    remote_pushs = {}
+    for i in a:
+        if 'push' in i:
+            a_push.append(i)
+    debug(a_push = a_push)
+    if a_push:
+        for i in a_push:
+            a_push = re.split("\n|\t|\(push\)", i)
+            remote_pushs.update({a_push[0].strip():a_push[1].strip()})
+    debug(remote_pushs = remote_pushs)
+    
+    if remote_push_name:
+        for i in remote_pushs:
+            if remote_push_name == i:
+                return remote_pushs.get(i)
+    return remote_pushs
 
 def pushs(remote_name = None):
     global NOTIFY_HOST
@@ -883,6 +907,8 @@ def create_repo(data):
     data_split = None
     if ":" in data:
         data_split = re.split(":", data)
+    else:
+        data_split = [data]
     if len(data_split) == 1 and data_split[0] == 'github':
         create_repo_github()
     elif len(data_split) == 2:
@@ -964,10 +990,15 @@ def create_repo_github(username = None, private = True, repo_name = None):
     for i in os.listdir(os.getcwd()):
         if 'readme' in i.lower():
             README = os.path.join(os.getcwd(), i)
+            break
+    print("README:", make_colors(README, 'lw', 'bl'))
     if README and os.path.isfile(README):
-        DECRIPTION = open(README, 'wb').read()
+        DECRIPTION = open(README, 'rb').read()
     if DECRIPTION:
-        auth.create_repo(REPO_NAME, private = private, has_issues = True, description = DECRIPTION)
+        try:
+            auth.create_repo(REPO_NAME, private = private, has_issues = True, description = DECRIPTION)
+        except:
+            auth.create_repo(REPO_NAME, private = private, has_issues = True, description = '')
     else:
         auth.create_repo(REPO_NAME, private = private, has_issues = True)
     return REPO_NAME, 'https://github.com/' + username + "/" + REPO_NAME
@@ -1089,6 +1120,7 @@ def usage():
     parser.add_argument('-nv', '--no-version', action='store_false', help='Don\'t Generate version of this program/project')
     parser.add_argument('-nt', '--no-time', action='store_false', help='Don\'t Generate Comment time of this program/project')
     parser.add_argument('-m', '--message', action='store', help='comment if --no-version')
+    parser.add_argument('-g', '--get', action='store_true', help='get origin remote repo name and copy to clipboard')
     parser.add_argument('-V', '--version', action='store_true', help='Show version of this program/project')
     parser.add_argument('-v', '--set-version', action = 'store', help = 'Set Version for commit')
     print(__help__)
@@ -1101,6 +1133,20 @@ def usage():
         commit(no_push=True)
     else:
         args = parser.parse_args()
+        if args.get:
+            origin = getOrigin()
+            if isinstance(origin, str):                
+                clipboard.copy(origin)
+            if isinstance(origin, list):
+                print(make_colors("No repo origin found !", 'lw', 'lr', ['blink']))
+                if len(origin) > 0:
+                    n = 1
+                    for i in origin:
+                        print(str(n) + ". " + make_colors(i, 'lw', 'bl') + ":" + make_colors(origin.get(i), 'lw', 'm'))
+                    qr = raw_input("select you want copy to")
+                    if qr and qr.isdigit() and not len(int(str(qr).strip())) > len(origin):
+                        clipboard.copy(origin.get(origin.key()[int(qr) - 1]))
+
         if args.github_find:
             check_repo_github(args.github_find, args.github_find_private, as_is = False)
             sys.exit()
