@@ -261,7 +261,7 @@ def notify(message, event='Control', app = 'GitDate', title = '', icon = None, h
             else:
                 growl.publish(app, event, title, message, timeout= timeout, iconpath= icon)
     except:
-        traceback.format_exc(print_msg= False)
+        traceback.format_exc()
     try:
         import PySnarl
         PySnarl.snShowMessage(title, message, timeout= timeout, iconPath= icon)
@@ -900,7 +900,7 @@ def commit(no_push = False, check=False, commit=True, push_version=True, with_ti
             if os.getenv('DEBUG'):
                 traceback.format_exc()
             else:
-                traceback.format_exc(print_msg = True)
+                traceback.format_exc()
         return
 
 def create_repo(data):
@@ -1121,6 +1121,7 @@ def usage():
     parser.add_argument('-nt', '--no-time', action='store_false', help='Don\'t Generate Comment time of this program/project')
     parser.add_argument('-m', '--message', action='store', help='comment if --no-version')
     parser.add_argument('-g', '--get', action='store_true', help='get origin remote repo name and copy to clipboard')
+    parser.add_argument('-d', '--dir', action='store', help='Change dir to')
     parser.add_argument('-V', '--version', action='store_true', help='Show version of this program/project')
     parser.add_argument('-v', '--set-version', action = 'store', help = 'Set Version for commit')
     print(__help__)
@@ -1129,10 +1130,22 @@ def usage():
         commit()
         pushs()
         # parser.print_help()
+    elif len(sys.argv) == 2 and os.path.isdir(sys.argv[1]):
+        os.chdir(sys.argv[1])
+        check_repo()
+        commit()
+        pushs()
+        sys.exit()        
     elif len(sys.argv) == 2 and sys.argv[1] == '--no-push' or sys.argv[1] == '-np':
         commit(no_push=True)
     else:
         args = parser.parse_args()
+        if args.dir and len(sys.argv[1:]) == 2:
+            os.chdir(args.dir)
+            check_repo()
+            commit()
+            pushs()
+            sys.exit()
         if args.get:
             origin = getOrigin()
             if isinstance(origin, str):                
