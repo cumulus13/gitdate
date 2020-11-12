@@ -916,6 +916,7 @@ def create_repo(data):
             repo_name, repo_url = create_repo_github(repo_name = data_split[1])
             add = "origin;" + repo_url
             controlRemote(add = add, interactive = True)
+
         else:
             add = data_split[0] + ";" + data_split[1]
             controlRemote(add = add, interactive = True)
@@ -923,6 +924,8 @@ def create_repo(data):
         if data_split[0] == 'github':
             if data_split[2] == 'public':
                 repo_name, repo_url = create_repo_github(None, False, data_split[1])
+            else:
+                repo_name, repo_url = create_repo_github(None, True, data_split[1])
             add = "origin;" + repo_url
             controlRemote(add = add, interactive = True)
         else:
@@ -931,15 +934,17 @@ def create_repo(data):
 
     elif len(data_split) == 4:
         if data_split[0] == 'github':
-            if data_split[3] == 'public':
-                repo_name, repo_url = create_repo_github(data_split[1], False, data_split[2])
+            if data_split[2] == 'public':
+                repo_name, repo_url = create_repo_github(data_split[3], False, data_split[1])
+            else:
+                repo_name, repo_url = create_repo_github(data_split[3], True, data_split[1])
             add = "origin;" + repo_url
             controlRemote(add = add, interactive = True)
         else:
             add = data_split[0] + ";" + data_split[1]
             controlRemote(add = add, interactive = True)
     
-def create_repo_github(username = None, private = True, repo_name = None):
+def create_repo_github(username = None, private = True, repo_name = None, token = None, client_id = None, client_secret = None):
     try:
         from github import Github
     except:
@@ -957,32 +962,22 @@ def create_repo_github(username = None, private = True, repo_name = None):
     debug(REPO_NAME = REPO_NAME)
     if not username:
         username = CONFIG.get_config('github', 'username')
-    if not username == CONFIG.get_config('github', 'username'):
-        while 1:
-            password = getpass.getpass("PASSWORD (x/q = exit): ")
-            if password:
-                break
-            elif password == 'x' or password == 'q':
-                sys.exit()
-        CONFIG.write_config('github', 'password', password)
-    else:
-        password = CONFIG.get_config('github', 'password')
     
     debug(username = username)
-    debug(password = password)
     if not username:
         username = raw_input(make_colors("Github Username :", 'b', 'ly'))
         if username:
             CONFIG.write_config('github', 'username', username)
-    if not password:
-        password = getpass.getpass(make_colors("Github Password :", 'b', 'ly'))
-        if password:
-            CONFIG.write_config('github', 'password', password)
+    
+    if not token:
+        token = CONFIG.get_config('github', 'token', '2c5a2b2dbab79f8042c0b2ebdfb6c4a9fc0828b6')
+    client_id = CONFIG.get_config('github', 'client_id', 'bcc0c5253f5a43845355')
+    client_secret = CONFIG.get_config('github', 'client_secret', '264e42f7ecff43665d0c948edee04d1d54eea9ea')
+
     debug(username = username)
-    debug(password = password)    
-    if not username and password:
-        return create_repo_github()
-    g = Github(username, password)
+    
+    if token:
+        g = Github(token)
     auth = g.get_user()
     debug(auth = auth)
     README = None
@@ -1003,7 +998,63 @@ def create_repo_github(username = None, private = True, repo_name = None):
         auth.create_repo(REPO_NAME, private = private, has_issues = True)
     return REPO_NAME, 'https://github.com/' + username + "/" + REPO_NAME
 
-def check_repo_github(name = None, private = False, sort = 'time', as_is = True):
+def edit_repo_github(private = True, repo_name = None, token = None):
+    try:
+        from github import Github
+    except:
+        print(make_colors("No pygithub installer !", 'lw', 'lr'))
+        return False
+    if not repo_name:
+        REPO_NAME = os.path.basename(os.getcwd())
+    else:
+        REPO_NAME = repo_name
+    if not check_repo_github(REPO_NAME, as_is = True):
+            # add = "origin;" + 'https://github.com/' + REPO_NAME
+            # controlRemote(add = add, interactive = True)
+            # os.system(GIT_BIN + " remote -v")
+        return create_repo_github(private = private, token = token, repo_name = repo_name)
+    debug(REPO_NAME = REPO_NAME)
+    
+    if not token:
+        token = CONFIG.get_config('github', 'token', '2c5a2b2dbab79f8042c0b2ebdfb6c4a9fc0828b6')
+    if not token:
+        token = raw_input(make_colors("TOKEN:", 'lw', 'lr') + " ")
+
+    if token:
+        g = Github(token)
+    else:
+        while 1:
+            token = raw_input(make_colors("TOKEN:", 'lw', 'lr') + " ")
+            if token:
+                break
+        g = Github(token)
+    debug(REPO_NAME = REPO_NAME)
+    auth = g.get_user()
+    repo_edit = auth.get_repo(REPO_NAME)
+    debug(auth = auth)
+    README = None
+    DECRIPTION = None
+    for i in os.listdir(os.getcwd()):
+        if 'readme' in i.lower():
+            README = os.path.join(os.getcwd(), i)
+            break
+    if not README:
+        README = ''
+    print("README:", make_colors(README, 'lw', 'bl'))
+    if README and os.path.isfile(README):
+        DECRIPTION = open(README, 'rb').read()
+    debug(DECRIPTION = DECRIPTION)
+    if DECRIPTION:
+        try:
+            repo_edit.edit(REPO_NAME, private = private, has_issues = True, description = DECRIPTION)
+        except:
+            repo_edit.edit(REPO_NAME, private = private, has_issues = True, description = '')
+    else:
+        repo_edit.edit(REPO_NAME, private = private, has_issues = True)
+    username = CONFIG.write_config('github', 'username', 'cumulus13')
+    return REPO_NAME, 'https://github.com/' + username + "/" + REPO_NAME
+
+def check_repo_github(name = None, private = False, sort = 'time', as_is = True, token = None, client_id = None, client_secret = None):
     try:
         from github import Github
     except:
@@ -1011,23 +1062,29 @@ def check_repo_github(name = None, private = False, sort = 'time', as_is = True)
         return False
     
     username = CONFIG.get_config('github', 'username')
-    password = CONFIG.get_config('github', 'password')
     
     debug(username = username)
-    debug(password = password)
     if not username:
         username = raw_input(make_colors("Github Username :", 'b', 'ly'))
         if username:
             CONFIG.write_config('github', 'username', username)
-    if not password:
-        password = getpass.getpass(make_colors("Github Password :", 'b', 'ly'))
-        if password:
-            CONFIG.write_config('github', 'password', password)
+    
     debug(username = username)
-    debug(password = password)    
-    if not username and password:
-        return create_repo_github()
-    g = Github(username, password)
+    
+    #if not username and password:
+    #    return create_repo_github()
+    
+    if not token:
+        token = CONFIG.get_config('github', 'token', '2c5a2b2dbab79f8042c0b2ebdfb6c4a9fc0828b6')
+    
+    client_id = CONFIG.get_config('github', 'client_id', 'bcc0c5253f5a43845355')
+    client_secret = CONFIG.get_config('github', 'client_secret', '264e42f7ecff43665d0c948edee04d1d54eea9ea')
+
+    debug(username = username)
+    debug(token = token)
+    if token:
+        g = Github(token)
+    
     auth = g.get_user()
     dtype = ''
     if private:
@@ -1075,9 +1132,20 @@ def check_repo():
     else:
         while not checkRemoteName():
             add = None
-            origin = raw_input(make_colors("Remote Origin URL [type 'github' for Github or e[x]it|[q]uit]: ", 'lw', 'lr'))
+            origin = raw_input(make_colors("Remote Origin URL [type 'github' or 'github:private/public' for Github or e[x]it|[q]uit]: ", 'lw', 'lr'))
             if origin == 'github':
                 create_repo_github()
+            elif ":" in origin and 'github' in origin:
+                rn, rt = origin.split(":")
+                rn = rn.strip()
+                if rt:
+                    rt = rt.strip()
+                if rt == 'private':
+                    create_repo_github(private = True)
+                elif rt == 'private':
+                    create_repo_github(private = False)
+                else:
+                    create_repo_github(private = True)
             if origin:
                 if not repo_name:
                     repo_name = os.path.basename(os.getcwd())
@@ -1099,7 +1167,7 @@ def usage():
     import argparse
     parser = argparse.ArgumentParser(formatter_class=argparse.RawTextHelpFormatter)
     parser.add_argument('-f', '--github-find', action = 'store', help = 'Find remote repository name on github, type "all" to show all repository')
-    parser.add_argument('-C', '--create', action = 'store', help = 'Create remote repository type: github for automactly create repo to github with username store on config file or type: REMOTE_NAME:URL_REMOTE for create another remote repo or for github may type: github:USERNAME:REPO_NAME:PUBLIC/PRIVATE for public or private repository with default github repo is private mode')
+    parser.add_argument('-C', '--create', action = 'store', help = 'Create remote repository type: github for automactly create repo to github with username store on config file or type: REMOTE_NAME:URL_REMOTE for create another remote repo or for github may type: github:REPO_NAME:PUBLIC/PRIVATE or github:REPO_NAME:PUBLIC/PRIVATE:USERNAME for public or private repository with default github repo is private mode')
     parser.add_argument('-fp', '--github-find-private', action = 'store_true', help = 'Set find private for Find remote repository name on github')
     parser.add_argument('-np', '--no-push', action='store_true', help='Doing all but don\'t push it')
     parser.add_argument('-s', '--check', action='store_true', help='Check Status')
@@ -1122,6 +1190,8 @@ def usage():
     parser.add_argument('-m', '--message', action='store', help='comment if --no-version')
     parser.add_argument('-g', '--get', action='store_true', help='get origin remote repo name and copy to clipboard')
     parser.add_argument('-d', '--dir', action='store', help='Change dir to')
+    parser.add_argument('--set-private', action = 'store_true', help='Set github repository as Private')
+    parser.add_argument('--set-public', action = 'store_true', help='Set github repository as Public')
     parser.add_argument('-V', '--version', action='store_true', help='Show version of this program/project')
     parser.add_argument('-v', '--set-version', action = 'store', help = 'Set Version for commit')
     print(__help__)
@@ -1140,6 +1210,10 @@ def usage():
         commit(no_push=True)
     else:
         args = parser.parse_args()
+        if args.set_private:
+            edit_repo_github(private=True)
+        elif args.set_public:
+            edit_repo_github(private=False)
         if args.dir and len(sys.argv[1:]) == 2:
             os.chdir(args.dir)
             check_repo()
