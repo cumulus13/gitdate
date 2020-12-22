@@ -1,0 +1,3378 @@
+2020:11:12 19:09:28:314895 ~ Traceback (most recent call last):
+  File "C:\SDK\Anaconda3\lib\site-packages\mercurial\dispatch.py", line 481, in _callcatch
+    return scmutil.callcatch(ui, func)
+  File "C:\SDK\Anaconda3\lib\site-packages\mercurial\scmutil.py", line 152, in callcatch
+    return func()
+  File "C:\SDK\Anaconda3\lib\site-packages\mercurial\dispatch.py", line 462, in _runcatchfunc
+    return _dispatch(req)
+  File "C:\SDK\Anaconda3\lib\site-packages\mercurial\dispatch.py", line 1226, in _dispatch
+    lui, repo, cmd, fullargs, ui, options, d, cmdpats, cmdoptions
+  File "C:\SDK\Anaconda3\lib\site-packages\mercurial\dispatch.py", line 910, in runcommand
+    ret = _runcommand(ui, options, cmd, d)
+  File "C:\SDK\Anaconda3\lib\site-packages\mercurial\dispatch.py", line 1237, in _runcommand
+    return cmdfunc()
+  File "C:\SDK\Anaconda3\lib\site-packages\mercurial\dispatch.py", line 1223, in <lambda>
+    d = lambda: util.checksignature(func)(ui, *args, **strcmdopt)
+  File "C:\SDK\Anaconda3\lib\site-packages\mercurial\util.py", line 1865, in check
+    return func(*args, **kwargs)
+  File "C:\SDK\Anaconda3\lib\site-packages\mercurial\commands.py", line 5671, in push
+    opargs=opargs,
+  File "C:\SDK\Anaconda3\lib\site-packages\hggit\util.py", line 64, in inner
+    return f(*args, **kwargs)
+  File "C:\SDK\Anaconda3\lib\site-packages\hggit\__init__.py", line 400, in exchangepush
+    pushop.cgresult = repo.githandler.push(remote.path, revs, force)
+  File "C:\SDK\Anaconda3\lib\site-packages\hggit\git_handler.py", line 408, in push
+    old_refs, new_refs = self.upload_pack(remote, revs, force)
+  File "C:\SDK\Anaconda3\lib\site-packages\hggit\git_handler.py", line 1116, in upload_pack
+    progress=callback)
+  File "C:\SDK\Anaconda3\lib\site-packages\dulwich\client.py", line 830, in send_pack
+    proto, unused_can_read, stderr = self._connect(b'receive-pack', path)
+  File "C:\SDK\Anaconda3\lib\site-packages\dulwich\client.py", line 1449, in _connect
+    **kwargs)
+  File "C:\SDK\Anaconda3\lib\site-packages\hggit\_ssh.py", line 29, in run_command
+    stdout=subprocess.PIPE)
+  File "C:\SDK\Anaconda3\lib\subprocess.py", line 775, in __init__
+    restore_signals, start_new_session)
+  File "C:\SDK\Anaconda3\lib\subprocess.py", line 1119, in _execute_child
+    args = list2cmdline(args)
+  File "C:\SDK\Anaconda3\lib\subprocess.py", line 530, in list2cmdline
+    needquote = (" " in arg) or ("\t" in arg) or not arg
+TypeError: argument of type 'int' is not iterable
+
+2020:11:12 19:09:50:268880 ~ Traceback (most recent call last):
+  File "C:\SDK\Anaconda3\lib\site-packages\mercurial\dispatch.py", line 481, in _callcatch
+    return scmutil.callcatch(ui, func)
+  File "C:\SDK\Anaconda3\lib\site-packages\mercurial\scmutil.py", line 152, in callcatch
+    return func()
+  File "C:\SDK\Anaconda3\lib\site-packages\mercurial\dispatch.py", line 462, in _runcatchfunc
+    return _dispatch(req)
+  File "C:\SDK\Anaconda3\lib\site-packages\mercurial\dispatch.py", line 1226, in _dispatch
+    lui, repo, cmd, fullargs, ui, options, d, cmdpats, cmdoptions
+  File "C:\SDK\Anaconda3\lib\site-packages\mercurial\dispatch.py", line 910, in runcommand
+    ret = _runcommand(ui, options, cmd, d)
+  File "C:\SDK\Anaconda3\lib\site-packages\mercurial\dispatch.py", line 1237, in _runcommand
+    return cmdfunc()
+  File "C:\SDK\Anaconda3\lib\site-packages\mercurial\dispatch.py", line 1223, in <lambda>
+    d = lambda: util.checksignature(func)(ui, *args, **strcmdopt)
+  File "C:\SDK\Anaconda3\lib\site-packages\mercurial\util.py", line 1865, in check
+    return func(*args, **kwargs)
+  File "C:\SDK\Anaconda3\lib\site-packages\mercurial\commands.py", line 5671, in push
+    opargs=opargs,
+  File "C:\SDK\Anaconda3\lib\site-packages\hggit\util.py", line 64, in inner
+    return f(*args, **kwargs)
+  File "C:\SDK\Anaconda3\lib\site-packages\hggit\__init__.py", line 400, in exchangepush
+    pushop.cgresult = repo.githandler.push(remote.path, revs, force)
+  File "C:\SDK\Anaconda3\lib\site-packages\hggit\git_handler.py", line 408, in push
+    old_refs, new_refs = self.upload_pack(remote, revs, force)
+  File "C:\SDK\Anaconda3\lib\site-packages\hggit\git_handler.py", line 1116, in upload_pack
+    progress=callback)
+  File "C:\SDK\Anaconda3\lib\site-packages\dulwich\client.py", line 830, in send_pack
+    proto, unused_can_read, stderr = self._connect(b'receive-pack', path)
+  File "C:\SDK\Anaconda3\lib\site-packages\dulwich\client.py", line 1449, in _connect
+    **kwargs)
+  File "C:\SDK\Anaconda3\lib\site-packages\hggit\_ssh.py", line 29, in run_command
+    stdout=subprocess.PIPE)
+  File "C:\SDK\Anaconda3\lib\subprocess.py", line 775, in __init__
+    restore_signals, start_new_session)
+  File "C:\SDK\Anaconda3\lib\subprocess.py", line 1119, in _execute_child
+    args = list2cmdline(args)
+  File "C:\SDK\Anaconda3\lib\subprocess.py", line 530, in list2cmdline
+    needquote = (" " in arg) or ("\t" in arg) or not arg
+TypeError: argument of type 'int' is not iterable
+
+2020:11:12 19:14:38:023464 ~ Traceback (most recent call last):
+  File "C:\SDK\Anaconda3\lib\site-packages\mercurial\dispatch.py", line 481, in _callcatch
+    return scmutil.callcatch(ui, func)
+  File "C:\SDK\Anaconda3\lib\site-packages\mercurial\scmutil.py", line 152, in callcatch
+    return func()
+  File "C:\SDK\Anaconda3\lib\site-packages\mercurial\dispatch.py", line 464, in _runcatchfunc
+    ui.flush()
+  File "C:\SDK\Anaconda3\lib\site-packages\mercurial\ui.py", line 1230, in flush
+    self._fout.flush()
+  File "C:\SDK\Anaconda3\lib\site-packages\mercurial\windows.py", line 224, in flush
+    return self.fp.flush()
+ValueError: I/O operation on closed file.
+
+2020:11:12 19:14:39:039671 ~ Traceback (most recent call last):
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 646, in format_exc
+    debug_server_client(dtime + "\n" + make_colors(msg1, 'lightwhite', 'lightblue'))
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 552, in debug_server_client
+    print(msg)
+OSError: [Errno 9] Bad file descriptor
+
+2020:11:12 19:14:39:058670 ~ Traceback (most recent call last):
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 646, in format_exc
+    debug_server_client(dtime + "\n" + make_colors(msg1, 'lightwhite', 'lightblue'))
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 552, in debug_server_client
+    print(msg)
+OSError: [Errno 9] Bad file descriptor
+
+2020:11:12 19:14:39:081662 ~ Traceback (most recent call last):
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 646, in format_exc
+    debug_server_client(dtime + "\n" + make_colors(msg1, 'lightwhite', 'lightblue'))
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 552, in debug_server_client
+    print(msg)
+OSError: [Errno 9] Bad file descriptor
+
+2020:11:12 19:14:39:099684 ~ Traceback (most recent call last):
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 646, in format_exc
+    debug_server_client(dtime + "\n" + make_colors(msg1, 'lightwhite', 'lightblue'))
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 552, in debug_server_client
+    print(msg)
+OSError: [Errno 9] Bad file descriptor
+
+2020:11:12 19:14:39:117685 ~ Traceback (most recent call last):
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 646, in format_exc
+    debug_server_client(dtime + "\n" + make_colors(msg1, 'lightwhite', 'lightblue'))
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 552, in debug_server_client
+    print(msg)
+OSError: [Errno 9] Bad file descriptor
+
+2020:11:12 19:14:39:136666 ~ Traceback (most recent call last):
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 646, in format_exc
+    debug_server_client(dtime + "\n" + make_colors(msg1, 'lightwhite', 'lightblue'))
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 552, in debug_server_client
+    print(msg)
+OSError: [Errno 9] Bad file descriptor
+
+2020:11:12 19:14:39:155660 ~ Traceback (most recent call last):
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 646, in format_exc
+    debug_server_client(dtime + "\n" + make_colors(msg1, 'lightwhite', 'lightblue'))
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 552, in debug_server_client
+    print(msg)
+OSError: [Errno 9] Bad file descriptor
+
+2020:11:12 19:14:39:174684 ~ Traceback (most recent call last):
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 646, in format_exc
+    debug_server_client(dtime + "\n" + make_colors(msg1, 'lightwhite', 'lightblue'))
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 552, in debug_server_client
+    print(msg)
+OSError: [Errno 9] Bad file descriptor
+
+2020:11:12 19:14:39:220844 ~ Traceback (most recent call last):
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 646, in format_exc
+    debug_server_client(dtime + "\n" + make_colors(msg1, 'lightwhite', 'lightblue'))
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 552, in debug_server_client
+    print(msg)
+OSError: [Errno 9] Bad file descriptor
+
+2020:11:12 19:14:39:240820 ~ Traceback (most recent call last):
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 646, in format_exc
+    debug_server_client(dtime + "\n" + make_colors(msg1, 'lightwhite', 'lightblue'))
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 552, in debug_server_client
+    print(msg)
+OSError: [Errno 9] Bad file descriptor
+
+2020:11:12 19:14:39:262844 ~ Traceback (most recent call last):
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 646, in format_exc
+    debug_server_client(dtime + "\n" + make_colors(msg1, 'lightwhite', 'lightblue'))
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 552, in debug_server_client
+    print(msg)
+OSError: [Errno 9] Bad file descriptor
+
+2020:11:12 19:14:39:284829 ~ Traceback (most recent call last):
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 646, in format_exc
+    debug_server_client(dtime + "\n" + make_colors(msg1, 'lightwhite', 'lightblue'))
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 552, in debug_server_client
+    print(msg)
+OSError: [Errno 9] Bad file descriptor
+
+2020:11:12 19:14:39:304827 ~ Traceback (most recent call last):
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 646, in format_exc
+    debug_server_client(dtime + "\n" + make_colors(msg1, 'lightwhite', 'lightblue'))
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 552, in debug_server_client
+    print(msg)
+OSError: [Errno 9] Bad file descriptor
+
+2020:11:12 19:14:39:334863 ~ Traceback (most recent call last):
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 646, in format_exc
+    debug_server_client(dtime + "\n" + make_colors(msg1, 'lightwhite', 'lightblue'))
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 552, in debug_server_client
+    print(msg)
+OSError: [Errno 9] Bad file descriptor
+
+2020:11:12 19:14:39:357831 ~ Traceback (most recent call last):
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 646, in format_exc
+    debug_server_client(dtime + "\n" + make_colors(msg1, 'lightwhite', 'lightblue'))
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 552, in debug_server_client
+    print(msg)
+OSError: [Errno 9] Bad file descriptor
+
+2020:11:12 19:14:39:379499 ~ Traceback (most recent call last):
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 646, in format_exc
+    debug_server_client(dtime + "\n" + make_colors(msg1, 'lightwhite', 'lightblue'))
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 552, in debug_server_client
+    print(msg)
+OSError: [Errno 9] Bad file descriptor
+
+2020:11:12 19:14:39:400497 ~ Traceback (most recent call last):
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 646, in format_exc
+    debug_server_client(dtime + "\n" + make_colors(msg1, 'lightwhite', 'lightblue'))
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 552, in debug_server_client
+    print(msg)
+OSError: [Errno 9] Bad file descriptor
+
+2020:11:12 19:14:39:423495 ~ Traceback (most recent call last):
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 646, in format_exc
+    debug_server_client(dtime + "\n" + make_colors(msg1, 'lightwhite', 'lightblue'))
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 552, in debug_server_client
+    print(msg)
+OSError: [Errno 9] Bad file descriptor
+
+2020:11:12 19:14:39:454490 ~ Traceback (most recent call last):
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 646, in format_exc
+    debug_server_client(dtime + "\n" + make_colors(msg1, 'lightwhite', 'lightblue'))
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 552, in debug_server_client
+    print(msg)
+OSError: [Errno 9] Bad file descriptor
+
+2020:11:12 19:14:39:536495 ~ Traceback (most recent call last):
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 646, in format_exc
+    debug_server_client(dtime + "\n" + make_colors(msg1, 'lightwhite', 'lightblue'))
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 552, in debug_server_client
+    print(msg)
+OSError: [Errno 9] Bad file descriptor
+
+2020:11:12 19:14:39:573490 ~ Traceback (most recent call last):
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 646, in format_exc
+    debug_server_client(dtime + "\n" + make_colors(msg1, 'lightwhite', 'lightblue'))
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 552, in debug_server_client
+    print(msg)
+OSError: [Errno 9] Bad file descriptor
+
+2020:11:12 19:14:39:596494 ~ Traceback (most recent call last):
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 646, in format_exc
+    debug_server_client(dtime + "\n" + make_colors(msg1, 'lightwhite', 'lightblue'))
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 552, in debug_server_client
+    print(msg)
+OSError: [Errno 9] Bad file descriptor
+
+2020:11:12 19:14:39:620496 ~ Traceback (most recent call last):
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 646, in format_exc
+    debug_server_client(dtime + "\n" + make_colors(msg1, 'lightwhite', 'lightblue'))
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 552, in debug_server_client
+    print(msg)
+OSError: [Errno 9] Bad file descriptor
+
+2020:11:12 19:14:39:642513 ~ Traceback (most recent call last):
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 646, in format_exc
+    debug_server_client(dtime + "\n" + make_colors(msg1, 'lightwhite', 'lightblue'))
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 552, in debug_server_client
+    print(msg)
+OSError: [Errno 9] Bad file descriptor
+
+2020:11:12 19:14:39:668497 ~ Traceback (most recent call last):
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 646, in format_exc
+    debug_server_client(dtime + "\n" + make_colors(msg1, 'lightwhite', 'lightblue'))
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 552, in debug_server_client
+    print(msg)
+OSError: [Errno 9] Bad file descriptor
+
+2020:11:12 19:14:39:693847 ~ Traceback (most recent call last):
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 646, in format_exc
+    debug_server_client(dtime + "\n" + make_colors(msg1, 'lightwhite', 'lightblue'))
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 552, in debug_server_client
+    print(msg)
+OSError: [Errno 9] Bad file descriptor
+
+2020:11:12 19:14:39:717848 ~ Traceback (most recent call last):
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 646, in format_exc
+    debug_server_client(dtime + "\n" + make_colors(msg1, 'lightwhite', 'lightblue'))
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 552, in debug_server_client
+    print(msg)
+OSError: [Errno 9] Bad file descriptor
+
+2020:11:12 19:14:39:741869 ~ Traceback (most recent call last):
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 646, in format_exc
+    debug_server_client(dtime + "\n" + make_colors(msg1, 'lightwhite', 'lightblue'))
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 552, in debug_server_client
+    print(msg)
+OSError: [Errno 9] Bad file descriptor
+
+2020:11:12 19:14:39:767846 ~ Traceback (most recent call last):
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 646, in format_exc
+    debug_server_client(dtime + "\n" + make_colors(msg1, 'lightwhite', 'lightblue'))
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 552, in debug_server_client
+    print(msg)
+OSError: [Errno 9] Bad file descriptor
+
+2020:11:12 19:14:39:799857 ~ Traceback (most recent call last):
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 646, in format_exc
+    debug_server_client(dtime + "\n" + make_colors(msg1, 'lightwhite', 'lightblue'))
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 552, in debug_server_client
+    print(msg)
+OSError: [Errno 9] Bad file descriptor
+
+2020:11:12 19:14:39:825855 ~ Traceback (most recent call last):
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 646, in format_exc
+    debug_server_client(dtime + "\n" + make_colors(msg1, 'lightwhite', 'lightblue'))
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 552, in debug_server_client
+    print(msg)
+OSError: [Errno 9] Bad file descriptor
+
+2020:11:12 19:14:39:856849 ~ Traceback (most recent call last):
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 646, in format_exc
+    debug_server_client(dtime + "\n" + make_colors(msg1, 'lightwhite', 'lightblue'))
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 552, in debug_server_client
+    print(msg)
+OSError: [Errno 9] Bad file descriptor
+
+2020:11:12 19:14:39:881844 ~ Traceback (most recent call last):
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 646, in format_exc
+    debug_server_client(dtime + "\n" + make_colors(msg1, 'lightwhite', 'lightblue'))
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 552, in debug_server_client
+    print(msg)
+OSError: [Errno 9] Bad file descriptor
+
+2020:11:12 19:14:39:907868 ~ Traceback (most recent call last):
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 646, in format_exc
+    debug_server_client(dtime + "\n" + make_colors(msg1, 'lightwhite', 'lightblue'))
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 552, in debug_server_client
+    print(msg)
+OSError: [Errno 9] Bad file descriptor
+
+2020:11:12 19:14:39:933847 ~ Traceback (most recent call last):
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 646, in format_exc
+    debug_server_client(dtime + "\n" + make_colors(msg1, 'lightwhite', 'lightblue'))
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 552, in debug_server_client
+    print(msg)
+OSError: [Errno 9] Bad file descriptor
+
+2020:11:12 19:14:40:046869 ~ Traceback (most recent call last):
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 646, in format_exc
+    debug_server_client(dtime + "\n" + make_colors(msg1, 'lightwhite', 'lightblue'))
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 552, in debug_server_client
+    print(msg)
+OSError: [Errno 9] Bad file descriptor
+
+2020:11:12 19:14:40:073853 ~ Traceback (most recent call last):
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 646, in format_exc
+    debug_server_client(dtime + "\n" + make_colors(msg1, 'lightwhite', 'lightblue'))
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 552, in debug_server_client
+    print(msg)
+OSError: [Errno 9] Bad file descriptor
+
+2020:11:12 19:14:40:102856 ~ Traceback (most recent call last):
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 646, in format_exc
+    debug_server_client(dtime + "\n" + make_colors(msg1, 'lightwhite', 'lightblue'))
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 552, in debug_server_client
+    print(msg)
+OSError: [Errno 9] Bad file descriptor
+
+2020:11:12 19:14:40:130847 ~ Traceback (most recent call last):
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 646, in format_exc
+    debug_server_client(dtime + "\n" + make_colors(msg1, 'lightwhite', 'lightblue'))
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 552, in debug_server_client
+    print(msg)
+OSError: [Errno 9] Bad file descriptor
+
+2020:11:12 19:14:40:172854 ~ Traceback (most recent call last):
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 646, in format_exc
+    debug_server_client(dtime + "\n" + make_colors(msg1, 'lightwhite', 'lightblue'))
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 552, in debug_server_client
+    print(msg)
+OSError: [Errno 9] Bad file descriptor
+
+2020:11:12 19:14:40:200853 ~ Traceback (most recent call last):
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 646, in format_exc
+    debug_server_client(dtime + "\n" + make_colors(msg1, 'lightwhite', 'lightblue'))
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 552, in debug_server_client
+    print(msg)
+OSError: [Errno 9] Bad file descriptor
+
+2020:11:12 19:14:40:229868 ~ Traceback (most recent call last):
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 646, in format_exc
+    debug_server_client(dtime + "\n" + make_colors(msg1, 'lightwhite', 'lightblue'))
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 552, in debug_server_client
+    print(msg)
+OSError: [Errno 9] Bad file descriptor
+
+2020:11:12 19:14:40:261859 ~ Traceback (most recent call last):
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 646, in format_exc
+    debug_server_client(dtime + "\n" + make_colors(msg1, 'lightwhite', 'lightblue'))
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 552, in debug_server_client
+    print(msg)
+OSError: [Errno 9] Bad file descriptor
+
+2020:11:12 19:14:40:290851 ~ Traceback (most recent call last):
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 646, in format_exc
+    debug_server_client(dtime + "\n" + make_colors(msg1, 'lightwhite', 'lightblue'))
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 552, in debug_server_client
+    print(msg)
+OSError: [Errno 9] Bad file descriptor
+
+2020:11:12 19:14:40:319846 ~ Traceback (most recent call last):
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 646, in format_exc
+    debug_server_client(dtime + "\n" + make_colors(msg1, 'lightwhite', 'lightblue'))
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 552, in debug_server_client
+    print(msg)
+OSError: [Errno 9] Bad file descriptor
+
+2020:11:12 19:14:40:351868 ~ Traceback (most recent call last):
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 646, in format_exc
+    debug_server_client(dtime + "\n" + make_colors(msg1, 'lightwhite', 'lightblue'))
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 552, in debug_server_client
+    print(msg)
+OSError: [Errno 9] Bad file descriptor
+
+2020:11:12 19:14:40:384861 ~ Traceback (most recent call last):
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 646, in format_exc
+    debug_server_client(dtime + "\n" + make_colors(msg1, 'lightwhite', 'lightblue'))
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 552, in debug_server_client
+    print(msg)
+OSError: [Errno 9] Bad file descriptor
+
+2020:11:12 19:14:40:417845 ~ Traceback (most recent call last):
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 646, in format_exc
+    debug_server_client(dtime + "\n" + make_colors(msg1, 'lightwhite', 'lightblue'))
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 552, in debug_server_client
+    print(msg)
+OSError: [Errno 9] Bad file descriptor
+
+2020:11:12 19:14:40:448853 ~ Traceback (most recent call last):
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 646, in format_exc
+    debug_server_client(dtime + "\n" + make_colors(msg1, 'lightwhite', 'lightblue'))
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 552, in debug_server_client
+    print(msg)
+OSError: [Errno 9] Bad file descriptor
+
+2020:11:12 19:14:40:486855 ~ Traceback (most recent call last):
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 646, in format_exc
+    debug_server_client(dtime + "\n" + make_colors(msg1, 'lightwhite', 'lightblue'))
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 552, in debug_server_client
+    print(msg)
+OSError: [Errno 9] Bad file descriptor
+
+2020:11:12 19:14:40:568848 ~ Traceback (most recent call last):
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 646, in format_exc
+    debug_server_client(dtime + "\n" + make_colors(msg1, 'lightwhite', 'lightblue'))
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 552, in debug_server_client
+    print(msg)
+OSError: [Errno 9] Bad file descriptor
+
+2020:11:12 19:14:40:602848 ~ Traceback (most recent call last):
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 646, in format_exc
+    debug_server_client(dtime + "\n" + make_colors(msg1, 'lightwhite', 'lightblue'))
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 552, in debug_server_client
+    print(msg)
+OSError: [Errno 9] Bad file descriptor
+
+2020:11:12 19:14:40:633848 ~ Traceback (most recent call last):
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 646, in format_exc
+    debug_server_client(dtime + "\n" + make_colors(msg1, 'lightwhite', 'lightblue'))
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 552, in debug_server_client
+    print(msg)
+OSError: [Errno 9] Bad file descriptor
+
+2020:11:12 19:14:40:664845 ~ Traceback (most recent call last):
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 646, in format_exc
+    debug_server_client(dtime + "\n" + make_colors(msg1, 'lightwhite', 'lightblue'))
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 552, in debug_server_client
+    print(msg)
+OSError: [Errno 9] Bad file descriptor
+
+2020:11:12 19:14:40:696846 ~ Traceback (most recent call last):
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 646, in format_exc
+    debug_server_client(dtime + "\n" + make_colors(msg1, 'lightwhite', 'lightblue'))
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 552, in debug_server_client
+    print(msg)
+OSError: [Errno 9] Bad file descriptor
+
+2020:11:12 19:14:40:727846 ~ Traceback (most recent call last):
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 646, in format_exc
+    debug_server_client(dtime + "\n" + make_colors(msg1, 'lightwhite', 'lightblue'))
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 552, in debug_server_client
+    print(msg)
+OSError: [Errno 9] Bad file descriptor
+
+2020:11:12 19:14:40:760845 ~ Traceback (most recent call last):
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 646, in format_exc
+    debug_server_client(dtime + "\n" + make_colors(msg1, 'lightwhite', 'lightblue'))
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 552, in debug_server_client
+    print(msg)
+OSError: [Errno 9] Bad file descriptor
+
+2020:11:12 19:14:40:816849 ~ Traceback (most recent call last):
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 646, in format_exc
+    debug_server_client(dtime + "\n" + make_colors(msg1, 'lightwhite', 'lightblue'))
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 552, in debug_server_client
+    print(msg)
+OSError: [Errno 9] Bad file descriptor
+
+2020:11:12 19:14:40:851847 ~ Traceback (most recent call last):
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 646, in format_exc
+    debug_server_client(dtime + "\n" + make_colors(msg1, 'lightwhite', 'lightblue'))
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 552, in debug_server_client
+    print(msg)
+OSError: [Errno 9] Bad file descriptor
+
+2020:11:12 19:14:40:886855 ~ Traceback (most recent call last):
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 646, in format_exc
+    debug_server_client(dtime + "\n" + make_colors(msg1, 'lightwhite', 'lightblue'))
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 552, in debug_server_client
+    print(msg)
+OSError: [Errno 9] Bad file descriptor
+
+2020:11:12 19:14:40:921850 ~ Traceback (most recent call last):
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 646, in format_exc
+    debug_server_client(dtime + "\n" + make_colors(msg1, 'lightwhite', 'lightblue'))
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 552, in debug_server_client
+    print(msg)
+OSError: [Errno 9] Bad file descriptor
+
+2020:11:12 19:14:40:957854 ~ Traceback (most recent call last):
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 646, in format_exc
+    debug_server_client(dtime + "\n" + make_colors(msg1, 'lightwhite', 'lightblue'))
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 552, in debug_server_client
+    print(msg)
+OSError: [Errno 9] Bad file descriptor
+
+2020:11:12 19:14:40:990868 ~ Traceback (most recent call last):
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 646, in format_exc
+    debug_server_client(dtime + "\n" + make_colors(msg1, 'lightwhite', 'lightblue'))
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 552, in debug_server_client
+    print(msg)
+OSError: [Errno 9] Bad file descriptor
+
+2020:11:12 19:14:41:040850 ~ Traceback (most recent call last):
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 646, in format_exc
+    debug_server_client(dtime + "\n" + make_colors(msg1, 'lightwhite', 'lightblue'))
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 552, in debug_server_client
+    print(msg)
+OSError: [Errno 9] Bad file descriptor
+
+2020:11:12 19:14:41:109868 ~ Traceback (most recent call last):
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 646, in format_exc
+    debug_server_client(dtime + "\n" + make_colors(msg1, 'lightwhite', 'lightblue'))
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 552, in debug_server_client
+    print(msg)
+OSError: [Errno 9] Bad file descriptor
+
+2020:11:12 19:14:41:146846 ~ Traceback (most recent call last):
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 646, in format_exc
+    debug_server_client(dtime + "\n" + make_colors(msg1, 'lightwhite', 'lightblue'))
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 552, in debug_server_client
+    print(msg)
+OSError: [Errno 9] Bad file descriptor
+
+2020:11:12 19:14:41:183846 ~ Traceback (most recent call last):
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 646, in format_exc
+    debug_server_client(dtime + "\n" + make_colors(msg1, 'lightwhite', 'lightblue'))
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 552, in debug_server_client
+    print(msg)
+OSError: [Errno 9] Bad file descriptor
+
+2020:11:12 19:14:41:218846 ~ Traceback (most recent call last):
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 646, in format_exc
+    debug_server_client(dtime + "\n" + make_colors(msg1, 'lightwhite', 'lightblue'))
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 552, in debug_server_client
+    print(msg)
+OSError: [Errno 9] Bad file descriptor
+
+2020:11:12 19:14:41:255845 ~ Traceback (most recent call last):
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 646, in format_exc
+    debug_server_client(dtime + "\n" + make_colors(msg1, 'lightwhite', 'lightblue'))
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 552, in debug_server_client
+    print(msg)
+OSError: [Errno 9] Bad file descriptor
+
+2020:11:12 19:14:41:294844 ~ Traceback (most recent call last):
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 646, in format_exc
+    debug_server_client(dtime + "\n" + make_colors(msg1, 'lightwhite', 'lightblue'))
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 552, in debug_server_client
+    print(msg)
+OSError: [Errno 9] Bad file descriptor
+
+2020:11:12 19:14:41:332845 ~ Traceback (most recent call last):
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 646, in format_exc
+    debug_server_client(dtime + "\n" + make_colors(msg1, 'lightwhite', 'lightblue'))
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 552, in debug_server_client
+    print(msg)
+OSError: [Errno 9] Bad file descriptor
+
+2020:11:12 19:14:41:370868 ~ Traceback (most recent call last):
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 646, in format_exc
+    debug_server_client(dtime + "\n" + make_colors(msg1, 'lightwhite', 'lightblue'))
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 552, in debug_server_client
+    print(msg)
+OSError: [Errno 9] Bad file descriptor
+
+2020:11:12 19:14:41:409847 ~ Traceback (most recent call last):
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 646, in format_exc
+    debug_server_client(dtime + "\n" + make_colors(msg1, 'lightwhite', 'lightblue'))
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 552, in debug_server_client
+    print(msg)
+OSError: [Errno 9] Bad file descriptor
+
+2020:11:12 19:14:41:450848 ~ Traceback (most recent call last):
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 646, in format_exc
+    debug_server_client(dtime + "\n" + make_colors(msg1, 'lightwhite', 'lightblue'))
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 552, in debug_server_client
+    print(msg)
+OSError: [Errno 9] Bad file descriptor
+
+2020:11:12 19:14:41:490869 ~ Traceback (most recent call last):
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 646, in format_exc
+    debug_server_client(dtime + "\n" + make_colors(msg1, 'lightwhite', 'lightblue'))
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 552, in debug_server_client
+    print(msg)
+OSError: [Errno 9] Bad file descriptor
+
+2020:11:12 19:14:41:545866 ~ Traceback (most recent call last):
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 646, in format_exc
+    debug_server_client(dtime + "\n" + make_colors(msg1, 'lightwhite', 'lightblue'))
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 552, in debug_server_client
+    print(msg)
+OSError: [Errno 9] Bad file descriptor
+
+2020:11:12 19:14:41:597855 ~ Traceback (most recent call last):
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 646, in format_exc
+    debug_server_client(dtime + "\n" + make_colors(msg1, 'lightwhite', 'lightblue'))
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 552, in debug_server_client
+    print(msg)
+OSError: [Errno 9] Bad file descriptor
+
+2020:11:12 19:14:41:647849 ~ Traceback (most recent call last):
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 646, in format_exc
+    debug_server_client(dtime + "\n" + make_colors(msg1, 'lightwhite', 'lightblue'))
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 552, in debug_server_client
+    print(msg)
+OSError: [Errno 9] Bad file descriptor
+
+2020:11:12 19:14:41:692844 ~ Traceback (most recent call last):
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 646, in format_exc
+    debug_server_client(dtime + "\n" + make_colors(msg1, 'lightwhite', 'lightblue'))
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 552, in debug_server_client
+    print(msg)
+OSError: [Errno 9] Bad file descriptor
+
+2020:11:12 19:14:41:739845 ~ Traceback (most recent call last):
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 646, in format_exc
+    debug_server_client(dtime + "\n" + make_colors(msg1, 'lightwhite', 'lightblue'))
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 552, in debug_server_client
+    print(msg)
+OSError: [Errno 9] Bad file descriptor
+
+2020:11:12 19:14:41:780847 ~ Traceback (most recent call last):
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 646, in format_exc
+    debug_server_client(dtime + "\n" + make_colors(msg1, 'lightwhite', 'lightblue'))
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 552, in debug_server_client
+    print(msg)
+OSError: [Errno 9] Bad file descriptor
+
+2020:11:12 19:14:41:825868 ~ Traceback (most recent call last):
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 646, in format_exc
+    debug_server_client(dtime + "\n" + make_colors(msg1, 'lightwhite', 'lightblue'))
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 552, in debug_server_client
+    print(msg)
+OSError: [Errno 9] Bad file descriptor
+
+2020:11:12 19:14:41:866846 ~ Traceback (most recent call last):
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 646, in format_exc
+    debug_server_client(dtime + "\n" + make_colors(msg1, 'lightwhite', 'lightblue'))
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 552, in debug_server_client
+    print(msg)
+OSError: [Errno 9] Bad file descriptor
+
+2020:11:12 19:14:41:908868 ~ Traceback (most recent call last):
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 646, in format_exc
+    debug_server_client(dtime + "\n" + make_colors(msg1, 'lightwhite', 'lightblue'))
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 552, in debug_server_client
+    print(msg)
+OSError: [Errno 9] Bad file descriptor
+
+2020:11:12 19:14:41:949855 ~ Traceback (most recent call last):
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 646, in format_exc
+    debug_server_client(dtime + "\n" + make_colors(msg1, 'lightwhite', 'lightblue'))
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 552, in debug_server_client
+    print(msg)
+OSError: [Errno 9] Bad file descriptor
+
+2020:11:12 19:14:41:996853 ~ Traceback (most recent call last):
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 646, in format_exc
+    debug_server_client(dtime + "\n" + make_colors(msg1, 'lightwhite', 'lightblue'))
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 552, in debug_server_client
+    print(msg)
+OSError: [Errno 9] Bad file descriptor
+
+2020:11:12 19:14:42:043846 ~ Traceback (most recent call last):
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 646, in format_exc
+    debug_server_client(dtime + "\n" + make_colors(msg1, 'lightwhite', 'lightblue'))
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 552, in debug_server_client
+    print(msg)
+OSError: [Errno 9] Bad file descriptor
+
+2020:11:12 19:14:42:086849 ~ Traceback (most recent call last):
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 646, in format_exc
+    debug_server_client(dtime + "\n" + make_colors(msg1, 'lightwhite', 'lightblue'))
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 552, in debug_server_client
+    print(msg)
+OSError: [Errno 9] Bad file descriptor
+
+2020:11:12 19:14:42:136878 ~ Traceback (most recent call last):
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 646, in format_exc
+    debug_server_client(dtime + "\n" + make_colors(msg1, 'lightwhite', 'lightblue'))
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 552, in debug_server_client
+    print(msg)
+OSError: [Errno 9] Bad file descriptor
+
+2020:11:12 19:14:42:183845 ~ Traceback (most recent call last):
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 646, in format_exc
+    debug_server_client(dtime + "\n" + make_colors(msg1, 'lightwhite', 'lightblue'))
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 552, in debug_server_client
+    print(msg)
+OSError: [Errno 9] Bad file descriptor
+
+2020:11:12 19:14:42:225865 ~ Traceback (most recent call last):
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 646, in format_exc
+    debug_server_client(dtime + "\n" + make_colors(msg1, 'lightwhite', 'lightblue'))
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 552, in debug_server_client
+    print(msg)
+OSError: [Errno 9] Bad file descriptor
+
+2020:11:12 19:14:42:266864 ~ Traceback (most recent call last):
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 646, in format_exc
+    debug_server_client(dtime + "\n" + make_colors(msg1, 'lightwhite', 'lightblue'))
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 552, in debug_server_client
+    print(msg)
+OSError: [Errno 9] Bad file descriptor
+
+2020:11:12 19:14:42:314865 ~ Traceback (most recent call last):
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 646, in format_exc
+    debug_server_client(dtime + "\n" + make_colors(msg1, 'lightwhite', 'lightblue'))
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 552, in debug_server_client
+    print(msg)
+OSError: [Errno 9] Bad file descriptor
+
+2020:11:12 19:14:42:367850 ~ Traceback (most recent call last):
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 646, in format_exc
+    debug_server_client(dtime + "\n" + make_colors(msg1, 'lightwhite', 'lightblue'))
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 552, in debug_server_client
+    print(msg)
+OSError: [Errno 9] Bad file descriptor
+
+2020:11:12 19:14:42:413868 ~ Traceback (most recent call last):
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 646, in format_exc
+    debug_server_client(dtime + "\n" + make_colors(msg1, 'lightwhite', 'lightblue'))
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 552, in debug_server_client
+    print(msg)
+OSError: [Errno 9] Bad file descriptor
+
+2020:11:12 19:14:42:487871 ~ Traceback (most recent call last):
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 646, in format_exc
+    debug_server_client(dtime + "\n" + make_colors(msg1, 'lightwhite', 'lightblue'))
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 552, in debug_server_client
+    print(msg)
+OSError: [Errno 9] Bad file descriptor
+
+2020:11:12 19:14:42:564846 ~ Traceback (most recent call last):
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 646, in format_exc
+    debug_server_client(dtime + "\n" + make_colors(msg1, 'lightwhite', 'lightblue'))
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 552, in debug_server_client
+    print(msg)
+OSError: [Errno 9] Bad file descriptor
+
+2020:11:12 19:14:42:613865 ~ Traceback (most recent call last):
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 646, in format_exc
+    debug_server_client(dtime + "\n" + make_colors(msg1, 'lightwhite', 'lightblue'))
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 552, in debug_server_client
+    print(msg)
+OSError: [Errno 9] Bad file descriptor
+
+2020:11:12 19:14:42:666846 ~ Traceback (most recent call last):
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 646, in format_exc
+    debug_server_client(dtime + "\n" + make_colors(msg1, 'lightwhite', 'lightblue'))
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 552, in debug_server_client
+    print(msg)
+OSError: [Errno 9] Bad file descriptor
+
+2020:11:12 19:14:42:722847 ~ Traceback (most recent call last):
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 646, in format_exc
+    debug_server_client(dtime + "\n" + make_colors(msg1, 'lightwhite', 'lightblue'))
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 552, in debug_server_client
+    print(msg)
+OSError: [Errno 9] Bad file descriptor
+
+2020:11:12 19:14:42:773845 ~ Traceback (most recent call last):
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 646, in format_exc
+    debug_server_client(dtime + "\n" + make_colors(msg1, 'lightwhite', 'lightblue'))
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 552, in debug_server_client
+    print(msg)
+OSError: [Errno 9] Bad file descriptor
+
+2020:11:12 19:14:42:822845 ~ Traceback (most recent call last):
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 646, in format_exc
+    debug_server_client(dtime + "\n" + make_colors(msg1, 'lightwhite', 'lightblue'))
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 552, in debug_server_client
+    print(msg)
+OSError: [Errno 9] Bad file descriptor
+
+2020:11:12 19:14:42:869850 ~ Traceback (most recent call last):
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 646, in format_exc
+    debug_server_client(dtime + "\n" + make_colors(msg1, 'lightwhite', 'lightblue'))
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 552, in debug_server_client
+    print(msg)
+OSError: [Errno 9] Bad file descriptor
+
+2020:11:12 19:14:42:919865 ~ Traceback (most recent call last):
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 646, in format_exc
+    debug_server_client(dtime + "\n" + make_colors(msg1, 'lightwhite', 'lightblue'))
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 552, in debug_server_client
+    print(msg)
+OSError: [Errno 9] Bad file descriptor
+
+2020:11:12 19:14:42:968854 ~ Traceback (most recent call last):
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 646, in format_exc
+    debug_server_client(dtime + "\n" + make_colors(msg1, 'lightwhite', 'lightblue'))
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 552, in debug_server_client
+    print(msg)
+OSError: [Errno 9] Bad file descriptor
+
+2020:11:12 19:14:43:038855 ~ Traceback (most recent call last):
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 646, in format_exc
+    debug_server_client(dtime + "\n" + make_colors(msg1, 'lightwhite', 'lightblue'))
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 552, in debug_server_client
+    print(msg)
+OSError: [Errno 9] Bad file descriptor
+
+2020:11:12 19:14:43:091849 ~ Traceback (most recent call last):
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 646, in format_exc
+    debug_server_client(dtime + "\n" + make_colors(msg1, 'lightwhite', 'lightblue'))
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 552, in debug_server_client
+    print(msg)
+OSError: [Errno 9] Bad file descriptor
+
+2020:11:12 19:14:43:140846 ~ Traceback (most recent call last):
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 646, in format_exc
+    debug_server_client(dtime + "\n" + make_colors(msg1, 'lightwhite', 'lightblue'))
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 552, in debug_server_client
+    print(msg)
+OSError: [Errno 9] Bad file descriptor
+
+2020:11:12 19:14:43:195846 ~ Traceback (most recent call last):
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 646, in format_exc
+    debug_server_client(dtime + "\n" + make_colors(msg1, 'lightwhite', 'lightblue'))
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 552, in debug_server_client
+    print(msg)
+OSError: [Errno 9] Bad file descriptor
+
+2020:11:12 19:14:43:249847 ~ Traceback (most recent call last):
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 646, in format_exc
+    debug_server_client(dtime + "\n" + make_colors(msg1, 'lightwhite', 'lightblue'))
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 552, in debug_server_client
+    print(msg)
+OSError: [Errno 9] Bad file descriptor
+
+2020:11:12 19:14:43:301846 ~ Traceback (most recent call last):
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 646, in format_exc
+    debug_server_client(dtime + "\n" + make_colors(msg1, 'lightwhite', 'lightblue'))
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 552, in debug_server_client
+    print(msg)
+OSError: [Errno 9] Bad file descriptor
+
+2020:11:12 19:14:43:349851 ~ Traceback (most recent call last):
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 646, in format_exc
+    debug_server_client(dtime + "\n" + make_colors(msg1, 'lightwhite', 'lightblue'))
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 552, in debug_server_client
+    print(msg)
+OSError: [Errno 9] Bad file descriptor
+
+2020:11:12 19:14:43:397868 ~ Traceback (most recent call last):
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 646, in format_exc
+    debug_server_client(dtime + "\n" + make_colors(msg1, 'lightwhite', 'lightblue'))
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 552, in debug_server_client
+    print(msg)
+OSError: [Errno 9] Bad file descriptor
+
+2020:11:12 19:14:43:451855 ~ Traceback (most recent call last):
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 646, in format_exc
+    debug_server_client(dtime + "\n" + make_colors(msg1, 'lightwhite', 'lightblue'))
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 552, in debug_server_client
+    print(msg)
+OSError: [Errno 9] Bad file descriptor
+
+2020:11:12 19:14:43:519849 ~ Traceback (most recent call last):
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 646, in format_exc
+    debug_server_client(dtime + "\n" + make_colors(msg1, 'lightwhite', 'lightblue'))
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 552, in debug_server_client
+    print(msg)
+OSError: [Errno 9] Bad file descriptor
+
+2020:11:12 19:14:43:579850 ~ Traceback (most recent call last):
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 646, in format_exc
+    debug_server_client(dtime + "\n" + make_colors(msg1, 'lightwhite', 'lightblue'))
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 552, in debug_server_client
+    print(msg)
+OSError: [Errno 9] Bad file descriptor
+
+2020:11:12 19:14:43:632865 ~ Traceback (most recent call last):
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 646, in format_exc
+    debug_server_client(dtime + "\n" + make_colors(msg1, 'lightwhite', 'lightblue'))
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 552, in debug_server_client
+    print(msg)
+OSError: [Errno 9] Bad file descriptor
+
+2020:11:12 19:14:43:682866 ~ Traceback (most recent call last):
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 646, in format_exc
+    debug_server_client(dtime + "\n" + make_colors(msg1, 'lightwhite', 'lightblue'))
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 552, in debug_server_client
+    print(msg)
+OSError: [Errno 9] Bad file descriptor
+
+2020:11:12 19:14:43:740849 ~ Traceback (most recent call last):
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 646, in format_exc
+    debug_server_client(dtime + "\n" + make_colors(msg1, 'lightwhite', 'lightblue'))
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 552, in debug_server_client
+    print(msg)
+OSError: [Errno 9] Bad file descriptor
+
+2020:11:12 19:14:43:806847 ~ Traceback (most recent call last):
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 646, in format_exc
+    debug_server_client(dtime + "\n" + make_colors(msg1, 'lightwhite', 'lightblue'))
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 552, in debug_server_client
+    print(msg)
+OSError: [Errno 9] Bad file descriptor
+
+2020:11:12 19:14:43:865846 ~ Traceback (most recent call last):
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 646, in format_exc
+    debug_server_client(dtime + "\n" + make_colors(msg1, 'lightwhite', 'lightblue'))
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 552, in debug_server_client
+    print(msg)
+OSError: [Errno 9] Bad file descriptor
+
+2020:11:12 19:14:43:915849 ~ Traceback (most recent call last):
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 646, in format_exc
+    debug_server_client(dtime + "\n" + make_colors(msg1, 'lightwhite', 'lightblue'))
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 552, in debug_server_client
+    print(msg)
+OSError: [Errno 9] Bad file descriptor
+
+2020:11:12 19:14:43:969854 ~ Traceback (most recent call last):
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 646, in format_exc
+    debug_server_client(dtime + "\n" + make_colors(msg1, 'lightwhite', 'lightblue'))
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 552, in debug_server_client
+    print(msg)
+OSError: [Errno 9] Bad file descriptor
+
+2020:11:12 19:14:44:039869 ~ Traceback (most recent call last):
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 646, in format_exc
+    debug_server_client(dtime + "\n" + make_colors(msg1, 'lightwhite', 'lightblue'))
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 552, in debug_server_client
+    print(msg)
+OSError: [Errno 9] Bad file descriptor
+
+2020:11:12 19:14:44:091844 ~ Traceback (most recent call last):
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 646, in format_exc
+    debug_server_client(dtime + "\n" + make_colors(msg1, 'lightwhite', 'lightblue'))
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 552, in debug_server_client
+    print(msg)
+OSError: [Errno 9] Bad file descriptor
+
+2020:11:12 19:14:44:146868 ~ Traceback (most recent call last):
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 646, in format_exc
+    debug_server_client(dtime + "\n" + make_colors(msg1, 'lightwhite', 'lightblue'))
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 552, in debug_server_client
+    print(msg)
+OSError: [Errno 9] Bad file descriptor
+
+2020:11:12 19:14:44:199699 ~ Traceback (most recent call last):
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 646, in format_exc
+    debug_server_client(dtime + "\n" + make_colors(msg1, 'lightwhite', 'lightblue'))
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 552, in debug_server_client
+    print(msg)
+OSError: [Errno 9] Bad file descriptor
+
+2020:11:12 19:14:44:262721 ~ Traceback (most recent call last):
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 646, in format_exc
+    debug_server_client(dtime + "\n" + make_colors(msg1, 'lightwhite', 'lightblue'))
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 552, in debug_server_client
+    print(msg)
+OSError: [Errno 9] Bad file descriptor
+
+2020:11:12 19:14:44:317721 ~ Traceback (most recent call last):
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 646, in format_exc
+    debug_server_client(dtime + "\n" + make_colors(msg1, 'lightwhite', 'lightblue'))
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 552, in debug_server_client
+    print(msg)
+OSError: [Errno 9] Bad file descriptor
+
+2020:11:12 19:14:44:370706 ~ Traceback (most recent call last):
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 646, in format_exc
+    debug_server_client(dtime + "\n" + make_colors(msg1, 'lightwhite', 'lightblue'))
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 552, in debug_server_client
+    print(msg)
+OSError: [Errno 9] Bad file descriptor
+
+2020:11:12 19:14:44:423721 ~ Traceback (most recent call last):
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 646, in format_exc
+    debug_server_client(dtime + "\n" + make_colors(msg1, 'lightwhite', 'lightblue'))
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 552, in debug_server_client
+    print(msg)
+OSError: [Errno 9] Bad file descriptor
+
+2020:11:12 19:14:44:479721 ~ Traceback (most recent call last):
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 646, in format_exc
+    debug_server_client(dtime + "\n" + make_colors(msg1, 'lightwhite', 'lightblue'))
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 552, in debug_server_client
+    print(msg)
+OSError: [Errno 9] Bad file descriptor
+
+2020:11:12 19:14:44:550702 ~ Traceback (most recent call last):
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 646, in format_exc
+    debug_server_client(dtime + "\n" + make_colors(msg1, 'lightwhite', 'lightblue'))
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 552, in debug_server_client
+    print(msg)
+OSError: [Errno 9] Bad file descriptor
+
+2020:11:12 19:14:44:606720 ~ Traceback (most recent call last):
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 646, in format_exc
+    debug_server_client(dtime + "\n" + make_colors(msg1, 'lightwhite', 'lightblue'))
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 552, in debug_server_client
+    print(msg)
+OSError: [Errno 9] Bad file descriptor
+
+2020:11:12 19:14:44:669460 ~ Traceback (most recent call last):
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 646, in format_exc
+    debug_server_client(dtime + "\n" + make_colors(msg1, 'lightwhite', 'lightblue'))
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 552, in debug_server_client
+    print(msg)
+OSError: [Errno 9] Bad file descriptor
+
+2020:11:12 19:14:44:724447 ~ Traceback (most recent call last):
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 646, in format_exc
+    debug_server_client(dtime + "\n" + make_colors(msg1, 'lightwhite', 'lightblue'))
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 552, in debug_server_client
+    print(msg)
+OSError: [Errno 9] Bad file descriptor
+
+2020:11:12 19:14:44:788437 ~ Traceback (most recent call last):
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 646, in format_exc
+    debug_server_client(dtime + "\n" + make_colors(msg1, 'lightwhite', 'lightblue'))
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 552, in debug_server_client
+    print(msg)
+OSError: [Errno 9] Bad file descriptor
+
+2020:11:12 19:14:44:853444 ~ Traceback (most recent call last):
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 646, in format_exc
+    debug_server_client(dtime + "\n" + make_colors(msg1, 'lightwhite', 'lightblue'))
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 552, in debug_server_client
+    print(msg)
+OSError: [Errno 9] Bad file descriptor
+
+2020:11:12 19:14:44:917437 ~ Traceback (most recent call last):
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 646, in format_exc
+    debug_server_client(dtime + "\n" + make_colors(msg1, 'lightwhite', 'lightblue'))
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 552, in debug_server_client
+    print(msg)
+OSError: [Errno 9] Bad file descriptor
+
+2020:11:12 19:14:44:976437 ~ Traceback (most recent call last):
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 646, in format_exc
+    debug_server_client(dtime + "\n" + make_colors(msg1, 'lightwhite', 'lightblue'))
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 552, in debug_server_client
+    print(msg)
+OSError: [Errno 9] Bad file descriptor
+
+2020:11:12 19:14:45:044438 ~ Traceback (most recent call last):
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 646, in format_exc
+    debug_server_client(dtime + "\n" + make_colors(msg1, 'lightwhite', 'lightblue'))
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 552, in debug_server_client
+    print(msg)
+OSError: [Errno 9] Bad file descriptor
+
+2020:11:12 19:14:45:102437 ~ Traceback (most recent call last):
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 646, in format_exc
+    debug_server_client(dtime + "\n" + make_colors(msg1, 'lightwhite', 'lightblue'))
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 552, in debug_server_client
+    print(msg)
+OSError: [Errno 9] Bad file descriptor
+
+2020:11:12 19:14:45:162438 ~ Traceback (most recent call last):
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 646, in format_exc
+    debug_server_client(dtime + "\n" + make_colors(msg1, 'lightwhite', 'lightblue'))
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 552, in debug_server_client
+    print(msg)
+OSError: [Errno 9] Bad file descriptor
+
+2020:11:12 19:14:45:223436 ~ Traceback (most recent call last):
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 646, in format_exc
+    debug_server_client(dtime + "\n" + make_colors(msg1, 'lightwhite', 'lightblue'))
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 552, in debug_server_client
+    print(msg)
+OSError: [Errno 9] Bad file descriptor
+
+2020:11:12 19:14:45:284437 ~ Traceback (most recent call last):
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 646, in format_exc
+    debug_server_client(dtime + "\n" + make_colors(msg1, 'lightwhite', 'lightblue'))
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 552, in debug_server_client
+    print(msg)
+OSError: [Errno 9] Bad file descriptor
+
+2020:11:12 19:14:45:352437 ~ Traceback (most recent call last):
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 646, in format_exc
+    debug_server_client(dtime + "\n" + make_colors(msg1, 'lightwhite', 'lightblue'))
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 552, in debug_server_client
+    print(msg)
+OSError: [Errno 9] Bad file descriptor
+
+2020:11:12 19:14:45:410447 ~ Traceback (most recent call last):
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 646, in format_exc
+    debug_server_client(dtime + "\n" + make_colors(msg1, 'lightwhite', 'lightblue'))
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 552, in debug_server_client
+    print(msg)
+OSError: [Errno 9] Bad file descriptor
+
+2020:11:12 19:14:45:467460 ~ Traceback (most recent call last):
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 646, in format_exc
+    debug_server_client(dtime + "\n" + make_colors(msg1, 'lightwhite', 'lightblue'))
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 552, in debug_server_client
+    print(msg)
+OSError: [Errno 9] Bad file descriptor
+
+2020:11:12 19:14:45:549441 ~ Traceback (most recent call last):
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 646, in format_exc
+    debug_server_client(dtime + "\n" + make_colors(msg1, 'lightwhite', 'lightblue'))
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 552, in debug_server_client
+    print(msg)
+OSError: [Errno 9] Bad file descriptor
+
+2020:11:12 19:14:45:616447 ~ Traceback (most recent call last):
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 646, in format_exc
+    debug_server_client(dtime + "\n" + make_colors(msg1, 'lightwhite', 'lightblue'))
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 552, in debug_server_client
+    print(msg)
+OSError: [Errno 9] Bad file descriptor
+
+2020:11:12 19:14:45:918460 ~ Traceback (most recent call last):
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 646, in format_exc
+    debug_server_client(dtime + "\n" + make_colors(msg1, 'lightwhite', 'lightblue'))
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 552, in debug_server_client
+    print(msg)
+OSError: [Errno 9] Bad file descriptor
+
+2020:11:12 19:14:45:989438 ~ Traceback (most recent call last):
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 646, in format_exc
+    debug_server_client(dtime + "\n" + make_colors(msg1, 'lightwhite', 'lightblue'))
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 552, in debug_server_client
+    print(msg)
+OSError: [Errno 9] Bad file descriptor
+
+2020:11:12 19:14:46:070458 ~ Traceback (most recent call last):
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 646, in format_exc
+    debug_server_client(dtime + "\n" + make_colors(msg1, 'lightwhite', 'lightblue'))
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 552, in debug_server_client
+    print(msg)
+OSError: [Errno 9] Bad file descriptor
+
+2020:11:12 19:14:46:137439 ~ Traceback (most recent call last):
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 646, in format_exc
+    debug_server_client(dtime + "\n" + make_colors(msg1, 'lightwhite', 'lightblue'))
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 552, in debug_server_client
+    print(msg)
+OSError: [Errno 9] Bad file descriptor
+
+2020:11:12 19:14:46:201460 ~ Traceback (most recent call last):
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 646, in format_exc
+    debug_server_client(dtime + "\n" + make_colors(msg1, 'lightwhite', 'lightblue'))
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 552, in debug_server_client
+    print(msg)
+OSError: [Errno 9] Bad file descriptor
+
+2020:11:12 19:14:46:265460 ~ Traceback (most recent call last):
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 646, in format_exc
+    debug_server_client(dtime + "\n" + make_colors(msg1, 'lightwhite', 'lightblue'))
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 552, in debug_server_client
+    print(msg)
+OSError: [Errno 9] Bad file descriptor
+
+2020:11:12 19:14:46:329447 ~ Traceback (most recent call last):
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 646, in format_exc
+    debug_server_client(dtime + "\n" + make_colors(msg1, 'lightwhite', 'lightblue'))
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 552, in debug_server_client
+    print(msg)
+OSError: [Errno 9] Bad file descriptor
+
+2020:11:12 19:14:46:399462 ~ Traceback (most recent call last):
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 646, in format_exc
+    debug_server_client(dtime + "\n" + make_colors(msg1, 'lightwhite', 'lightblue'))
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 552, in debug_server_client
+    print(msg)
+OSError: [Errno 9] Bad file descriptor
+
+2020:11:12 19:14:46:463447 ~ Traceback (most recent call last):
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 646, in format_exc
+    debug_server_client(dtime + "\n" + make_colors(msg1, 'lightwhite', 'lightblue'))
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 552, in debug_server_client
+    print(msg)
+OSError: [Errno 9] Bad file descriptor
+
+2020:11:12 19:14:46:544438 ~ Traceback (most recent call last):
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 646, in format_exc
+    debug_server_client(dtime + "\n" + make_colors(msg1, 'lightwhite', 'lightblue'))
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 552, in debug_server_client
+    print(msg)
+OSError: [Errno 9] Bad file descriptor
+
+2020:11:12 19:14:46:618437 ~ Traceback (most recent call last):
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 646, in format_exc
+    debug_server_client(dtime + "\n" + make_colors(msg1, 'lightwhite', 'lightblue'))
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 552, in debug_server_client
+    print(msg)
+OSError: [Errno 9] Bad file descriptor
+
+2020:11:12 19:14:46:684445 ~ Traceback (most recent call last):
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 646, in format_exc
+    debug_server_client(dtime + "\n" + make_colors(msg1, 'lightwhite', 'lightblue'))
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 552, in debug_server_client
+    print(msg)
+OSError: [Errno 9] Bad file descriptor
+
+2020:11:12 19:14:46:749440 ~ Traceback (most recent call last):
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 646, in format_exc
+    debug_server_client(dtime + "\n" + make_colors(msg1, 'lightwhite', 'lightblue'))
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 552, in debug_server_client
+    print(msg)
+OSError: [Errno 9] Bad file descriptor
+
+2020:11:12 19:14:46:823438 ~ Traceback (most recent call last):
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 646, in format_exc
+    debug_server_client(dtime + "\n" + make_colors(msg1, 'lightwhite', 'lightblue'))
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 552, in debug_server_client
+    print(msg)
+OSError: [Errno 9] Bad file descriptor
+
+2020:11:12 19:14:46:892439 ~ Traceback (most recent call last):
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 646, in format_exc
+    debug_server_client(dtime + "\n" + make_colors(msg1, 'lightwhite', 'lightblue'))
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 552, in debug_server_client
+    print(msg)
+OSError: [Errno 9] Bad file descriptor
+
+2020:11:12 19:14:46:961461 ~ Traceback (most recent call last):
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 646, in format_exc
+    debug_server_client(dtime + "\n" + make_colors(msg1, 'lightwhite', 'lightblue'))
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 552, in debug_server_client
+    print(msg)
+OSError: [Errno 9] Bad file descriptor
+
+2020:11:12 19:14:47:036441 ~ Traceback (most recent call last):
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 646, in format_exc
+    debug_server_client(dtime + "\n" + make_colors(msg1, 'lightwhite', 'lightblue'))
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 552, in debug_server_client
+    print(msg)
+OSError: [Errno 9] Bad file descriptor
+
+2020:11:12 19:14:47:116437 ~ Traceback (most recent call last):
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 646, in format_exc
+    debug_server_client(dtime + "\n" + make_colors(msg1, 'lightwhite', 'lightblue'))
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 552, in debug_server_client
+    print(msg)
+OSError: [Errno 9] Bad file descriptor
+
+2020:11:12 19:14:47:186446 ~ Traceback (most recent call last):
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 646, in format_exc
+    debug_server_client(dtime + "\n" + make_colors(msg1, 'lightwhite', 'lightblue'))
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 552, in debug_server_client
+    print(msg)
+OSError: [Errno 9] Bad file descriptor
+
+2020:11:12 19:14:47:253446 ~ Traceback (most recent call last):
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 646, in format_exc
+    debug_server_client(dtime + "\n" + make_colors(msg1, 'lightwhite', 'lightblue'))
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 552, in debug_server_client
+    print(msg)
+OSError: [Errno 9] Bad file descriptor
+
+2020:11:12 19:14:47:329462 ~ Traceback (most recent call last):
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 646, in format_exc
+    debug_server_client(dtime + "\n" + make_colors(msg1, 'lightwhite', 'lightblue'))
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 552, in debug_server_client
+    print(msg)
+OSError: [Errno 9] Bad file descriptor
+
+2020:11:12 19:14:47:403442 ~ Traceback (most recent call last):
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 646, in format_exc
+    debug_server_client(dtime + "\n" + make_colors(msg1, 'lightwhite', 'lightblue'))
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 552, in debug_server_client
+    print(msg)
+OSError: [Errno 9] Bad file descriptor
+
+2020:11:12 19:14:47:479438 ~ Traceback (most recent call last):
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 646, in format_exc
+    debug_server_client(dtime + "\n" + make_colors(msg1, 'lightwhite', 'lightblue'))
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 552, in debug_server_client
+    print(msg)
+OSError: [Errno 9] Bad file descriptor
+
+2020:11:12 19:14:47:566461 ~ Traceback (most recent call last):
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 646, in format_exc
+    debug_server_client(dtime + "\n" + make_colors(msg1, 'lightwhite', 'lightblue'))
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 552, in debug_server_client
+    print(msg)
+OSError: [Errno 9] Bad file descriptor
+
+2020:11:12 19:14:47:634445 ~ Traceback (most recent call last):
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 646, in format_exc
+    debug_server_client(dtime + "\n" + make_colors(msg1, 'lightwhite', 'lightblue'))
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 552, in debug_server_client
+    print(msg)
+OSError: [Errno 9] Bad file descriptor
+
+2020:11:12 19:14:47:706460 ~ Traceback (most recent call last):
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 646, in format_exc
+    debug_server_client(dtime + "\n" + make_colors(msg1, 'lightwhite', 'lightblue'))
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 552, in debug_server_client
+    print(msg)
+OSError: [Errno 9] Bad file descriptor
+
+2020:11:12 19:14:47:777444 ~ Traceback (most recent call last):
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 646, in format_exc
+    debug_server_client(dtime + "\n" + make_colors(msg1, 'lightwhite', 'lightblue'))
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 552, in debug_server_client
+    print(msg)
+OSError: [Errno 9] Bad file descriptor
+
+2020:11:12 19:14:47:857447 ~ Traceback (most recent call last):
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 646, in format_exc
+    debug_server_client(dtime + "\n" + make_colors(msg1, 'lightwhite', 'lightblue'))
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 552, in debug_server_client
+    print(msg)
+OSError: [Errno 9] Bad file descriptor
+
+2020:11:12 19:14:47:926446 ~ Traceback (most recent call last):
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 646, in format_exc
+    debug_server_client(dtime + "\n" + make_colors(msg1, 'lightwhite', 'lightblue'))
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 552, in debug_server_client
+    print(msg)
+OSError: [Errno 9] Bad file descriptor
+
+2020:11:12 19:14:48:009452 ~ Traceback (most recent call last):
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 646, in format_exc
+    debug_server_client(dtime + "\n" + make_colors(msg1, 'lightwhite', 'lightblue'))
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 552, in debug_server_client
+    print(msg)
+OSError: [Errno 9] Bad file descriptor
+
+2020:11:12 19:14:48:081460 ~ Traceback (most recent call last):
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 646, in format_exc
+    debug_server_client(dtime + "\n" + make_colors(msg1, 'lightwhite', 'lightblue'))
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 552, in debug_server_client
+    print(msg)
+OSError: [Errno 9] Bad file descriptor
+
+2020:11:12 19:14:48:159448 ~ Traceback (most recent call last):
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 646, in format_exc
+    debug_server_client(dtime + "\n" + make_colors(msg1, 'lightwhite', 'lightblue'))
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 552, in debug_server_client
+    print(msg)
+OSError: [Errno 9] Bad file descriptor
+
+2020:11:12 19:14:48:238460 ~ Traceback (most recent call last):
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 646, in format_exc
+    debug_server_client(dtime + "\n" + make_colors(msg1, 'lightwhite', 'lightblue'))
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 552, in debug_server_client
+    print(msg)
+OSError: [Errno 9] Bad file descriptor
+
+2020:11:12 19:14:48:314444 ~ Traceback (most recent call last):
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 646, in format_exc
+    debug_server_client(dtime + "\n" + make_colors(msg1, 'lightwhite', 'lightblue'))
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 552, in debug_server_client
+    print(msg)
+OSError: [Errno 9] Bad file descriptor
+
+2020:11:12 19:14:48:391447 ~ Traceback (most recent call last):
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 646, in format_exc
+    debug_server_client(dtime + "\n" + make_colors(msg1, 'lightwhite', 'lightblue'))
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 552, in debug_server_client
+    print(msg)
+OSError: [Errno 9] Bad file descriptor
+
+2020:11:12 19:14:48:463461 ~ Traceback (most recent call last):
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 646, in format_exc
+    debug_server_client(dtime + "\n" + make_colors(msg1, 'lightwhite', 'lightblue'))
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 552, in debug_server_client
+    print(msg)
+OSError: [Errno 9] Bad file descriptor
+
+2020:11:12 19:14:48:568439 ~ Traceback (most recent call last):
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 646, in format_exc
+    debug_server_client(dtime + "\n" + make_colors(msg1, 'lightwhite', 'lightblue'))
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 552, in debug_server_client
+    print(msg)
+OSError: [Errno 9] Bad file descriptor
+
+2020:11:12 19:14:48:616438 ~ Traceback (most recent call last):
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 646, in format_exc
+    debug_server_client(dtime + "\n" + make_colors(msg1, 'lightwhite', 'lightblue'))
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 552, in debug_server_client
+    print(msg)
+OSError: [Errno 9] Bad file descriptor
+
+2020:11:12 19:14:48:687440 ~ Traceback (most recent call last):
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 646, in format_exc
+    debug_server_client(dtime + "\n" + make_colors(msg1, 'lightwhite', 'lightblue'))
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 552, in debug_server_client
+    print(msg)
+OSError: [Errno 9] Bad file descriptor
+
+2020:11:12 19:14:48:760437 ~ Traceback (most recent call last):
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 646, in format_exc
+    debug_server_client(dtime + "\n" + make_colors(msg1, 'lightwhite', 'lightblue'))
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 552, in debug_server_client
+    print(msg)
+OSError: [Errno 9] Bad file descriptor
+
+2020:11:12 19:14:48:842438 ~ Traceback (most recent call last):
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 646, in format_exc
+    debug_server_client(dtime + "\n" + make_colors(msg1, 'lightwhite', 'lightblue'))
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 552, in debug_server_client
+    print(msg)
+OSError: [Errno 9] Bad file descriptor
+
+2020:11:12 19:14:48:919448 ~ Traceback (most recent call last):
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 646, in format_exc
+    debug_server_client(dtime + "\n" + make_colors(msg1, 'lightwhite', 'lightblue'))
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 552, in debug_server_client
+    print(msg)
+OSError: [Errno 9] Bad file descriptor
+
+2020:11:12 19:14:48:992460 ~ Traceback (most recent call last):
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 646, in format_exc
+    debug_server_client(dtime + "\n" + make_colors(msg1, 'lightwhite', 'lightblue'))
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 552, in debug_server_client
+    print(msg)
+OSError: [Errno 9] Bad file descriptor
+
+2020:11:12 19:14:49:090458 ~ Traceback (most recent call last):
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 646, in format_exc
+    debug_server_client(dtime + "\n" + make_colors(msg1, 'lightwhite', 'lightblue'))
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 552, in debug_server_client
+    print(msg)
+OSError: [Errno 9] Bad file descriptor
+
+2020:11:12 19:14:49:164451 ~ Traceback (most recent call last):
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 646, in format_exc
+    debug_server_client(dtime + "\n" + make_colors(msg1, 'lightwhite', 'lightblue'))
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 552, in debug_server_client
+    print(msg)
+OSError: [Errno 9] Bad file descriptor
+
+2020:11:12 19:14:49:246458 ~ Traceback (most recent call last):
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 646, in format_exc
+    debug_server_client(dtime + "\n" + make_colors(msg1, 'lightwhite', 'lightblue'))
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 552, in debug_server_client
+    print(msg)
+OSError: [Errno 9] Bad file descriptor
+
+2020:11:12 19:14:49:330457 ~ Traceback (most recent call last):
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 646, in format_exc
+    debug_server_client(dtime + "\n" + make_colors(msg1, 'lightwhite', 'lightblue'))
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 552, in debug_server_client
+    print(msg)
+OSError: [Errno 9] Bad file descriptor
+
+2020:11:12 19:14:49:408445 ~ Traceback (most recent call last):
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 646, in format_exc
+    debug_server_client(dtime + "\n" + make_colors(msg1, 'lightwhite', 'lightblue'))
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 552, in debug_server_client
+    print(msg)
+OSError: [Errno 9] Bad file descriptor
+
+2020:11:12 19:14:49:490444 ~ Traceback (most recent call last):
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 646, in format_exc
+    debug_server_client(dtime + "\n" + make_colors(msg1, 'lightwhite', 'lightblue'))
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 552, in debug_server_client
+    print(msg)
+OSError: [Errno 9] Bad file descriptor
+
+2020:11:12 19:14:49:604461 ~ Traceback (most recent call last):
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 646, in format_exc
+    debug_server_client(dtime + "\n" + make_colors(msg1, 'lightwhite', 'lightblue'))
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 552, in debug_server_client
+    print(msg)
+OSError: [Errno 9] Bad file descriptor
+
+2020:11:12 19:14:49:680461 ~ Traceback (most recent call last):
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 646, in format_exc
+    debug_server_client(dtime + "\n" + make_colors(msg1, 'lightwhite', 'lightblue'))
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 552, in debug_server_client
+    print(msg)
+OSError: [Errno 9] Bad file descriptor
+
+2020:11:12 19:14:49:758447 ~ Traceback (most recent call last):
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 646, in format_exc
+    debug_server_client(dtime + "\n" + make_colors(msg1, 'lightwhite', 'lightblue'))
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 552, in debug_server_client
+    print(msg)
+OSError: [Errno 9] Bad file descriptor
+
+2020:11:12 19:14:49:841437 ~ Traceback (most recent call last):
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 646, in format_exc
+    debug_server_client(dtime + "\n" + make_colors(msg1, 'lightwhite', 'lightblue'))
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 552, in debug_server_client
+    print(msg)
+OSError: [Errno 9] Bad file descriptor
+
+2020:11:12 19:14:49:922461 ~ Traceback (most recent call last):
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 646, in format_exc
+    debug_server_client(dtime + "\n" + make_colors(msg1, 'lightwhite', 'lightblue'))
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 552, in debug_server_client
+    print(msg)
+OSError: [Errno 9] Bad file descriptor
+
+2020:11:12 19:14:50:029440 ~ Traceback (most recent call last):
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 646, in format_exc
+    debug_server_client(dtime + "\n" + make_colors(msg1, 'lightwhite', 'lightblue'))
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 552, in debug_server_client
+    print(msg)
+OSError: [Errno 9] Bad file descriptor
+
+2020:11:12 19:14:50:117460 ~ Traceback (most recent call last):
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 646, in format_exc
+    debug_server_client(dtime + "\n" + make_colors(msg1, 'lightwhite', 'lightblue'))
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 552, in debug_server_client
+    print(msg)
+OSError: [Errno 9] Bad file descriptor
+
+2020:11:12 19:14:50:197437 ~ Traceback (most recent call last):
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 646, in format_exc
+    debug_server_client(dtime + "\n" + make_colors(msg1, 'lightwhite', 'lightblue'))
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 552, in debug_server_client
+    print(msg)
+OSError: [Errno 9] Bad file descriptor
+
+2020:11:12 19:14:50:276439 ~ Traceback (most recent call last):
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 646, in format_exc
+    debug_server_client(dtime + "\n" + make_colors(msg1, 'lightwhite', 'lightblue'))
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 552, in debug_server_client
+    print(msg)
+OSError: [Errno 9] Bad file descriptor
+
+2020:11:12 19:14:50:374440 ~ Traceback (most recent call last):
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 646, in format_exc
+    debug_server_client(dtime + "\n" + make_colors(msg1, 'lightwhite', 'lightblue'))
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 552, in debug_server_client
+    print(msg)
+OSError: [Errno 9] Bad file descriptor
+
+2020:11:12 19:14:50:458457 ~ Traceback (most recent call last):
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 646, in format_exc
+    debug_server_client(dtime + "\n" + make_colors(msg1, 'lightwhite', 'lightblue'))
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 552, in debug_server_client
+    print(msg)
+OSError: [Errno 9] Bad file descriptor
+
+2020:11:12 19:14:50:564438 ~ Traceback (most recent call last):
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 646, in format_exc
+    debug_server_client(dtime + "\n" + make_colors(msg1, 'lightwhite', 'lightblue'))
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 552, in debug_server_client
+    print(msg)
+OSError: [Errno 9] Bad file descriptor
+
+2020:11:12 19:14:50:650439 ~ Traceback (most recent call last):
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 646, in format_exc
+    debug_server_client(dtime + "\n" + make_colors(msg1, 'lightwhite', 'lightblue'))
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 552, in debug_server_client
+    print(msg)
+OSError: [Errno 9] Bad file descriptor
+
+2020:11:12 19:14:50:730439 ~ Traceback (most recent call last):
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 646, in format_exc
+    debug_server_client(dtime + "\n" + make_colors(msg1, 'lightwhite', 'lightblue'))
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 552, in debug_server_client
+    print(msg)
+OSError: [Errno 9] Bad file descriptor
+
+2020:11:12 19:14:50:820457 ~ Traceback (most recent call last):
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 646, in format_exc
+    debug_server_client(dtime + "\n" + make_colors(msg1, 'lightwhite', 'lightblue'))
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 552, in debug_server_client
+    print(msg)
+OSError: [Errno 9] Bad file descriptor
+
+2020:11:12 19:14:50:905439 ~ Traceback (most recent call last):
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 646, in format_exc
+    debug_server_client(dtime + "\n" + make_colors(msg1, 'lightwhite', 'lightblue'))
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 552, in debug_server_client
+    print(msg)
+OSError: [Errno 9] Bad file descriptor
+
+2020:11:12 19:14:50:992460 ~ Traceback (most recent call last):
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 646, in format_exc
+    debug_server_client(dtime + "\n" + make_colors(msg1, 'lightwhite', 'lightblue'))
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 552, in debug_server_client
+    print(msg)
+OSError: [Errno 9] Bad file descriptor
+
+2020:11:12 19:14:51:098447 ~ Traceback (most recent call last):
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 646, in format_exc
+    debug_server_client(dtime + "\n" + make_colors(msg1, 'lightwhite', 'lightblue'))
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 552, in debug_server_client
+    print(msg)
+OSError: [Errno 9] Bad file descriptor
+
+2020:11:12 19:14:51:185443 ~ Traceback (most recent call last):
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 646, in format_exc
+    debug_server_client(dtime + "\n" + make_colors(msg1, 'lightwhite', 'lightblue'))
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 552, in debug_server_client
+    print(msg)
+OSError: [Errno 9] Bad file descriptor
+
+2020:11:12 19:14:51:270461 ~ Traceback (most recent call last):
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 646, in format_exc
+    debug_server_client(dtime + "\n" + make_colors(msg1, 'lightwhite', 'lightblue'))
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 552, in debug_server_client
+    print(msg)
+OSError: [Errno 9] Bad file descriptor
+
+2020:11:12 19:14:51:352443 ~ Traceback (most recent call last):
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 646, in format_exc
+    debug_server_client(dtime + "\n" + make_colors(msg1, 'lightwhite', 'lightblue'))
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 552, in debug_server_client
+    print(msg)
+OSError: [Errno 9] Bad file descriptor
+
+2020:11:12 19:14:51:455437 ~ Traceback (most recent call last):
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 646, in format_exc
+    debug_server_client(dtime + "\n" + make_colors(msg1, 'lightwhite', 'lightblue'))
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 552, in debug_server_client
+    print(msg)
+OSError: [Errno 9] Bad file descriptor
+
+2020:11:12 19:14:51:565443 ~ Traceback (most recent call last):
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 646, in format_exc
+    debug_server_client(dtime + "\n" + make_colors(msg1, 'lightwhite', 'lightblue'))
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 552, in debug_server_client
+    print(msg)
+OSError: [Errno 9] Bad file descriptor
+
+2020:11:12 19:14:51:649461 ~ Traceback (most recent call last):
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 646, in format_exc
+    debug_server_client(dtime + "\n" + make_colors(msg1, 'lightwhite', 'lightblue'))
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 552, in debug_server_client
+    print(msg)
+OSError: [Errno 9] Bad file descriptor
+
+2020:11:12 19:14:51:741446 ~ Traceback (most recent call last):
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 646, in format_exc
+    debug_server_client(dtime + "\n" + make_colors(msg1, 'lightwhite', 'lightblue'))
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 552, in debug_server_client
+    print(msg)
+OSError: [Errno 9] Bad file descriptor
+
+2020:11:12 19:14:51:833461 ~ Traceback (most recent call last):
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 646, in format_exc
+    debug_server_client(dtime + "\n" + make_colors(msg1, 'lightwhite', 'lightblue'))
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 552, in debug_server_client
+    print(msg)
+OSError: [Errno 9] Bad file descriptor
+
+2020:11:12 19:14:51:918461 ~ Traceback (most recent call last):
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 646, in format_exc
+    debug_server_client(dtime + "\n" + make_colors(msg1, 'lightwhite', 'lightblue'))
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 552, in debug_server_client
+    print(msg)
+OSError: [Errno 9] Bad file descriptor
+
+2020:11:12 19:14:52:022445 ~ Traceback (most recent call last):
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 646, in format_exc
+    debug_server_client(dtime + "\n" + make_colors(msg1, 'lightwhite', 'lightblue'))
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 552, in debug_server_client
+    print(msg)
+OSError: [Errno 9] Bad file descriptor
+
+2020:11:12 19:14:52:121462 ~ Traceback (most recent call last):
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 646, in format_exc
+    debug_server_client(dtime + "\n" + make_colors(msg1, 'lightwhite', 'lightblue'))
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 552, in debug_server_client
+    print(msg)
+OSError: [Errno 9] Bad file descriptor
+
+2020:11:12 19:14:52:211437 ~ Traceback (most recent call last):
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 646, in format_exc
+    debug_server_client(dtime + "\n" + make_colors(msg1, 'lightwhite', 'lightblue'))
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 552, in debug_server_client
+    print(msg)
+OSError: [Errno 9] Bad file descriptor
+
+2020:11:12 19:14:52:303443 ~ Traceback (most recent call last):
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 646, in format_exc
+    debug_server_client(dtime + "\n" + make_colors(msg1, 'lightwhite', 'lightblue'))
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 552, in debug_server_client
+    print(msg)
+OSError: [Errno 9] Bad file descriptor
+
+2020:11:12 19:14:52:389461 ~ Traceback (most recent call last):
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 646, in format_exc
+    debug_server_client(dtime + "\n" + make_colors(msg1, 'lightwhite', 'lightblue'))
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 552, in debug_server_client
+    print(msg)
+OSError: [Errno 9] Bad file descriptor
+
+2020:11:12 19:14:52:483439 ~ Traceback (most recent call last):
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 646, in format_exc
+    debug_server_client(dtime + "\n" + make_colors(msg1, 'lightwhite', 'lightblue'))
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 552, in debug_server_client
+    print(msg)
+OSError: [Errno 9] Bad file descriptor
+
+2020:11:12 19:14:52:610437 ~ Traceback (most recent call last):
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 646, in format_exc
+    debug_server_client(dtime + "\n" + make_colors(msg1, 'lightwhite', 'lightblue'))
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 552, in debug_server_client
+    print(msg)
+OSError: [Errno 9] Bad file descriptor
+
+2020:11:12 19:14:52:696439 ~ Traceback (most recent call last):
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 646, in format_exc
+    debug_server_client(dtime + "\n" + make_colors(msg1, 'lightwhite', 'lightblue'))
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 552, in debug_server_client
+    print(msg)
+OSError: [Errno 9] Bad file descriptor
+
+2020:11:12 19:14:52:797446 ~ Traceback (most recent call last):
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 646, in format_exc
+    debug_server_client(dtime + "\n" + make_colors(msg1, 'lightwhite', 'lightblue'))
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 552, in debug_server_client
+    print(msg)
+OSError: [Errno 9] Bad file descriptor
+
+2020:11:12 19:14:52:886439 ~ Traceback (most recent call last):
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 646, in format_exc
+    debug_server_client(dtime + "\n" + make_colors(msg1, 'lightwhite', 'lightblue'))
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 552, in debug_server_client
+    print(msg)
+OSError: [Errno 9] Bad file descriptor
+
+2020:11:12 19:14:52:980438 ~ Traceback (most recent call last):
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 646, in format_exc
+    debug_server_client(dtime + "\n" + make_colors(msg1, 'lightwhite', 'lightblue'))
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 552, in debug_server_client
+    print(msg)
+OSError: [Errno 9] Bad file descriptor
+
+2020:11:12 19:14:53:094442 ~ Traceback (most recent call last):
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 646, in format_exc
+    debug_server_client(dtime + "\n" + make_colors(msg1, 'lightwhite', 'lightblue'))
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 552, in debug_server_client
+    print(msg)
+OSError: [Errno 9] Bad file descriptor
+
+2020:11:12 19:14:53:214446 ~ Traceback (most recent call last):
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 646, in format_exc
+    debug_server_client(dtime + "\n" + make_colors(msg1, 'lightwhite', 'lightblue'))
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 552, in debug_server_client
+    print(msg)
+OSError: [Errno 9] Bad file descriptor
+
+2020:11:12 19:14:53:313439 ~ Traceback (most recent call last):
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 646, in format_exc
+    debug_server_client(dtime + "\n" + make_colors(msg1, 'lightwhite', 'lightblue'))
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 552, in debug_server_client
+    print(msg)
+OSError: [Errno 9] Bad file descriptor
+
+2020:11:12 19:14:53:401460 ~ Traceback (most recent call last):
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 646, in format_exc
+    debug_server_client(dtime + "\n" + make_colors(msg1, 'lightwhite', 'lightblue'))
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 552, in debug_server_client
+    print(msg)
+OSError: [Errno 9] Bad file descriptor
+
+2020:11:12 19:14:53:491460 ~ Traceback (most recent call last):
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 646, in format_exc
+    debug_server_client(dtime + "\n" + make_colors(msg1, 'lightwhite', 'lightblue'))
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 552, in debug_server_client
+    print(msg)
+OSError: [Errno 9] Bad file descriptor
+
+2020:11:12 19:14:53:620447 ~ Traceback (most recent call last):
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 646, in format_exc
+    debug_server_client(dtime + "\n" + make_colors(msg1, 'lightwhite', 'lightblue'))
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 552, in debug_server_client
+    print(msg)
+OSError: [Errno 9] Bad file descriptor
+
+2020:11:12 19:14:53:718460 ~ Traceback (most recent call last):
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 646, in format_exc
+    debug_server_client(dtime + "\n" + make_colors(msg1, 'lightwhite', 'lightblue'))
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 552, in debug_server_client
+    print(msg)
+OSError: [Errno 9] Bad file descriptor
+
+2020:11:12 19:14:53:831446 ~ Traceback (most recent call last):
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 646, in format_exc
+    debug_server_client(dtime + "\n" + make_colors(msg1, 'lightwhite', 'lightblue'))
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 552, in debug_server_client
+    print(msg)
+OSError: [Errno 9] Bad file descriptor
+
+2020:11:12 19:14:53:922447 ~ Traceback (most recent call last):
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 646, in format_exc
+    debug_server_client(dtime + "\n" + make_colors(msg1, 'lightwhite', 'lightblue'))
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 552, in debug_server_client
+    print(msg)
+OSError: [Errno 9] Bad file descriptor
+
+2020:11:12 19:14:54:025441 ~ Traceback (most recent call last):
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 646, in format_exc
+    debug_server_client(dtime + "\n" + make_colors(msg1, 'lightwhite', 'lightblue'))
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 552, in debug_server_client
+    print(msg)
+OSError: [Errno 9] Bad file descriptor
+
+2020:11:12 19:14:54:121462 ~ Traceback (most recent call last):
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 646, in format_exc
+    debug_server_client(dtime + "\n" + make_colors(msg1, 'lightwhite', 'lightblue'))
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 552, in debug_server_client
+    print(msg)
+OSError: [Errno 9] Bad file descriptor
+
+2020:11:12 19:14:54:218439 ~ Traceback (most recent call last):
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 646, in format_exc
+    debug_server_client(dtime + "\n" + make_colors(msg1, 'lightwhite', 'lightblue'))
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 552, in debug_server_client
+    print(msg)
+OSError: [Errno 9] Bad file descriptor
+
+2020:11:12 19:14:54:310460 ~ Traceback (most recent call last):
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 646, in format_exc
+    debug_server_client(dtime + "\n" + make_colors(msg1, 'lightwhite', 'lightblue'))
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 552, in debug_server_client
+    print(msg)
+OSError: [Errno 9] Bad file descriptor
+
+2020:11:12 19:14:54:411461 ~ Traceback (most recent call last):
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 646, in format_exc
+    debug_server_client(dtime + "\n" + make_colors(msg1, 'lightwhite', 'lightblue'))
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 552, in debug_server_client
+    print(msg)
+OSError: [Errno 9] Bad file descriptor
+
+2020:11:12 19:14:54:517439 ~ Traceback (most recent call last):
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 646, in format_exc
+    debug_server_client(dtime + "\n" + make_colors(msg1, 'lightwhite', 'lightblue'))
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 552, in debug_server_client
+    print(msg)
+OSError: [Errno 9] Bad file descriptor
+
+2020:11:12 19:14:54:616438 ~ Traceback (most recent call last):
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 646, in format_exc
+    debug_server_client(dtime + "\n" + make_colors(msg1, 'lightwhite', 'lightblue'))
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 552, in debug_server_client
+    print(msg)
+OSError: [Errno 9] Bad file descriptor
+
+2020:11:12 19:14:54:729440 ~ Traceback (most recent call last):
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 646, in format_exc
+    debug_server_client(dtime + "\n" + make_colors(msg1, 'lightwhite', 'lightblue'))
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 552, in debug_server_client
+    print(msg)
+OSError: [Errno 9] Bad file descriptor
+
+2020:11:12 19:14:54:836458 ~ Traceback (most recent call last):
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 646, in format_exc
+    debug_server_client(dtime + "\n" + make_colors(msg1, 'lightwhite', 'lightblue'))
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 552, in debug_server_client
+    print(msg)
+OSError: [Errno 9] Bad file descriptor
+
+2020:11:12 19:14:54:937457 ~ Traceback (most recent call last):
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 646, in format_exc
+    debug_server_client(dtime + "\n" + make_colors(msg1, 'lightwhite', 'lightblue'))
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 552, in debug_server_client
+    print(msg)
+OSError: [Errno 9] Bad file descriptor
+
+2020:11:12 19:14:55:060457 ~ Traceback (most recent call last):
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 646, in format_exc
+    debug_server_client(dtime + "\n" + make_colors(msg1, 'lightwhite', 'lightblue'))
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 552, in debug_server_client
+    print(msg)
+OSError: [Errno 9] Bad file descriptor
+
+2020:11:12 19:14:55:158439 ~ Traceback (most recent call last):
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 646, in format_exc
+    debug_server_client(dtime + "\n" + make_colors(msg1, 'lightwhite', 'lightblue'))
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 552, in debug_server_client
+    print(msg)
+OSError: [Errno 9] Bad file descriptor
+
+2020:11:12 19:14:55:257446 ~ Traceback (most recent call last):
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 646, in format_exc
+    debug_server_client(dtime + "\n" + make_colors(msg1, 'lightwhite', 'lightblue'))
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 552, in debug_server_client
+    print(msg)
+OSError: [Errno 9] Bad file descriptor
+
+2020:11:12 19:14:55:360439 ~ Traceback (most recent call last):
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 646, in format_exc
+    debug_server_client(dtime + "\n" + make_colors(msg1, 'lightwhite', 'lightblue'))
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 552, in debug_server_client
+    print(msg)
+OSError: [Errno 9] Bad file descriptor
+
+2020:11:12 19:14:55:466437 ~ Traceback (most recent call last):
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 646, in format_exc
+    debug_server_client(dtime + "\n" + make_colors(msg1, 'lightwhite', 'lightblue'))
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 552, in debug_server_client
+    print(msg)
+OSError: [Errno 9] Bad file descriptor
+
+2020:11:12 19:14:55:587443 ~ Traceback (most recent call last):
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 646, in format_exc
+    debug_server_client(dtime + "\n" + make_colors(msg1, 'lightwhite', 'lightblue'))
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 552, in debug_server_client
+    print(msg)
+OSError: [Errno 9] Bad file descriptor
+
+2020:11:12 19:14:55:686442 ~ Traceback (most recent call last):
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 646, in format_exc
+    debug_server_client(dtime + "\n" + make_colors(msg1, 'lightwhite', 'lightblue'))
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 552, in debug_server_client
+    print(msg)
+OSError: [Errno 9] Bad file descriptor
+
+2020:11:12 19:14:55:806445 ~ Traceback (most recent call last):
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 646, in format_exc
+    debug_server_client(dtime + "\n" + make_colors(msg1, 'lightwhite', 'lightblue'))
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 552, in debug_server_client
+    print(msg)
+OSError: [Errno 9] Bad file descriptor
+
+2020:11:12 19:14:55:910461 ~ Traceback (most recent call last):
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 646, in format_exc
+    debug_server_client(dtime + "\n" + make_colors(msg1, 'lightwhite', 'lightblue'))
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 552, in debug_server_client
+    print(msg)
+OSError: [Errno 9] Bad file descriptor
+
+2020:11:12 19:14:56:025460 ~ Traceback (most recent call last):
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 646, in format_exc
+    debug_server_client(dtime + "\n" + make_colors(msg1, 'lightwhite', 'lightblue'))
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 552, in debug_server_client
+    print(msg)
+OSError: [Errno 9] Bad file descriptor
+
+2020:11:12 19:14:56:131461 ~ Traceback (most recent call last):
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 646, in format_exc
+    debug_server_client(dtime + "\n" + make_colors(msg1, 'lightwhite', 'lightblue'))
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 552, in debug_server_client
+    print(msg)
+OSError: [Errno 9] Bad file descriptor
+
+2020:11:12 19:14:56:234461 ~ Traceback (most recent call last):
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 646, in format_exc
+    debug_server_client(dtime + "\n" + make_colors(msg1, 'lightwhite', 'lightblue'))
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 552, in debug_server_client
+    print(msg)
+OSError: [Errno 9] Bad file descriptor
+
+2020:11:12 19:14:56:345438 ~ Traceback (most recent call last):
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 646, in format_exc
+    debug_server_client(dtime + "\n" + make_colors(msg1, 'lightwhite', 'lightblue'))
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 552, in debug_server_client
+    print(msg)
+OSError: [Errno 9] Bad file descriptor
+
+2020:11:12 19:14:56:445463 ~ Traceback (most recent call last):
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 646, in format_exc
+    debug_server_client(dtime + "\n" + make_colors(msg1, 'lightwhite', 'lightblue'))
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 552, in debug_server_client
+    print(msg)
+OSError: [Errno 9] Bad file descriptor
+
+2020:11:12 19:14:56:573440 ~ Traceback (most recent call last):
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 646, in format_exc
+    debug_server_client(dtime + "\n" + make_colors(msg1, 'lightwhite', 'lightblue'))
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 552, in debug_server_client
+    print(msg)
+OSError: [Errno 9] Bad file descriptor
+
+2020:11:12 19:14:56:675460 ~ Traceback (most recent call last):
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 646, in format_exc
+    debug_server_client(dtime + "\n" + make_colors(msg1, 'lightwhite', 'lightblue'))
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 552, in debug_server_client
+    print(msg)
+OSError: [Errno 9] Bad file descriptor
+
+2020:11:12 19:14:56:778442 ~ Traceback (most recent call last):
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 646, in format_exc
+    debug_server_client(dtime + "\n" + make_colors(msg1, 'lightwhite', 'lightblue'))
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 552, in debug_server_client
+    print(msg)
+OSError: [Errno 9] Bad file descriptor
+
+2020:11:12 19:14:56:897438 ~ Traceback (most recent call last):
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 646, in format_exc
+    debug_server_client(dtime + "\n" + make_colors(msg1, 'lightwhite', 'lightblue'))
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 552, in debug_server_client
+    print(msg)
+OSError: [Errno 9] Bad file descriptor
+
+2020:11:12 19:14:57:027449 ~ Traceback (most recent call last):
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 646, in format_exc
+    debug_server_client(dtime + "\n" + make_colors(msg1, 'lightwhite', 'lightblue'))
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 552, in debug_server_client
+    print(msg)
+OSError: [Errno 9] Bad file descriptor
+
+2020:11:12 19:14:57:132448 ~ Traceback (most recent call last):
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 646, in format_exc
+    debug_server_client(dtime + "\n" + make_colors(msg1, 'lightwhite', 'lightblue'))
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 552, in debug_server_client
+    print(msg)
+OSError: [Errno 9] Bad file descriptor
+
+2020:11:12 19:14:57:231461 ~ Traceback (most recent call last):
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 646, in format_exc
+    debug_server_client(dtime + "\n" + make_colors(msg1, 'lightwhite', 'lightblue'))
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 552, in debug_server_client
+    print(msg)
+OSError: [Errno 9] Bad file descriptor
+
+2020:11:12 19:14:57:339439 ~ Traceback (most recent call last):
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 646, in format_exc
+    debug_server_client(dtime + "\n" + make_colors(msg1, 'lightwhite', 'lightblue'))
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 552, in debug_server_client
+    print(msg)
+OSError: [Errno 9] Bad file descriptor
+
+2020:11:12 19:14:57:451438 ~ Traceback (most recent call last):
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 646, in format_exc
+    debug_server_client(dtime + "\n" + make_colors(msg1, 'lightwhite', 'lightblue'))
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 552, in debug_server_client
+    print(msg)
+OSError: [Errno 9] Bad file descriptor
+
+2020:11:12 19:14:57:597440 ~ Traceback (most recent call last):
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 646, in format_exc
+    debug_server_client(dtime + "\n" + make_colors(msg1, 'lightwhite', 'lightblue'))
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 552, in debug_server_client
+    print(msg)
+OSError: [Errno 9] Bad file descriptor
+
+2020:11:12 19:14:57:704460 ~ Traceback (most recent call last):
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 646, in format_exc
+    debug_server_client(dtime + "\n" + make_colors(msg1, 'lightwhite', 'lightblue'))
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 552, in debug_server_client
+    print(msg)
+OSError: [Errno 9] Bad file descriptor
+
+2020:11:12 19:14:57:817459 ~ Traceback (most recent call last):
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 646, in format_exc
+    debug_server_client(dtime + "\n" + make_colors(msg1, 'lightwhite', 'lightblue'))
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 552, in debug_server_client
+    print(msg)
+OSError: [Errno 9] Bad file descriptor
+
+2020:11:12 19:14:57:926480 ~ Traceback (most recent call last):
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 646, in format_exc
+    debug_server_client(dtime + "\n" + make_colors(msg1, 'lightwhite', 'lightblue'))
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 552, in debug_server_client
+    print(msg)
+OSError: [Errno 9] Bad file descriptor
+
+2020:11:12 19:14:58:079437 ~ Traceback (most recent call last):
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 646, in format_exc
+    debug_server_client(dtime + "\n" + make_colors(msg1, 'lightwhite', 'lightblue'))
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 552, in debug_server_client
+    print(msg)
+OSError: [Errno 9] Bad file descriptor
+
+2020:11:12 19:14:58:189461 ~ Traceback (most recent call last):
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 646, in format_exc
+    debug_server_client(dtime + "\n" + make_colors(msg1, 'lightwhite', 'lightblue'))
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 552, in debug_server_client
+    print(msg)
+OSError: [Errno 9] Bad file descriptor
+
+2020:11:12 19:14:58:347443 ~ Traceback (most recent call last):
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 646, in format_exc
+    debug_server_client(dtime + "\n" + make_colors(msg1, 'lightwhite', 'lightblue'))
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 552, in debug_server_client
+    print(msg)
+OSError: [Errno 9] Bad file descriptor
+
+2020:11:12 19:14:58:555438 ~ Traceback (most recent call last):
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 646, in format_exc
+    debug_server_client(dtime + "\n" + make_colors(msg1, 'lightwhite', 'lightblue'))
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 552, in debug_server_client
+    print(msg)
+OSError: [Errno 9] Bad file descriptor
+
+2020:11:12 19:14:58:664442 ~ Traceback (most recent call last):
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 646, in format_exc
+    debug_server_client(dtime + "\n" + make_colors(msg1, 'lightwhite', 'lightblue'))
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 552, in debug_server_client
+    print(msg)
+OSError: [Errno 9] Bad file descriptor
+
+2020:11:12 19:14:58:770461 ~ Traceback (most recent call last):
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 646, in format_exc
+    debug_server_client(dtime + "\n" + make_colors(msg1, 'lightwhite', 'lightblue'))
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 552, in debug_server_client
+    print(msg)
+OSError: [Errno 9] Bad file descriptor
+
+2020:11:12 19:14:58:889462 ~ Traceback (most recent call last):
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 646, in format_exc
+    debug_server_client(dtime + "\n" + make_colors(msg1, 'lightwhite', 'lightblue'))
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 552, in debug_server_client
+    print(msg)
+OSError: [Errno 9] Bad file descriptor
+
+2020:11:12 19:14:59:148439 ~ Traceback (most recent call last):
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 646, in format_exc
+    debug_server_client(dtime + "\n" + make_colors(msg1, 'lightwhite', 'lightblue'))
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 552, in debug_server_client
+    print(msg)
+OSError: [Errno 9] Bad file descriptor
+
+2020:11:12 19:14:59:289462 ~ Traceback (most recent call last):
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 646, in format_exc
+    debug_server_client(dtime + "\n" + make_colors(msg1, 'lightwhite', 'lightblue'))
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 552, in debug_server_client
+    print(msg)
+OSError: [Errno 9] Bad file descriptor
+
+2020:11:12 19:14:59:399447 ~ Traceback (most recent call last):
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 646, in format_exc
+    debug_server_client(dtime + "\n" + make_colors(msg1, 'lightwhite', 'lightblue'))
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 552, in debug_server_client
+    print(msg)
+OSError: [Errno 9] Bad file descriptor
+
+2020:11:12 19:14:59:542446 ~ Traceback (most recent call last):
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 646, in format_exc
+    debug_server_client(dtime + "\n" + make_colors(msg1, 'lightwhite', 'lightblue'))
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 552, in debug_server_client
+    print(msg)
+OSError: [Errno 9] Bad file descriptor
+
+2020:11:12 19:14:59:670438 ~ Traceback (most recent call last):
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 646, in format_exc
+    debug_server_client(dtime + "\n" + make_colors(msg1, 'lightwhite', 'lightblue'))
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 552, in debug_server_client
+    print(msg)
+OSError: [Errno 9] Bad file descriptor
+
+2020:11:12 19:14:59:783440 ~ Traceback (most recent call last):
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 646, in format_exc
+    debug_server_client(dtime + "\n" + make_colors(msg1, 'lightwhite', 'lightblue'))
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 552, in debug_server_client
+    print(msg)
+OSError: [Errno 9] Bad file descriptor
+
+2020:11:12 19:14:59:899458 ~ Traceback (most recent call last):
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 646, in format_exc
+    debug_server_client(dtime + "\n" + make_colors(msg1, 'lightwhite', 'lightblue'))
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 552, in debug_server_client
+    print(msg)
+OSError: [Errno 9] Bad file descriptor
+
+2020:11:12 19:15:00:068438 ~ Traceback (most recent call last):
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 646, in format_exc
+    debug_server_client(dtime + "\n" + make_colors(msg1, 'lightwhite', 'lightblue'))
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 552, in debug_server_client
+    print(msg)
+OSError: [Errno 9] Bad file descriptor
+
+2020:11:12 19:15:00:260441 ~ Traceback (most recent call last):
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 646, in format_exc
+    debug_server_client(dtime + "\n" + make_colors(msg1, 'lightwhite', 'lightblue'))
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 552, in debug_server_client
+    print(msg)
+OSError: [Errno 9] Bad file descriptor
+
+2020:11:12 19:15:00:386463 ~ Traceback (most recent call last):
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 646, in format_exc
+    debug_server_client(dtime + "\n" + make_colors(msg1, 'lightwhite', 'lightblue'))
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 552, in debug_server_client
+    print(msg)
+OSError: [Errno 9] Bad file descriptor
+
+2020:11:12 19:15:00:528442 ~ Traceback (most recent call last):
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 646, in format_exc
+    debug_server_client(dtime + "\n" + make_colors(msg1, 'lightwhite', 'lightblue'))
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 552, in debug_server_client
+    print(msg)
+OSError: [Errno 9] Bad file descriptor
+
+2020:11:12 19:15:00:654441 ~ Traceback (most recent call last):
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 646, in format_exc
+    debug_server_client(dtime + "\n" + make_colors(msg1, 'lightwhite', 'lightblue'))
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 552, in debug_server_client
+    print(msg)
+OSError: [Errno 9] Bad file descriptor
+
+2020:11:12 19:15:00:793447 ~ Traceback (most recent call last):
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 646, in format_exc
+    debug_server_client(dtime + "\n" + make_colors(msg1, 'lightwhite', 'lightblue'))
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 552, in debug_server_client
+    print(msg)
+OSError: [Errno 9] Bad file descriptor
+
+2020:11:12 19:15:00:908446 ~ Traceback (most recent call last):
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 646, in format_exc
+    debug_server_client(dtime + "\n" + make_colors(msg1, 'lightwhite', 'lightblue'))
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 552, in debug_server_client
+    print(msg)
+OSError: [Errno 9] Bad file descriptor
+
+2020:11:12 19:15:01:034451 ~ Traceback (most recent call last):
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 646, in format_exc
+    debug_server_client(dtime + "\n" + make_colors(msg1, 'lightwhite', 'lightblue'))
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 552, in debug_server_client
+    print(msg)
+OSError: [Errno 9] Bad file descriptor
+
+2020:11:12 19:15:01:164444 ~ Traceback (most recent call last):
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 646, in format_exc
+    debug_server_client(dtime + "\n" + make_colors(msg1, 'lightwhite', 'lightblue'))
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 552, in debug_server_client
+    print(msg)
+OSError: [Errno 9] Bad file descriptor
+
+2020:11:12 19:15:01:316444 ~ Traceback (most recent call last):
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 646, in format_exc
+    debug_server_client(dtime + "\n" + make_colors(msg1, 'lightwhite', 'lightblue'))
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 552, in debug_server_client
+    print(msg)
+OSError: [Errno 9] Bad file descriptor
+
+2020:11:12 19:15:01:455438 ~ Traceback (most recent call last):
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 646, in format_exc
+    debug_server_client(dtime + "\n" + make_colors(msg1, 'lightwhite', 'lightblue'))
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 552, in debug_server_client
+    print(msg)
+OSError: [Errno 9] Bad file descriptor
+
+2020:11:12 19:15:01:632440 ~ Traceback (most recent call last):
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 646, in format_exc
+    debug_server_client(dtime + "\n" + make_colors(msg1, 'lightwhite', 'lightblue'))
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 552, in debug_server_client
+    print(msg)
+OSError: [Errno 9] Bad file descriptor
+
+2020:11:12 19:15:01:761447 ~ Traceback (most recent call last):
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 646, in format_exc
+    debug_server_client(dtime + "\n" + make_colors(msg1, 'lightwhite', 'lightblue'))
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 552, in debug_server_client
+    print(msg)
+OSError: [Errno 9] Bad file descriptor
+
+2020:11:12 19:15:01:902442 ~ Traceback (most recent call last):
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 646, in format_exc
+    debug_server_client(dtime + "\n" + make_colors(msg1, 'lightwhite', 'lightblue'))
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 552, in debug_server_client
+    print(msg)
+OSError: [Errno 9] Bad file descriptor
+
+2020:11:12 19:15:02:072443 ~ Traceback (most recent call last):
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 646, in format_exc
+    debug_server_client(dtime + "\n" + make_colors(msg1, 'lightwhite', 'lightblue'))
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 552, in debug_server_client
+    print(msg)
+OSError: [Errno 9] Bad file descriptor
+
+2020:11:12 19:15:02:194462 ~ Traceback (most recent call last):
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 646, in format_exc
+    debug_server_client(dtime + "\n" + make_colors(msg1, 'lightwhite', 'lightblue'))
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 552, in debug_server_client
+    print(msg)
+OSError: [Errno 9] Bad file descriptor
+
+2020:11:12 19:15:02:314447 ~ Traceback (most recent call last):
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 646, in format_exc
+    debug_server_client(dtime + "\n" + make_colors(msg1, 'lightwhite', 'lightblue'))
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 552, in debug_server_client
+    print(msg)
+OSError: [Errno 9] Bad file descriptor
+
+2020:11:12 19:15:02:448437 ~ Traceback (most recent call last):
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 646, in format_exc
+    debug_server_client(dtime + "\n" + make_colors(msg1, 'lightwhite', 'lightblue'))
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 552, in debug_server_client
+    print(msg)
+OSError: [Errno 9] Bad file descriptor
+
+2020:11:12 19:15:02:593441 ~ Traceback (most recent call last):
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 646, in format_exc
+    debug_server_client(dtime + "\n" + make_colors(msg1, 'lightwhite', 'lightblue'))
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 552, in debug_server_client
+    print(msg)
+OSError: [Errno 9] Bad file descriptor
+
+2020:11:12 19:15:02:721457 ~ Traceback (most recent call last):
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 646, in format_exc
+    debug_server_client(dtime + "\n" + make_colors(msg1, 'lightwhite', 'lightblue'))
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 552, in debug_server_client
+    print(msg)
+OSError: [Errno 9] Bad file descriptor
+
+2020:11:12 19:15:02:858481 ~ Traceback (most recent call last):
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 646, in format_exc
+    debug_server_client(dtime + "\n" + make_colors(msg1, 'lightwhite', 'lightblue'))
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 552, in debug_server_client
+    print(msg)
+OSError: [Errno 9] Bad file descriptor
+
+2020:11:12 19:15:02:977461 ~ Traceback (most recent call last):
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 646, in format_exc
+    debug_server_client(dtime + "\n" + make_colors(msg1, 'lightwhite', 'lightblue'))
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 552, in debug_server_client
+    print(msg)
+OSError: [Errno 9] Bad file descriptor
+
+2020:11:12 19:15:03:130438 ~ Traceback (most recent call last):
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 646, in format_exc
+    debug_server_client(dtime + "\n" + make_colors(msg1, 'lightwhite', 'lightblue'))
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 552, in debug_server_client
+    print(msg)
+OSError: [Errno 9] Bad file descriptor
+
+2020:11:12 19:15:03:273437 ~ Traceback (most recent call last):
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 646, in format_exc
+    debug_server_client(dtime + "\n" + make_colors(msg1, 'lightwhite', 'lightblue'))
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 552, in debug_server_client
+    print(msg)
+OSError: [Errno 9] Bad file descriptor
+
+2020:11:12 19:15:03:432438 ~ Traceback (most recent call last):
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 646, in format_exc
+    debug_server_client(dtime + "\n" + make_colors(msg1, 'lightwhite', 'lightblue'))
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 552, in debug_server_client
+    print(msg)
+OSError: [Errno 9] Bad file descriptor
+
+2020:11:12 19:15:03:596458 ~ Traceback (most recent call last):
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 646, in format_exc
+    debug_server_client(dtime + "\n" + make_colors(msg1, 'lightwhite', 'lightblue'))
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 552, in debug_server_client
+    print(msg)
+OSError: [Errno 9] Bad file descriptor
+
+2020:11:12 19:15:03:718439 ~ Traceback (most recent call last):
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 646, in format_exc
+    debug_server_client(dtime + "\n" + make_colors(msg1, 'lightwhite', 'lightblue'))
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 552, in debug_server_client
+    print(msg)
+OSError: [Errno 9] Bad file descriptor
+
+2020:11:12 19:15:03:851445 ~ Traceback (most recent call last):
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 646, in format_exc
+    debug_server_client(dtime + "\n" + make_colors(msg1, 'lightwhite', 'lightblue'))
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 552, in debug_server_client
+    print(msg)
+OSError: [Errno 9] Bad file descriptor
+
+2020:11:12 19:15:03:980461 ~ Traceback (most recent call last):
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 646, in format_exc
+    debug_server_client(dtime + "\n" + make_colors(msg1, 'lightwhite', 'lightblue'))
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 552, in debug_server_client
+    print(msg)
+OSError: [Errno 9] Bad file descriptor
+
+2020:11:12 19:15:04:247441 ~ Traceback (most recent call last):
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 646, in format_exc
+    debug_server_client(dtime + "\n" + make_colors(msg1, 'lightwhite', 'lightblue'))
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 552, in debug_server_client
+    print(msg)
+OSError: [Errno 9] Bad file descriptor
+
+2020:11:12 19:15:04:374439 ~ Traceback (most recent call last):
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 646, in format_exc
+    debug_server_client(dtime + "\n" + make_colors(msg1, 'lightwhite', 'lightblue'))
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 552, in debug_server_client
+    print(msg)
+OSError: [Errno 9] Bad file descriptor
+
+2020:11:12 19:15:04:537438 ~ Traceback (most recent call last):
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 646, in format_exc
+    debug_server_client(dtime + "\n" + make_colors(msg1, 'lightwhite', 'lightblue'))
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 552, in debug_server_client
+    print(msg)
+OSError: [Errno 9] Bad file descriptor
+
+2020:11:12 19:15:04:712437 ~ Traceback (most recent call last):
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 646, in format_exc
+    debug_server_client(dtime + "\n" + make_colors(msg1, 'lightwhite', 'lightblue'))
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 552, in debug_server_client
+    print(msg)
+OSError: [Errno 9] Bad file descriptor
+
+2020:11:12 19:15:04:856438 ~ Traceback (most recent call last):
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 646, in format_exc
+    debug_server_client(dtime + "\n" + make_colors(msg1, 'lightwhite', 'lightblue'))
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 552, in debug_server_client
+    print(msg)
+OSError: [Errno 9] Bad file descriptor
+
+2020:11:12 19:15:04:991438 ~ Traceback (most recent call last):
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 646, in format_exc
+    debug_server_client(dtime + "\n" + make_colors(msg1, 'lightwhite', 'lightblue'))
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 552, in debug_server_client
+    print(msg)
+OSError: [Errno 9] Bad file descriptor
+
+2020:11:12 19:15:05:130440 ~ Traceback (most recent call last):
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 646, in format_exc
+    debug_server_client(dtime + "\n" + make_colors(msg1, 'lightwhite', 'lightblue'))
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 552, in debug_server_client
+    print(msg)
+OSError: [Errno 9] Bad file descriptor
+
+2020:11:12 19:15:05:264441 ~ Traceback (most recent call last):
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 646, in format_exc
+    debug_server_client(dtime + "\n" + make_colors(msg1, 'lightwhite', 'lightblue'))
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 552, in debug_server_client
+    print(msg)
+OSError: [Errno 9] Bad file descriptor
+
+2020:11:12 19:15:05:395447 ~ Traceback (most recent call last):
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 646, in format_exc
+    debug_server_client(dtime + "\n" + make_colors(msg1, 'lightwhite', 'lightblue'))
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 552, in debug_server_client
+    print(msg)
+OSError: [Errno 9] Bad file descriptor
+
+2020:11:12 19:15:05:555439 ~ Traceback (most recent call last):
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 646, in format_exc
+    debug_server_client(dtime + "\n" + make_colors(msg1, 'lightwhite', 'lightblue'))
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 552, in debug_server_client
+    print(msg)
+OSError: [Errno 9] Bad file descriptor
+
+2020:11:12 19:15:05:685465 ~ Traceback (most recent call last):
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 646, in format_exc
+    debug_server_client(dtime + "\n" + make_colors(msg1, 'lightwhite', 'lightblue'))
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 552, in debug_server_client
+    print(msg)
+OSError: [Errno 9] Bad file descriptor
+
+2020:11:12 19:15:05:836437 ~ Traceback (most recent call last):
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 646, in format_exc
+    debug_server_client(dtime + "\n" + make_colors(msg1, 'lightwhite', 'lightblue'))
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 552, in debug_server_client
+    print(msg)
+OSError: [Errno 9] Bad file descriptor
+
+2020:11:12 19:15:05:971440 ~ Traceback (most recent call last):
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 646, in format_exc
+    debug_server_client(dtime + "\n" + make_colors(msg1, 'lightwhite', 'lightblue'))
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 552, in debug_server_client
+    print(msg)
+OSError: [Errno 9] Bad file descriptor
+
+2020:11:12 19:15:06:113457 ~ Traceback (most recent call last):
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 646, in format_exc
+    debug_server_client(dtime + "\n" + make_colors(msg1, 'lightwhite', 'lightblue'))
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 552, in debug_server_client
+    print(msg)
+OSError: [Errno 9] Bad file descriptor
+
+2020:11:12 19:15:06:271443 ~ Traceback (most recent call last):
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 646, in format_exc
+    debug_server_client(dtime + "\n" + make_colors(msg1, 'lightwhite', 'lightblue'))
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 552, in debug_server_client
+    print(msg)
+OSError: [Errno 9] Bad file descriptor
+
+2020:11:12 19:15:06:403438 ~ Traceback (most recent call last):
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 646, in format_exc
+    debug_server_client(dtime + "\n" + make_colors(msg1, 'lightwhite', 'lightblue'))
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 552, in debug_server_client
+    print(msg)
+OSError: [Errno 9] Bad file descriptor
+
+2020:11:12 19:15:06:549443 ~ Traceback (most recent call last):
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 646, in format_exc
+    debug_server_client(dtime + "\n" + make_colors(msg1, 'lightwhite', 'lightblue'))
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 552, in debug_server_client
+    print(msg)
+OSError: [Errno 9] Bad file descriptor
+
+2020:11:12 19:15:06:701460 ~ Traceback (most recent call last):
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 646, in format_exc
+    debug_server_client(dtime + "\n" + make_colors(msg1, 'lightwhite', 'lightblue'))
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 552, in debug_server_client
+    print(msg)
+OSError: [Errno 9] Bad file descriptor
+
+2020:11:12 19:15:06:874442 ~ Traceback (most recent call last):
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 646, in format_exc
+    debug_server_client(dtime + "\n" + make_colors(msg1, 'lightwhite', 'lightblue'))
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 552, in debug_server_client
+    print(msg)
+OSError: [Errno 9] Bad file descriptor
+
+2020:11:12 19:15:07:068457 ~ Traceback (most recent call last):
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 646, in format_exc
+    debug_server_client(dtime + "\n" + make_colors(msg1, 'lightwhite', 'lightblue'))
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 552, in debug_server_client
+    print(msg)
+OSError: [Errno 9] Bad file descriptor
+
+2020:11:12 19:15:07:423445 ~ Traceback (most recent call last):
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 646, in format_exc
+    debug_server_client(dtime + "\n" + make_colors(msg1, 'lightwhite', 'lightblue'))
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 552, in debug_server_client
+    print(msg)
+OSError: [Errno 9] Bad file descriptor
+
+2020:11:12 19:15:07:578441 ~ Traceback (most recent call last):
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 646, in format_exc
+    debug_server_client(dtime + "\n" + make_colors(msg1, 'lightwhite', 'lightblue'))
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 552, in debug_server_client
+    print(msg)
+OSError: [Errno 9] Bad file descriptor
+
+2020:11:12 19:15:07:722468 ~ Traceback (most recent call last):
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 646, in format_exc
+    debug_server_client(dtime + "\n" + make_colors(msg1, 'lightwhite', 'lightblue'))
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 552, in debug_server_client
+    print(msg)
+OSError: [Errno 9] Bad file descriptor
+
+2020:11:12 19:15:07:881441 ~ Traceback (most recent call last):
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 646, in format_exc
+    debug_server_client(dtime + "\n" + make_colors(msg1, 'lightwhite', 'lightblue'))
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 552, in debug_server_client
+    print(msg)
+OSError: [Errno 9] Bad file descriptor
+
+2020:11:12 19:15:08:040437 ~ Traceback (most recent call last):
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 646, in format_exc
+    debug_server_client(dtime + "\n" + make_colors(msg1, 'lightwhite', 'lightblue'))
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 552, in debug_server_client
+    print(msg)
+OSError: [Errno 9] Bad file descriptor
+
+2020:11:12 19:15:08:176461 ~ Traceback (most recent call last):
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 646, in format_exc
+    debug_server_client(dtime + "\n" + make_colors(msg1, 'lightwhite', 'lightblue'))
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 552, in debug_server_client
+    print(msg)
+OSError: [Errno 9] Bad file descriptor
+
+2020:11:12 19:15:08:314461 ~ Traceback (most recent call last):
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 646, in format_exc
+    debug_server_client(dtime + "\n" + make_colors(msg1, 'lightwhite', 'lightblue'))
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 552, in debug_server_client
+    print(msg)
+OSError: [Errno 9] Bad file descriptor
+
+2020:11:12 19:15:08:474446 ~ Traceback (most recent call last):
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 646, in format_exc
+    debug_server_client(dtime + "\n" + make_colors(msg1, 'lightwhite', 'lightblue'))
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 552, in debug_server_client
+    print(msg)
+OSError: [Errno 9] Bad file descriptor
+
+2020:11:12 19:15:08:628449 ~ Traceback (most recent call last):
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 646, in format_exc
+    debug_server_client(dtime + "\n" + make_colors(msg1, 'lightwhite', 'lightblue'))
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 552, in debug_server_client
+    print(msg)
+OSError: [Errno 9] Bad file descriptor
+
+2020:11:12 19:15:08:808437 ~ Traceback (most recent call last):
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 646, in format_exc
+    debug_server_client(dtime + "\n" + make_colors(msg1, 'lightwhite', 'lightblue'))
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 552, in debug_server_client
+    print(msg)
+OSError: [Errno 9] Bad file descriptor
+
+2020:11:12 19:15:08:955441 ~ Traceback (most recent call last):
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 646, in format_exc
+    debug_server_client(dtime + "\n" + make_colors(msg1, 'lightwhite', 'lightblue'))
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 552, in debug_server_client
+    print(msg)
+OSError: [Errno 9] Bad file descriptor
+
+2020:11:12 19:15:09:131438 ~ Traceback (most recent call last):
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 646, in format_exc
+    debug_server_client(dtime + "\n" + make_colors(msg1, 'lightwhite', 'lightblue'))
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 552, in debug_server_client
+    print(msg)
+OSError: [Errno 9] Bad file descriptor
+
+2020:11:12 19:15:09:273462 ~ Traceback (most recent call last):
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 646, in format_exc
+    debug_server_client(dtime + "\n" + make_colors(msg1, 'lightwhite', 'lightblue'))
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 552, in debug_server_client
+    print(msg)
+OSError: [Errno 9] Bad file descriptor
+
+2020:11:12 19:15:09:411461 ~ Traceback (most recent call last):
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 646, in format_exc
+    debug_server_client(dtime + "\n" + make_colors(msg1, 'lightwhite', 'lightblue'))
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 552, in debug_server_client
+    print(msg)
+OSError: [Errno 9] Bad file descriptor
+
+2020:11:12 19:15:09:576438 ~ Traceback (most recent call last):
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 646, in format_exc
+    debug_server_client(dtime + "\n" + make_colors(msg1, 'lightwhite', 'lightblue'))
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 552, in debug_server_client
+    print(msg)
+OSError: [Errno 9] Bad file descriptor
+
+2020:11:12 19:15:09:796439 ~ Traceback (most recent call last):
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 646, in format_exc
+    debug_server_client(dtime + "\n" + make_colors(msg1, 'lightwhite', 'lightblue'))
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 552, in debug_server_client
+    print(msg)
+OSError: [Errno 9] Bad file descriptor
+
+2020:11:12 19:15:10:146009 ~ Traceback (most recent call last):
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 646, in format_exc
+    debug_server_client(dtime + "\n" + make_colors(msg1, 'lightwhite', 'lightblue'))
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 552, in debug_server_client
+    print(msg)
+OSError: [Errno 9] Bad file descriptor
+
+2020:11:12 19:15:10:298010 ~ Traceback (most recent call last):
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 646, in format_exc
+    debug_server_client(dtime + "\n" + make_colors(msg1, 'lightwhite', 'lightblue'))
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 552, in debug_server_client
+    print(msg)
+OSError: [Errno 9] Bad file descriptor
+
+2020:11:12 19:15:10:443010 ~ Traceback (most recent call last):
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 646, in format_exc
+    debug_server_client(dtime + "\n" + make_colors(msg1, 'lightwhite', 'lightblue'))
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 552, in debug_server_client
+    print(msg)
+OSError: [Errno 9] Bad file descriptor
+
+2020:11:12 19:15:10:624013 ~ Traceback (most recent call last):
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 646, in format_exc
+    debug_server_client(dtime + "\n" + make_colors(msg1, 'lightwhite', 'lightblue'))
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 552, in debug_server_client
+    print(msg)
+OSError: [Errno 9] Bad file descriptor
+
+2020:11:12 19:15:10:763009 ~ Traceback (most recent call last):
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 646, in format_exc
+    debug_server_client(dtime + "\n" + make_colors(msg1, 'lightwhite', 'lightblue'))
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 552, in debug_server_client
+    print(msg)
+OSError: [Errno 9] Bad file descriptor
+
+2020:11:12 19:15:10:928032 ~ Traceback (most recent call last):
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 646, in format_exc
+    debug_server_client(dtime + "\n" + make_colors(msg1, 'lightwhite', 'lightblue'))
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 552, in debug_server_client
+    print(msg)
+OSError: [Errno 9] Bad file descriptor
+
+2020:11:12 19:15:11:129096 ~ Traceback (most recent call last):
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 646, in format_exc
+    debug_server_client(dtime + "\n" + make_colors(msg1, 'lightwhite', 'lightblue'))
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 552, in debug_server_client
+    print(msg)
+OSError: [Errno 9] Bad file descriptor
+
+2020:11:12 19:15:13:463688 ~ Traceback (most recent call last):
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 646, in format_exc
+    debug_server_client(dtime + "\n" + make_colors(msg1, 'lightwhite', 'lightblue'))
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 552, in debug_server_client
+    print(msg)
+OSError: [Errno 9] Bad file descriptor
+
+2020:11:12 19:15:13:668691 ~ Traceback (most recent call last):
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 646, in format_exc
+    debug_server_client(dtime + "\n" + make_colors(msg1, 'lightwhite', 'lightblue'))
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 552, in debug_server_client
+    print(msg)
+OSError: [Errno 9] Bad file descriptor
+
+2020:11:12 19:15:19:544868 ~ Traceback (most recent call last):
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 646, in format_exc
+    debug_server_client(dtime + "\n" + make_colors(msg1, 'lightwhite', 'lightblue'))
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 552, in debug_server_client
+    print(msg)
+OSError: [Errno 9] Bad file descriptor
+
+2020:11:12 19:15:21:760364 ~ Traceback (most recent call last):
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 646, in format_exc
+    debug_server_client(dtime + "\n" + make_colors(msg1, 'lightwhite', 'lightblue'))
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 552, in debug_server_client
+    print(msg)
+OSError: [Errno 9] Bad file descriptor
+
+2020:11:12 19:15:21:953367 ~ Traceback (most recent call last):
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 646, in format_exc
+    debug_server_client(dtime + "\n" + make_colors(msg1, 'lightwhite', 'lightblue'))
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 552, in debug_server_client
+    print(msg)
+OSError: [Errno 9] Bad file descriptor
+
+2020:11:12 19:15:24:683386 ~ Traceback (most recent call last):
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 646, in format_exc
+    debug_server_client(dtime + "\n" + make_colors(msg1, 'lightwhite', 'lightblue'))
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 552, in debug_server_client
+    print(msg)
+OSError: [Errno 9] Bad file descriptor
+
+2020:11:12 19:15:24:927390 ~ Traceback (most recent call last):
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 646, in format_exc
+    debug_server_client(dtime + "\n" + make_colors(msg1, 'lightwhite', 'lightblue'))
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 552, in debug_server_client
+    print(msg)
+OSError: [Errno 9] Bad file descriptor
+
+2020:11:12 19:15:25:097381 ~ Traceback (most recent call last):
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 646, in format_exc
+    debug_server_client(dtime + "\n" + make_colors(msg1, 'lightwhite', 'lightblue'))
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 552, in debug_server_client
+    print(msg)
+OSError: [Errno 9] Bad file descriptor
+
+2020:11:12 19:15:25:345384 ~ Traceback (most recent call last):
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 646, in format_exc
+    debug_server_client(dtime + "\n" + make_colors(msg1, 'lightwhite', 'lightblue'))
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 552, in debug_server_client
+    print(msg)
+OSError: [Errno 9] Bad file descriptor
+
+2020:11:12 19:15:25:803844 ~ Traceback (most recent call last):
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 646, in format_exc
+    debug_server_client(dtime + "\n" + make_colors(msg1, 'lightwhite', 'lightblue'))
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 552, in debug_server_client
+    print(msg)
+OSError: [Errno 9] Bad file descriptor
+
+2020:11:12 19:15:25:951836 ~ Traceback (most recent call last):
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 646, in format_exc
+    debug_server_client(dtime + "\n" + make_colors(msg1, 'lightwhite', 'lightblue'))
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 552, in debug_server_client
+    print(msg)
+OSError: [Errno 9] Bad file descriptor
+
+2020:11:12 19:15:26:123835 ~ Traceback (most recent call last):
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 646, in format_exc
+    debug_server_client(dtime + "\n" + make_colors(msg1, 'lightwhite', 'lightblue'))
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 552, in debug_server_client
+    print(msg)
+OSError: [Errno 9] Bad file descriptor
+
+2020:11:12 19:15:26:303836 ~ Traceback (most recent call last):
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 646, in format_exc
+    debug_server_client(dtime + "\n" + make_colors(msg1, 'lightwhite', 'lightblue'))
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 552, in debug_server_client
+    print(msg)
+OSError: [Errno 9] Bad file descriptor
+
+2020:11:12 19:15:26:874658 ~ Traceback (most recent call last):
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 646, in format_exc
+    debug_server_client(dtime + "\n" + make_colors(msg1, 'lightwhite', 'lightblue'))
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 552, in debug_server_client
+    print(msg)
+OSError: [Errno 9] Bad file descriptor
+
+2020:11:12 19:15:27:049659 ~ Traceback (most recent call last):
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 646, in format_exc
+    debug_server_client(dtime + "\n" + make_colors(msg1, 'lightwhite', 'lightblue'))
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 552, in debug_server_client
+    print(msg)
+OSError: [Errno 9] Bad file descriptor
+
+2020:11:12 19:15:27:239659 ~ Traceback (most recent call last):
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 646, in format_exc
+    debug_server_client(dtime + "\n" + make_colors(msg1, 'lightwhite', 'lightblue'))
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 552, in debug_server_client
+    print(msg)
+OSError: [Errno 9] Bad file descriptor
+
+2020:11:12 19:15:27:456662 ~ Traceback (most recent call last):
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 646, in format_exc
+    debug_server_client(dtime + "\n" + make_colors(msg1, 'lightwhite', 'lightblue'))
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 552, in debug_server_client
+    print(msg)
+OSError: [Errno 9] Bad file descriptor
+
+2020:11:12 19:15:27:687658 ~ Traceback (most recent call last):
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 646, in format_exc
+    debug_server_client(dtime + "\n" + make_colors(msg1, 'lightwhite', 'lightblue'))
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 552, in debug_server_client
+    print(msg)
+OSError: [Errno 9] Bad file descriptor
+
+2020:11:12 19:15:27:861657 ~ Traceback (most recent call last):
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 646, in format_exc
+    debug_server_client(dtime + "\n" + make_colors(msg1, 'lightwhite', 'lightblue'))
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 552, in debug_server_client
+    print(msg)
+OSError: [Errno 9] Bad file descriptor
+
+2020:11:12 19:15:28:028659 ~ Traceback (most recent call last):
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 646, in format_exc
+    debug_server_client(dtime + "\n" + make_colors(msg1, 'lightwhite', 'lightblue'))
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 552, in debug_server_client
+    print(msg)
+OSError: [Errno 9] Bad file descriptor
+
+2020:11:12 19:15:28:219659 ~ Traceback (most recent call last):
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 646, in format_exc
+    debug_server_client(dtime + "\n" + make_colors(msg1, 'lightwhite', 'lightblue'))
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 552, in debug_server_client
+    print(msg)
+OSError: [Errno 9] Bad file descriptor
+
+2020:11:12 19:15:28:435658 ~ Traceback (most recent call last):
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 646, in format_exc
+    debug_server_client(dtime + "\n" + make_colors(msg1, 'lightwhite', 'lightblue'))
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 552, in debug_server_client
+    print(msg)
+OSError: [Errno 9] Bad file descriptor
+
+2020:11:12 19:15:28:603659 ~ Traceback (most recent call last):
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 646, in format_exc
+    debug_server_client(dtime + "\n" + make_colors(msg1, 'lightwhite', 'lightblue'))
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 552, in debug_server_client
+    print(msg)
+OSError: [Errno 9] Bad file descriptor
+
+2020:11:12 19:15:28:827656 ~ Traceback (most recent call last):
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 646, in format_exc
+    debug_server_client(dtime + "\n" + make_colors(msg1, 'lightwhite', 'lightblue'))
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 552, in debug_server_client
+    print(msg)
+OSError: [Errno 9] Bad file descriptor
+
+2020:11:12 19:15:29:026677 ~ Traceback (most recent call last):
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 646, in format_exc
+    debug_server_client(dtime + "\n" + make_colors(msg1, 'lightwhite', 'lightblue'))
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 552, in debug_server_client
+    print(msg)
+OSError: [Errno 9] Bad file descriptor
+
+2020:11:12 19:15:29:184680 ~ Traceback (most recent call last):
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 646, in format_exc
+    debug_server_client(dtime + "\n" + make_colors(msg1, 'lightwhite', 'lightblue'))
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 552, in debug_server_client
+    print(msg)
+OSError: [Errno 9] Bad file descriptor
+
+2020:11:12 19:15:29:390661 ~ Traceback (most recent call last):
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 646, in format_exc
+    debug_server_client(dtime + "\n" + make_colors(msg1, 'lightwhite', 'lightblue'))
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 552, in debug_server_client
+    print(msg)
+OSError: [Errno 9] Bad file descriptor
+
+2020:11:12 19:15:29:654658 ~ Traceback (most recent call last):
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 646, in format_exc
+    debug_server_client(dtime + "\n" + make_colors(msg1, 'lightwhite', 'lightblue'))
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 552, in debug_server_client
+    print(msg)
+OSError: [Errno 9] Bad file descriptor
+
+2020:11:12 19:15:29:842661 ~ Traceback (most recent call last):
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 646, in format_exc
+    debug_server_client(dtime + "\n" + make_colors(msg1, 'lightwhite', 'lightblue'))
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 552, in debug_server_client
+    print(msg)
+OSError: [Errno 9] Bad file descriptor
+
+2020:11:12 19:15:30:009666 ~ Traceback (most recent call last):
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 646, in format_exc
+    debug_server_client(dtime + "\n" + make_colors(msg1, 'lightwhite', 'lightblue'))
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 552, in debug_server_client
+    print(msg)
+OSError: [Errno 9] Bad file descriptor
+
+2020:11:12 19:15:30:203660 ~ Traceback (most recent call last):
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 646, in format_exc
+    debug_server_client(dtime + "\n" + make_colors(msg1, 'lightwhite', 'lightblue'))
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 552, in debug_server_client
+    print(msg)
+OSError: [Errno 9] Bad file descriptor
+
+2020:11:12 19:15:30:429658 ~ Traceback (most recent call last):
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 646, in format_exc
+    debug_server_client(dtime + "\n" + make_colors(msg1, 'lightwhite', 'lightblue'))
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 552, in debug_server_client
+    print(msg)
+OSError: [Errno 9] Bad file descriptor
+
+2020:11:12 19:15:30:630657 ~ Traceback (most recent call last):
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 646, in format_exc
+    debug_server_client(dtime + "\n" + make_colors(msg1, 'lightwhite', 'lightblue'))
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 552, in debug_server_client
+    print(msg)
+OSError: [Errno 9] Bad file descriptor
+
+2020:11:12 19:15:30:803659 ~ Traceback (most recent call last):
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 646, in format_exc
+    debug_server_client(dtime + "\n" + make_colors(msg1, 'lightwhite', 'lightblue'))
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 552, in debug_server_client
+    print(msg)
+OSError: [Errno 9] Bad file descriptor
+
+2020:11:12 19:15:30:977659 ~ Traceback (most recent call last):
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 646, in format_exc
+    debug_server_client(dtime + "\n" + make_colors(msg1, 'lightwhite', 'lightblue'))
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 552, in debug_server_client
+    print(msg)
+OSError: [Errno 9] Bad file descriptor
+
+2020:11:12 19:15:31:184658 ~ Traceback (most recent call last):
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 646, in format_exc
+    debug_server_client(dtime + "\n" + make_colors(msg1, 'lightwhite', 'lightblue'))
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 552, in debug_server_client
+    print(msg)
+OSError: [Errno 9] Bad file descriptor
+
+2020:11:12 19:15:31:364658 ~ Traceback (most recent call last):
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 646, in format_exc
+    debug_server_client(dtime + "\n" + make_colors(msg1, 'lightwhite', 'lightblue'))
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 552, in debug_server_client
+    print(msg)
+OSError: [Errno 9] Bad file descriptor
+
+2020:11:12 19:15:31:553662 ~ Traceback (most recent call last):
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 646, in format_exc
+    debug_server_client(dtime + "\n" + make_colors(msg1, 'lightwhite', 'lightblue'))
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 552, in debug_server_client
+    print(msg)
+OSError: [Errno 9] Bad file descriptor
+
+2020:11:12 19:15:31:745672 ~ Traceback (most recent call last):
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 646, in format_exc
+    debug_server_client(dtime + "\n" + make_colors(msg1, 'lightwhite', 'lightblue'))
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 552, in debug_server_client
+    print(msg)
+OSError: [Errno 9] Bad file descriptor
+
+2020:11:12 19:15:31:928657 ~ Traceback (most recent call last):
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 646, in format_exc
+    debug_server_client(dtime + "\n" + make_colors(msg1, 'lightwhite', 'lightblue'))
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 552, in debug_server_client
+    print(msg)
+OSError: [Errno 9] Bad file descriptor
+
+2020:11:12 19:15:32:104658 ~ Traceback (most recent call last):
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 646, in format_exc
+    debug_server_client(dtime + "\n" + make_colors(msg1, 'lightwhite', 'lightblue'))
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 552, in debug_server_client
+    print(msg)
+OSError: [Errno 9] Bad file descriptor
+
+2020:11:12 19:15:32:272681 ~ Traceback (most recent call last):
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 646, in format_exc
+    debug_server_client(dtime + "\n" + make_colors(msg1, 'lightwhite', 'lightblue'))
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 552, in debug_server_client
+    print(msg)
+OSError: [Errno 9] Bad file descriptor
+
+2020:11:12 19:15:32:435680 ~ Traceback (most recent call last):
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 646, in format_exc
+    debug_server_client(dtime + "\n" + make_colors(msg1, 'lightwhite', 'lightblue'))
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 552, in debug_server_client
+    print(msg)
+OSError: [Errno 9] Bad file descriptor
+
+2020:11:12 19:15:32:678677 ~ Traceback (most recent call last):
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 646, in format_exc
+    debug_server_client(dtime + "\n" + make_colors(msg1, 'lightwhite', 'lightblue'))
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 552, in debug_server_client
+    print(msg)
+OSError: [Errno 9] Bad file descriptor
+
+2020:11:12 19:15:32:849659 ~ Traceback (most recent call last):
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 646, in format_exc
+    debug_server_client(dtime + "\n" + make_colors(msg1, 'lightwhite', 'lightblue'))
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 552, in debug_server_client
+    print(msg)
+OSError: [Errno 9] Bad file descriptor
+
+2020:11:12 19:15:33:038660 ~ Traceback (most recent call last):
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 646, in format_exc
+    debug_server_client(dtime + "\n" + make_colors(msg1, 'lightwhite', 'lightblue'))
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 552, in debug_server_client
+    print(msg)
+OSError: [Errno 9] Bad file descriptor
+
+2020:11:12 19:15:33:205661 ~ Traceback (most recent call last):
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 646, in format_exc
+    debug_server_client(dtime + "\n" + make_colors(msg1, 'lightwhite', 'lightblue'))
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 552, in debug_server_client
+    print(msg)
+OSError: [Errno 9] Bad file descriptor
+
+2020:11:12 19:15:33:370681 ~ Traceback (most recent call last):
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 646, in format_exc
+    debug_server_client(dtime + "\n" + make_colors(msg1, 'lightwhite', 'lightblue'))
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 552, in debug_server_client
+    print(msg)
+OSError: [Errno 9] Bad file descriptor
+
+2020:11:12 19:15:33:550657 ~ Traceback (most recent call last):
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 646, in format_exc
+    debug_server_client(dtime + "\n" + make_colors(msg1, 'lightwhite', 'lightblue'))
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 552, in debug_server_client
+    print(msg)
+OSError: [Errno 9] Bad file descriptor
+
+2020:11:12 19:15:33:715657 ~ Traceback (most recent call last):
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 646, in format_exc
+    debug_server_client(dtime + "\n" + make_colors(msg1, 'lightwhite', 'lightblue'))
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 552, in debug_server_client
+    print(msg)
+OSError: [Errno 9] Bad file descriptor
+
+2020:11:12 19:15:33:888657 ~ Traceback (most recent call last):
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 646, in format_exc
+    debug_server_client(dtime + "\n" + make_colors(msg1, 'lightwhite', 'lightblue'))
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 552, in debug_server_client
+    print(msg)
+OSError: [Errno 9] Bad file descriptor
+
+2020:11:12 19:15:34:066678 ~ Traceback (most recent call last):
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 646, in format_exc
+    debug_server_client(dtime + "\n" + make_colors(msg1, 'lightwhite', 'lightblue'))
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 552, in debug_server_client
+    print(msg)
+OSError: [Errno 9] Bad file descriptor
+
+2020:11:12 19:15:34:252658 ~ Traceback (most recent call last):
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 646, in format_exc
+    debug_server_client(dtime + "\n" + make_colors(msg1, 'lightwhite', 'lightblue'))
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 552, in debug_server_client
+    print(msg)
+OSError: [Errno 9] Bad file descriptor
+
+2020:11:12 19:15:34:422658 ~ Traceback (most recent call last):
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 646, in format_exc
+    debug_server_client(dtime + "\n" + make_colors(msg1, 'lightwhite', 'lightblue'))
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 552, in debug_server_client
+    print(msg)
+OSError: [Errno 9] Bad file descriptor
+
+2020:11:12 19:15:34:603662 ~ Traceback (most recent call last):
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 646, in format_exc
+    debug_server_client(dtime + "\n" + make_colors(msg1, 'lightwhite', 'lightblue'))
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 552, in debug_server_client
+    print(msg)
+OSError: [Errno 9] Bad file descriptor
+
+2020:11:12 19:15:34:780663 ~ Traceback (most recent call last):
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 646, in format_exc
+    debug_server_client(dtime + "\n" + make_colors(msg1, 'lightwhite', 'lightblue'))
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 552, in debug_server_client
+    print(msg)
+OSError: [Errno 9] Bad file descriptor
+
+2020:11:12 19:15:34:955662 ~ Traceback (most recent call last):
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 646, in format_exc
+    debug_server_client(dtime + "\n" + make_colors(msg1, 'lightwhite', 'lightblue'))
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 552, in debug_server_client
+    print(msg)
+OSError: [Errno 9] Bad file descriptor
+
+2020:11:12 19:15:35:136678 ~ Traceback (most recent call last):
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 646, in format_exc
+    debug_server_client(dtime + "\n" + make_colors(msg1, 'lightwhite', 'lightblue'))
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 552, in debug_server_client
+    print(msg)
+OSError: [Errno 9] Bad file descriptor
+
+2020:11:12 19:15:35:346658 ~ Traceback (most recent call last):
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 646, in format_exc
+    debug_server_client(dtime + "\n" + make_colors(msg1, 'lightwhite', 'lightblue'))
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 552, in debug_server_client
+    print(msg)
+OSError: [Errno 9] Bad file descriptor
+
+2020:11:12 19:15:35:532660 ~ Traceback (most recent call last):
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 646, in format_exc
+    debug_server_client(dtime + "\n" + make_colors(msg1, 'lightwhite', 'lightblue'))
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 552, in debug_server_client
+    print(msg)
+OSError: [Errno 9] Bad file descriptor
+
+2020:11:12 19:15:35:715658 ~ Traceback (most recent call last):
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 646, in format_exc
+    debug_server_client(dtime + "\n" + make_colors(msg1, 'lightwhite', 'lightblue'))
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 552, in debug_server_client
+    print(msg)
+OSError: [Errno 9] Bad file descriptor
+
+2020:11:12 19:15:35:903659 ~ Traceback (most recent call last):
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 646, in format_exc
+    debug_server_client(dtime + "\n" + make_colors(msg1, 'lightwhite', 'lightblue'))
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 552, in debug_server_client
+    print(msg)
+OSError: [Errno 9] Bad file descriptor
+
+2020:11:12 19:15:36:205662 ~ Traceback (most recent call last):
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 646, in format_exc
+    debug_server_client(dtime + "\n" + make_colors(msg1, 'lightwhite', 'lightblue'))
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 552, in debug_server_client
+    print(msg)
+OSError: [Errno 9] Bad file descriptor
+
+2020:11:12 19:15:36:444657 ~ Traceback (most recent call last):
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 646, in format_exc
+    debug_server_client(dtime + "\n" + make_colors(msg1, 'lightwhite', 'lightblue'))
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 552, in debug_server_client
+    print(msg)
+OSError: [Errno 9] Bad file descriptor
+
+2020:11:12 19:15:36:874897 ~ Traceback (most recent call last):
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 646, in format_exc
+    debug_server_client(dtime + "\n" + make_colors(msg1, 'lightwhite', 'lightblue'))
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 552, in debug_server_client
+    print(msg)
+OSError: [Errno 9] Bad file descriptor
+
+2020:11:12 19:15:37:073877 ~ Traceback (most recent call last):
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 646, in format_exc
+    debug_server_client(dtime + "\n" + make_colors(msg1, 'lightwhite', 'lightblue'))
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 552, in debug_server_client
+    print(msg)
+OSError: [Errno 9] Bad file descriptor
+
+2020:11:12 19:15:37:473878 ~ Traceback (most recent call last):
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 646, in format_exc
+    debug_server_client(dtime + "\n" + make_colors(msg1, 'lightwhite', 'lightblue'))
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 552, in debug_server_client
+    print(msg)
+OSError: [Errno 9] Bad file descriptor
+
+2020:11:12 19:15:37:653886 ~ Traceback (most recent call last):
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 646, in format_exc
+    debug_server_client(dtime + "\n" + make_colors(msg1, 'lightwhite', 'lightblue'))
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 552, in debug_server_client
+    print(msg)
+OSError: [Errno 9] Bad file descriptor
+
+2020:11:12 19:15:37:883878 ~ Traceback (most recent call last):
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 646, in format_exc
+    debug_server_client(dtime + "\n" + make_colors(msg1, 'lightwhite', 'lightblue'))
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 552, in debug_server_client
+    print(msg)
+OSError: [Errno 9] Bad file descriptor
+
+2020:11:12 19:15:38:057899 ~ Traceback (most recent call last):
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 646, in format_exc
+    debug_server_client(dtime + "\n" + make_colors(msg1, 'lightwhite', 'lightblue'))
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 552, in debug_server_client
+    print(msg)
+OSError: [Errno 9] Bad file descriptor
+
+2020:11:12 19:15:38:289929 ~ Traceback (most recent call last):
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 646, in format_exc
+    debug_server_client(dtime + "\n" + make_colors(msg1, 'lightwhite', 'lightblue'))
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 552, in debug_server_client
+    print(msg)
+OSError: [Errno 9] Bad file descriptor
+
+2020:11:12 19:15:38:470925 ~ Traceback (most recent call last):
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 646, in format_exc
+    debug_server_client(dtime + "\n" + make_colors(msg1, 'lightwhite', 'lightblue'))
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 552, in debug_server_client
+    print(msg)
+OSError: [Errno 9] Bad file descriptor
+
+2020:11:12 19:15:38:680926 ~ Traceback (most recent call last):
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 646, in format_exc
+    debug_server_client(dtime + "\n" + make_colors(msg1, 'lightwhite', 'lightblue'))
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 552, in debug_server_client
+    print(msg)
+OSError: [Errno 9] Bad file descriptor
+
+2020:11:12 19:15:38:874927 ~ Traceback (most recent call last):
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 646, in format_exc
+    debug_server_client(dtime + "\n" + make_colors(msg1, 'lightwhite', 'lightblue'))
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 552, in debug_server_client
+    print(msg)
+OSError: [Errno 9] Bad file descriptor
+
+2020:11:12 19:15:39:064929 ~ Traceback (most recent call last):
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 646, in format_exc
+    debug_server_client(dtime + "\n" + make_colors(msg1, 'lightwhite', 'lightblue'))
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 552, in debug_server_client
+    print(msg)
+OSError: [Errno 9] Bad file descriptor
+
+2020:11:12 19:15:39:235927 ~ Traceback (most recent call last):
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 646, in format_exc
+    debug_server_client(dtime + "\n" + make_colors(msg1, 'lightwhite', 'lightblue'))
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 552, in debug_server_client
+    print(msg)
+OSError: [Errno 9] Bad file descriptor
+
+2020:11:12 19:15:39:418925 ~ Traceback (most recent call last):
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 646, in format_exc
+    debug_server_client(dtime + "\n" + make_colors(msg1, 'lightwhite', 'lightblue'))
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 552, in debug_server_client
+    print(msg)
+OSError: [Errno 9] Bad file descriptor
+
+2020:11:12 19:15:39:632929 ~ Traceback (most recent call last):
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 646, in format_exc
+    debug_server_client(dtime + "\n" + make_colors(msg1, 'lightwhite', 'lightblue'))
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 552, in debug_server_client
+    print(msg)
+OSError: [Errno 9] Bad file descriptor
+
+2020:11:12 19:15:39:829926 ~ Traceback (most recent call last):
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 646, in format_exc
+    debug_server_client(dtime + "\n" + make_colors(msg1, 'lightwhite', 'lightblue'))
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 552, in debug_server_client
+    print(msg)
+OSError: [Errno 9] Bad file descriptor
+
+2020:11:12 19:15:40:027930 ~ Traceback (most recent call last):
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 646, in format_exc
+    debug_server_client(dtime + "\n" + make_colors(msg1, 'lightwhite', 'lightblue'))
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 552, in debug_server_client
+    print(msg)
+OSError: [Errno 9] Bad file descriptor
+
+2020:11:12 19:15:40:204931 ~ Traceback (most recent call last):
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 646, in format_exc
+    debug_server_client(dtime + "\n" + make_colors(msg1, 'lightwhite', 'lightblue'))
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 552, in debug_server_client
+    print(msg)
+OSError: [Errno 9] Bad file descriptor
+
+2020:11:12 19:15:40:392940 ~ Traceback (most recent call last):
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 646, in format_exc
+    debug_server_client(dtime + "\n" + make_colors(msg1, 'lightwhite', 'lightblue'))
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 552, in debug_server_client
+    print(msg)
+OSError: [Errno 9] Bad file descriptor
+
+2020:11:12 19:15:40:594927 ~ Traceback (most recent call last):
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 646, in format_exc
+    debug_server_client(dtime + "\n" + make_colors(msg1, 'lightwhite', 'lightblue'))
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 552, in debug_server_client
+    print(msg)
+OSError: [Errno 9] Bad file descriptor
+
+2020:11:12 19:15:40:860927 ~ Traceback (most recent call last):
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 646, in format_exc
+    debug_server_client(dtime + "\n" + make_colors(msg1, 'lightwhite', 'lightblue'))
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 552, in debug_server_client
+    print(msg)
+OSError: [Errno 9] Bad file descriptor
+
+2020:11:12 19:15:41:069927 ~ Traceback (most recent call last):
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 646, in format_exc
+    debug_server_client(dtime + "\n" + make_colors(msg1, 'lightwhite', 'lightblue'))
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 552, in debug_server_client
+    print(msg)
+OSError: [Errno 9] Bad file descriptor
+
+2020:11:12 19:15:41:246925 ~ Traceback (most recent call last):
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 646, in format_exc
+    debug_server_client(dtime + "\n" + make_colors(msg1, 'lightwhite', 'lightblue'))
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 552, in debug_server_client
+    print(msg)
+OSError: [Errno 9] Bad file descriptor
+
+2020:11:12 19:15:41:420926 ~ Traceback (most recent call last):
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 646, in format_exc
+    debug_server_client(dtime + "\n" + make_colors(msg1, 'lightwhite', 'lightblue'))
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 552, in debug_server_client
+    print(msg)
+OSError: [Errno 9] Bad file descriptor
+
+2020:11:12 19:15:41:613927 ~ Traceback (most recent call last):
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 646, in format_exc
+    debug_server_client(dtime + "\n" + make_colors(msg1, 'lightwhite', 'lightblue'))
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 552, in debug_server_client
+    print(msg)
+OSError: [Errno 9] Bad file descriptor
+
+2020:11:12 19:15:41:911925 ~ Traceback (most recent call last):
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 646, in format_exc
+    debug_server_client(dtime + "\n" + make_colors(msg1, 'lightwhite', 'lightblue'))
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 552, in debug_server_client
+    print(msg)
+OSError: [Errno 9] Bad file descriptor
+
+2020:11:12 19:15:42:115929 ~ Traceback (most recent call last):
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 646, in format_exc
+    debug_server_client(dtime + "\n" + make_colors(msg1, 'lightwhite', 'lightblue'))
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 552, in debug_server_client
+    print(msg)
+OSError: [Errno 9] Bad file descriptor
+
+2020:11:12 19:15:42:293927 ~ Traceback (most recent call last):
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 646, in format_exc
+    debug_server_client(dtime + "\n" + make_colors(msg1, 'lightwhite', 'lightblue'))
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 552, in debug_server_client
+    print(msg)
+OSError: [Errno 9] Bad file descriptor
+
+2020:11:12 19:15:42:482928 ~ Traceback (most recent call last):
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 646, in format_exc
+    debug_server_client(dtime + "\n" + make_colors(msg1, 'lightwhite', 'lightblue'))
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 552, in debug_server_client
+    print(msg)
+OSError: [Errno 9] Bad file descriptor
+
+2020:11:12 19:15:42:689926 ~ Traceback (most recent call last):
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 646, in format_exc
+    debug_server_client(dtime + "\n" + make_colors(msg1, 'lightwhite', 'lightblue'))
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 552, in debug_server_client
+    print(msg)
+OSError: [Errno 9] Bad file descriptor
+
+2020:11:12 19:15:42:868927 ~ Traceback (most recent call last):
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 646, in format_exc
+    debug_server_client(dtime + "\n" + make_colors(msg1, 'lightwhite', 'lightblue'))
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 552, in debug_server_client
+    print(msg)
+OSError: [Errno 9] Bad file descriptor
+
+2020:11:12 19:15:43:085926 ~ Traceback (most recent call last):
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 646, in format_exc
+    debug_server_client(dtime + "\n" + make_colors(msg1, 'lightwhite', 'lightblue'))
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 552, in debug_server_client
+    print(msg)
+OSError: [Errno 9] Bad file descriptor
+
+2020:11:12 19:15:43:267926 ~ Traceback (most recent call last):
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 646, in format_exc
+    debug_server_client(dtime + "\n" + make_colors(msg1, 'lightwhite', 'lightblue'))
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 552, in debug_server_client
+    print(msg)
+OSError: [Errno 9] Bad file descriptor
+
+2020:11:12 19:15:43:453927 ~ Traceback (most recent call last):
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 646, in format_exc
+    debug_server_client(dtime + "\n" + make_colors(msg1, 'lightwhite', 'lightblue'))
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 552, in debug_server_client
+    print(msg)
+OSError: [Errno 9] Bad file descriptor
+
+2020:11:12 19:15:43:700928 ~ Traceback (most recent call last):
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 646, in format_exc
+    debug_server_client(dtime + "\n" + make_colors(msg1, 'lightwhite', 'lightblue'))
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 552, in debug_server_client
+    print(msg)
+OSError: [Errno 9] Bad file descriptor
+
+2020:11:12 19:15:43:898928 ~ Traceback (most recent call last):
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 646, in format_exc
+    debug_server_client(dtime + "\n" + make_colors(msg1, 'lightwhite', 'lightblue'))
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 552, in debug_server_client
+    print(msg)
+OSError: [Errno 9] Bad file descriptor
+
+2020:11:12 19:15:44:122930 ~ Traceback (most recent call last):
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 646, in format_exc
+    debug_server_client(dtime + "\n" + make_colors(msg1, 'lightwhite', 'lightblue'))
+  File "C:\SDK\Anaconda3\lib\traceback.py", line 552, in debug_server_client
+    print(msg)
+OSError: [Errno 9] Bad file descriptor
+
